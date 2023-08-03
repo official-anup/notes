@@ -1,0 +1,657 @@
+1] what is angular framework ?
+-------------------------
+-Angular is a popular open-source framework for building web applications. 
+-It is developed and maintained by Google.
+-Angular is written in TypeScript, a superset of JavaScript, and follows 
+the MVC (Model-View-Controller) architectural pattern.
+-Angular is a component based framework for building structured, scalable 
+and single page web applicatios for client side.
+
+=============================================================================
+
+2] What are Angular advantages?
+---------------------------------
+==> 1.It is Relatively simple to build Single Page Applications (Components).
+        2. To make flexiable & structured applications(oops friendly).
+        3. It is cross platform & open source(free).
+        4. Reusable code (services)
+        5. Testabilty(spec.ts)
+=============================================================================
+3] What is the difference between Angular and Angular JS? OR What are the 
+advantages of Angular over AngularJS?
+----------------------------------------------------------------------------
+Angular JS (2010) : 
+ 1]  It only supports JavaScript.
+ 2]  This framework has a model-view- controller (MVC) architecture.
+ 3]   It does not have CLI tool.
+ 4]   It does not use Dependency Injection.
+ 5]   It does not support mobile browsers.
+ 6]   It is not so fast.so google replace it with angular.
+
+Angular : 
+   1]   It support both JavaScript and TypeScript.
+   2]  This framework has a component based architecture,
+   3]  It has a CLI tool
+   4]  It uses Dependency Injection.
+   5]  It also support mobile browsers.
+   6] It is very fast because of its data binding technic & component based 
+      architecture.
+
+=============================================================================
+
+4] What is NPM?
+---------------------------------
+==>NPM/ Node package manager is an online repository from where you can 
+get thousands of free libraries which can be used in your angular project.
+
+=============================================================================
+5] What is CLI tool?
+-------------------------------------------------
+==>   CLI is a command-line interface tool that you use to initialize and 
+develop Angular applications. 
+-For ex. it is use in creating new project new compnent
+
+=================================================================================
+6] What is component in Angular? 
+-------------------------------------------------
+==>   In Angular, a component is a fundamental building block of an application's 
+user interface. 
+-It represents a specific part of the application's UI,such as a button, form, or 
+navigation bar. 
+-Components are responsible for controlling and rendering their own view, handling 
+user interactions,  and  managing data and state.
+          Component is the combination of 4 files. 
+         1] CSS file : Css file used for keeping the css code of the component.
+         2] HTML file : HTML file used for modifying the html template of the 
+          component.
+         3] Spec.ts : The spec file is used for writing unit tests for your component..
+         4] .ts file : Component.ts is  the file which link all the other component 
+           files.
+
+====================================================================================
+7] What is a Selector and Template?
+-------------------------------------------------
+==> A selector is used to identify each component uniquely into the component tree.
+-A Template is a HTML view of an Angular component.
+
+
+=============================================================================
+8] What is Module in Angular? What is app.module.ts file?
+-------------------------------------------------
+==> Module is a place where you can group the components, directives, pipes, and 
+services,which are related to the application.
+
+-In Angular, the app.module.ts file is a crucial part of the application's structure. 
+-It represents the main module of the Angular application and plays a vital role in 
+bootstrapping the application, managing dependencies, and configuring various aspects 
+of the application.
+
+-The app.module.ts file is typically located in the 'src/app' directory of an Angular 
+project. 
+-It is responsible for defining and organizing the components,services, directives, 
+and other features that make up the application. 
+-It serves as the entry point for the Angular framework to load and start the 
+application.
+
+-Overall, the app.module.ts file acts as the central configuration file for an Angular 
+application, bringing together various components, services, and modules to create a 
+cohesive and functional application.
+
+======================================================================================
+
+9] How an Angular App gets Loaded and Started? What are index.html, app-root, selector 
+and main.ts?
+-------------------------------------------------
+==> 1) Angular is used to create Single Page Applications. index.html file is that single 
+page.
+-Index.html will invoke main. js file which is the Javascript version of main.ts file.
+       2)  Main.ts file is like the entry point of web app.It compiles the web app & 
+           bootstraps the AppModule to run in the browser.
+      3) App module file will then bootstrap the Appcomponent.
+      4) App-component or app-root component is the html which you will see finally.
+
+======================================================================================
+
+10] What is a Bootstrapped Module & Bootstrapped Component?
+-------------------------------------------------
+==>  When the Angular web application will start then the first module launched is the 
+bootstrapped module and same is true for the bootstrapped component also.
+
+======================================================================================
+
+11]  What is Data Binding in Angular?
+-------------------------------------------------
+==>  Data binding is the way to communicate between your typescript code of your 
+component and your html view.
+1) One way data binding : 
+a) Output Data => Transfering typescript code (app.component.ts)(component) to HTML 
+template (app.component.html)(view).Output data transfering having two type 
+1. String Interpolation property={{data}}
+2. Property Binding [property]="data"
+
+b) Input Data =>  Transfering code HTML template (app.component.html)(view) to typescript 
+code (app.component.ts)(component). Input data transfer has one type
+1. Event Binding(event) = "expression" 
+
+2) Both ways : Transfering data from both the sides.
+1. Two way data binding [(ngModel")]="data"
+
+======================================================================================
+12] What is String Interpolation in Angular?
+-------------------------------------------------
+==> String Interpolation is a one-way data-binding technique that is used to transfer the 
+data from a TypeScript code(component) to an HTML template (view).
+                   
+                                                 One way  
+            TypeScript Code              -------------------------->   HTML Template
+            (app.component.ts)              {{data}}                 (app.component.html)
+                (Component)                                                 (View)
+
+-String interpolation can work on string type only not numbers or any other type. 
+-It is represented inside {{data}} double curly braces.
+
+=========================================================================================
+
+13] What is Property Binding in Angular?
+-------------------------------------------------
+==> Property binding is a superset of interpolation. 
+-It can do whatever interpolation can do. 
+-In addition, it can set an element property to a non-string data value like Boolean.
+or it can set an element property to any data type.
+-if all the data type is data bind with property binding then why string interpolation is 
+used. 
+-because data bind for string is more simple or easy in string interpolation so.
+
+                                              One way 
+            TypeScript Code       ------------------------------------>  HTML Template
+            (app.component.ts)     Property Binding [property] = “data"  (app.component.html)
+                 (Component)                                                                                                                 (View)
+=========================================================================================
+14]  What is Event Binding in Angular?
+-------------------------------------------------
+==>                                           One way  
+            TypeScript Code     <------------------------------------- HTML Template
+            (app.component.ts)   Event Binding(event)=“expression”     (app.component.html)
+                (Component)                                                                                                                         (View) 
+                                                                                                                                                                                        
+-Event binding is used to handle the events raised by the user actions like button click. 
+
+=========================================================================================
+
+15]  What is Two way Binding in Angular?
+-------------------------------------------------
+==>Two-way data binding in Angular will help users to exchange data from the view to 
+component and then from component to the view at the same time.
+
+                                        Two way  
+ TypeScript Code   <---------------------------------------------------> HTML Template
+  (app.component.ts)  Two way data-binding [(" ngModel ")] = “data”    (app.component.html)
+  (Component)                                                                                                                                     (View)                 
+                                                                                                                                  
+=========================================================================================
+
+16] What are Directives? What are the type of directives?
+----------------------------------------------------------
+==> Directives are classes that add additional behavior to elements in your Angular 
+    applications.
+        Types of Directives : 1] Structural   2] Attribute  3] Component 
+       
+         1] Structural Directive : Structural directives change appearance of DOM by 
+           adding or removing elements.
+              types of structural directives : a) ngIf      b)ngFor      c) ngSwitch                                                                                                                                                
+
+         2] Attribute Directive :  Attribute directives change the appearance or behavior 
+            of an element.
+               types of Attrinute directives : a) [ngClass]     b) [ngStyle]       
+         
+         3] Component Directive : -Component directive are directives with its own template.
+                                  -Component directive are directives which shows this is
+                                   component class.
+
+===========================================================================================
+
+17] What is *ngIf Structural directive?
+-------------------------------------------------
+==> Structural Directives are classes that change appearance of DOM by adding or removing 
+elements.
+-nglf Directive is used to add or remove items based on the if condition.
+
+===========================================================================================
+
+18] What is *ngFor Structural directive?
+-------------------------------------------------
+==> The *ngFor directive is used to iterate a list of items and then display them.
+ 
+===========================================================================================
+
+19] What is *ngSwitch Structural directive?
+-------------------------------------------------
+==> ngSwitch is an structural directive used in combination with *ngSwitchCase and 
+*ngSwitchDefault that are both structural directives. 
+
+=============================================================================
+
+20] What is [ngStyle] Attribute directive?
+-------------------------------------------------
+==> Attribute directives change the appearance or behavior of an element.
+-ngStyle is an attribute directive that updates styles for the HTML element.
+
+=============================================================================
+
+21] What is [ngClass] Attribute directive?
+-------------------------------------------
+==> ngClass directive adds and removes CSS classes on an HTML element.
+
+=============================================================================
+
+22] What is the difference between Component, Attribute and Structural Directives?
+---------------------------------------------------------------------------------
+==>  A] Component Directive : 
+             1)  Component directive is responsible for showing the first whole view.
+               It is the most used one.
+             2)  Starts with @ sign. Like: @Component
+
+         B] Structural Directive : 
+              1) Structural directive is responsible for adding and deleting html 
+               elements in the view.
+              2)  Starts with * sign. Like: *nglf, *ngFor, *ngSwitch
+
+         C] Attribute Directive : 
+              1) Attribute directive is responsible for changing the appearance of 
+               view by adding or removing styles/cssclasses of the html elements.
+              2) Set inside Square brackets. Like: [ngClass], [ngStyle]
+
+===================================================================================
+23] What is Decorator?
+-----------------------
+==> 1. Angular decorators store metadata about a class, method, or property. 
+       2. Metadata is "data that provides information about other data”.
+       3. All decorators are represented with @ symbol.
+
+===================================================================================
+24] What are the types of Decorator?
+-----------------------------------
+==>    1] Class Decorators : @NgModule, @Component . ----  @Injectable,  @Directive
+       2] Property Decorators :  @Input , @Output. ---- @ContentChild , @ContentChildren, 
+          @ViewChild, @ViewChildren , @HostBinding
+       3] Method Decorators : @HostListner
+       4] Parameter Decorators : @input , @self ------ @Host, @Skipself, @Optional
+
+===================================================================================
+
+25] What are Pipes? What are the types of Pipes & Parameterized Pipes?
+---------------------------------------------------------------------
+==> Pipes are simple functions which accept an input value and return a transformed 
+   value.
+       A] Angular Pipe :   
+           a) Built-in-pipe => Lowercase,Uppercase,date,percentage,currency,Decimal,
+                               Slice,json
+           b) Custom Pipe 
+ 
+-When we pass any parameter to the pipes,it is called as Parameterized pipes.
+
+===================================================================================
+
+26] Explain Services with Example?
+-----------------------------------
+==> 1) Suppose, we have two component - Login component & Menu component .
+-if any error occure in those component then developer has lock that error.
+-for that we have write some errorlogging code on both that component . 
+-And if 100 component are there then we write that code on 100 times in all the 
+component .
+-So in order to avoid repeated lines of code.We will create one single service which 
+will be link errorlogging service & then we will put that code inside this file only.
+-And then we will inject the service in both the componen.& then the errorlogging code 
+is no more longer
+
+2) A service is a typescript class and a reusable code which can be used in 
+multiple components.
+
+3) Service can be implemented with the help of dependency injection.
+
+4) so the service is used for reausebility purpose.
+5) & if u have the userdata which is used in 2 3 component then the service u can also 
+get created for that userdata.
+
+===================================================================================
+
+27] How to Create Service in Angular?
+---------------------------------------
+==> Open the terminal then write : ng generate service servicename
+
+===================================================================================
+
+28] How to use Dependency Injector  with Services in Angular?
+-------------------------------------------------------------
+==>  
+
+===================================================================================
+29] What is dependency injection ?
+--------------------------------------
+-Dependency injection is a coding pattern in which a class ask for dependencies from
+external sourcesrather that creating them itself.
+-To use the services in other components wee have to import that perticular service 
+and register it in the provides of that components(Both setting in app.module.ts).
+-After this we inject in constructor of the component and write function in component 
+and in service ts file.
+
+===================================================================================
+
+27] How to Create Service in Angular?
+--------------------------------------
+==> Open the terminal then write : ng generate service servicename
+
+===================================================================================
+
+28] How to use Dependency Injector  with Services in Angular?
+----------------------------------------------------------------------------
+==>  To use Dependency Injection with services in Angular, you can follow these steps:
+
+A]  Create a service : First, create a service class that will provide the functionality 
+you need. 
+-For example, let's create a simple UserService:
+
+code of typescript
+
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class UserService {
+  getUsers(): string[] {
+    return ['User 1', 'User 2', 'User 3'];
+  }
+}
+
+B] Register the service: In Angular, you can register a service at the module level 
+or at the component level. To register it at the module level, open the module file 
+(e.g., app.module.ts) and import the service, then add it to the providers array:
+
+import { NgModule } from '@angular/core';
+import { UserService } from './user.service';
+
+@NgModule({
+  // ...
+  providers: [UserService],
+  // ...
+})
+export class AppModule { }
+
+C] -Inject the service: To use the service in a component or another service, you 
+need to inject it using the constructor. 
+-Angular's dependency injection system will take care of providing an instance of 
+the service for you. For example, 
+let's inject the UserService into a UserListComponent:
+
+import { Component } from '@angular/core';
+import { UserService } from './user.service';
+
+@Component({
+  selector: 'app-user-list',
+  template: `
+    <ul>
+      <li *ngFor="let user of users">{{ user }}</li>
+    </ul>
+  `
+})
+export class UserListComponent {
+  users: string[];
+
+  constructor(private userService: UserService) {
+    this.users = this.userService.getUsers();
+  }
+}
+
+-In the above code, we import the UserService and inject it into the constructor 
+of UserListComponent.
+-Then, we can access the service's methods or properties using this.userService.
+
+-Use the component or service: Finally, you can use the component or service in 
+your application. 
+-For example, you can add the <app-user-list></app-user-list> component to your 
+template to display the list of users.
+
+-By following these steps, you can leverage Angular's dependency injection 
+mechanism to easily provide and use services in your application.
+
+===================================================================================
+
+29] What is Hierarchical Dependency Injection?
+----------------------------------------------
+==> If we inject the service in parent component with the help of provider then it 
+is available for all childs component.
+-But if we inject the service in child component i.e.(child2)  it is available for 
+only childs component(child4 & child5) not to the parent component & not to the 
+sibling child component (child1 & child3)
+
+                                                                  PARENT 
+                                                                    |
+   -----------------------------------------------------------------
+   |                                |                               |
+
+   Child 1                       Child2                         Child3
+                                                                     |
+                                                                 Child4
+                                                                      |
+                                                                Child5
+
+===================================================================================
+
+30] What is Provider in Angular?
+----------------------------------------------
+==> A provider is an object declared inside decorators which inform Angular that a 
+particular service is available for injecting inside the components.
+     1) At the module level add the provider then the service is available for module
+       level.
+     2) At the application  root level add the provider then the service is available 
+        for all the application component.
+     3) At the component level add the provider then the service is available for that 
+       component & that component child component.
+
+===================================================================================
+
+31] What is the role of @Injectable Decorator? How to use one service inside 
+    another service?
+----------------------------------------------------------------------------
+==>  With @Injectable decorator one service can be used by another service.
+
+===================================================================================
+
+32] What are Parent-Child Components?
+----------------------------------------------
+==> Suppose we have the parent component in this single page application. 
+-most of the time root component is the parent component. 
+-And if there are any component inside the parent component then they will be called 
+child component.
+-If we have the child component inside the parent component then for that ,in the app 
+component generate child component for that open terminal type command 
+" ng generate component child"
+       
+-How to make that child component of the parent component? 
+-so that if we open the parent component child component is also open in that parent 
+component for that go inside the   child component.ts file copy the selector then go 
+to the parent component html file & paste the selector inside the parent component. 
+-we can put many child component inside the parent component.
+
+===================================================================================
+
+33] What are Lifecycle Hooks in Angular?
+----------------------------------------------
+==>  A component from creation to destruction goes through several stages: and these 
+stages are the life cycle hooks.
+        The stages will cover activities like:
+        1. Component instantiating.
+        2. Rendering the component html view.
+        3. Creating the child components(if required).
+        4. Destroying the component. 
+
+         we overlook some important hooks : 
+
+         1. Constructor : It is a default method of the typescript class that is 
+                          executed when the class is instantiated.
+                         -It always run before any angular hook and it is not a 
+                          part of Lifecycle Hooks.
+
+         2.ngOnChange : Called when input property changes.
+
+         3. ngOnInit : Called when the component is created.
+
+         4. ngDoCheck : it is not so important. when the component is created & 
+            the angular can not detect the changes in it then this hook is called.
+
+         5. ngAfterContentInit,ngAfterContentChecked,ngAfterViewlnit , 
+           ngAfterViewChecked ==> Called for component children. 
+
+         6. ngOnDestroy : Called when the component is destroyed.
+
+===================================================================================
+
+34] What is a Constructor in Angular?
+----------------------------------------
+==>  The constructor is a method in a TypeScript class that automatically gets called 
+     when the class is being instantiated.
+    -Constructor always run before any angular hook and it is not a part of Lifecycle 
+     Hooks.
+    -Constructor is widely used to inject udependencies(services) into the component 
+     class.
+
+===================================================================================
+
+35] What is ngOninit life cycle hook in Angular?
+------------------------------------------------
+==> 1. NgOnlnit signals the activation of the created component.
+        2. This is the second hook and called after ngOnChange:
+        3. NgOnlnit called only once during lifecycle.
+        4. By default, present in the component.
+
+===================================================================================
+
+36] What is the difference between Constructor and ngOninit? 
+-------------------------------------------------------------
+==>  1] Constructor :1. The constructor is a method in a TypeScript class, that 
+automatically gets called when the class is being instantiated.
+
+                     2. Constructor is called before any lifecycle hook. 
+                                     
+                     3. When constructor called, everything in component is not ready, 
+                      so it's mostly used for injecting dependencies only.
+
+        2] ngOnit : 1. NgOnlnit is an Angular lifecycle hook, which signals the activation 
+                        of the created component.
+                    2. ngOnlnit is called after ngOnChanges lifecycle-hook. 
+                    3. When ngOnlnit called, everything about component is already ready,
+                     so it’s use is to perform most of the business logic on component
+
+===================================================================================
+
+37] What are Asynchronous operations?
+----------------------------------------------
+==> Observables are used to perform asynchronous operations and handle asynchronous 
+   data.
+     A] SYNCHRONOUS : Task1 - 10 sec  
+                                           Task2 - 7sec
+                                           Task3 -  6sec      
+                                           Task4 -  5sec
+          Total time taken was = task1 is start 1st if it finish then 2nd,3rd,4th 
+           task are start & finish. so the total time is 28 sec 
+
+     B] ASYNCHRONOUS : Task1 - 10 sec  
+                                             Task2 - 7sec
+                                             Task3 -  6sec      
+                                             Task4 -  5sec
+          Total time taken was = all the task perform at the same time.so the longest 
+          time taken is the total time i.e. 10 sec 
+
+===================================================================================
+
+38] What is the difference between Promise and Observable?
+---------------------------------------------------------
+==>  Observable : 
+                1] Emit multiple values over a period of time. Also called streaming
+                of data.
+                2] Are lazy; they're not executed until we subscribe to them using 
+                   the subscribe() method.
+                3] Have subscriptions that are cancellable using the unsubscribe() 
+                  method.
+
+        Promise : 
+                1] Emit a single value at a time.
+                2] Are not lazy; execute immediately after creation. 
+                3] Are not cancellable.
+===================================================================================
+
+39] What is RxJS?
+-------------------
+==> RxJS is a javascript library that allow us to work with asynchronous data stream 
+    with the help of observables.
+-Observables introduced by RxJS library.
+-RxJS stands for Reactive Extensions for JavaScript.
+===================================================================================
+
+40] What is the role of HttpClient in Angular?
+----------------------------------------------
+==>  HttpClient is a built-in service class available in Angular.
+         Httpclient present inside the @angular/common/http package.
+         this service does perform the HTTP request.
+===================================================================================
+
+41] What is Typescript? What are the advantages of Typescript over Javascript?
+-------------------------------------------------------------------------------
+ ==> Typescript :
+            1. Typescript is a strongly typed language.
+            2. Typescript is a superset of javascript.
+            3. It has Object oriented features.
+            4. Detect error at compile time
+
+         Javascript : 
+            1. Javascript has a loosely type language.
+            2. it has not object oriented features.
+            4. Javascript detect error at run time only.
+===================================================================================
+
+42] What are Built in/ Primitive and User-Defined/ Non-primitive Types in Typescript?
+-------------------------------------------------------------------------------------
+==>  Data Types : 
+         A] Built-in-type : Built-in Data types are used to store simple data,
+
+                                       1) String 
+                                       2) Boolean
+                                       3) void
+                                       4) Number : 1) Null    2) Undefined 
+
+         B] User-Defined : User-Defined types are used to store complex data
+
+                                         1) Array
+                                         2) enum
+                                         3) classes
+                                         4) Interfaces
+===================================================================================
+
+43] What is “any” type in Typescript?
+-------------------------------------
+==> When a value is of type any,then no typechecking will be done by compiler and 
+the flexibility is there to do anything with the variable.
+
+===================================================================================
+
+44] What is Enum type in Typescript?
+------------------------------------
+==> Enums allows to define a set of named constants.
+
+===================================================================================
+
+45] What is Type Assertion in Typescript?
+----------------------------------------------
+==>Type assertion is a technique that informs the compiler about the type of a 
+variable.
+
+===================================================================================
+
+46] What are Arrow Functions in Typescript?
+----------------------------------------------
+==>  Arrow functions are the shorthand syntax
+         for defining the anonymous function
+
+
+
+
+

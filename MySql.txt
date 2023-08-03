@@ -1,0 +1,304 @@
+RECENT QUESTIONS :
+-----------------
+1)Query to see duplicated names in mysql.
+-----------------------------------------
+-SELECT * FROM your_table where Lname 
+in (SELECT Lname FROM your_table GROUP BY Lname HAVING COUNT(Fname) > 1 )
+ORDER BY Lname
+
+-select student_id,student_name from student GROUP BY student_name HAVING count(*)>1 
+
+-SELECT name, COUNT(*) as count
+FROM users
+GROUP BY name
+HAVING count > 1;
+
+
+2)
+
+
+
+------------------------------------------------------------------
+"""
+1) contraints used to avoid inconsistant and incorrect data
+
+
+2) mysql contrsains:
+-------------------
+not null,unique,default,check,foreign key,primary key.
+
+3)
+"""
+
+select  Id, Name as "Employee name",DOB from user;
+
+select * from anup.user where id in(1,2)
+
+select  Id, Name,DOB from anup.user;
+
+-- select * from student as name;(alias ,"as")
+--  
+-- select * from student;
+
+-- alter table student
+-- add column age varchar(10);
+
+-- insert into student(age) values ("23"),("23");
+
+DELETE FROM student where id=1;
+============================================
+create table student1
+( 
+id int not null unique unsigned,(unsigned for not negative)
+name varchar(20) not null,
+email varchar(150) not null,
+age tinyint check (age>=18)
+status boolean default 1
+)
+===========================================
+-- SELECT * FROM anup.student1; 
+
+-- insert into student1
+-- values
+-- (4,"Ram","ram@gmail.com",26),
+-- (5,"sam","sam@gmail.com",27),
+-- (6,"dom","dom@gmail.com",28)
+
+-- SELECT * FROM anup.student;
+-- alter table student 
+-- add column city varchar(20) not null;
+-- insert into student(city) values ("c1"),("c2")
+
+ SELECT * FROM anup.student1
+ where age>18 and age<=26;
+============================================
+ IN OPERATOR:
+-------------
+-SELECT * FROM student1 WHERE age=23 or age=24; 
+
+-SELECT * FROM student1 WHERE age in(19,23,24,25)
+=================================================
+LIKE OPERATOR:
+---------------
+(% means 0 or any)
+SELECT * FROM student1 WHERE name like "a%";
+
+ 'a%'	Finds any values that start with "a"
+ '%a'	Finds any values that end with "a"
+ '%or%'	Finds any values that have "or" in any position 
+ '_r%'	Finds any values that have "r" in the second position
+ 'a_%'	Finds any values that start with "a" and are at least 2 characters in length
+ 'a__%'	Finds any values that start with "a" and are at least 3 characters in length
+ 'a%o'	Finds any values that start with "a" and ends with "o"
+
+===========================================
+COUNT MIN MAX avg:
+---------------
+select min(age) from student1
+select max(age) from student1
+select count(age) from student1 where age>25
+select avg(age) as avgAge from student1
+
+
+==============================================
+ascending and descending:
+---------------------------
+SELECT * FROM student1 order by age desc
+===================================
+UPDATE:
+--------
+update student1 set age=45 where id=1;
+select* from student1
+=======================================
+
+BETWEEN & NOT BETWEEN OPERATOR:
+---------------------------
+ select * from student1 where age not  between 23 and 26;(cover 23 and 26)
+ select * from student1 where age between 23 and 26;
+============================================
+
+ORDER BY & DISTINCT (To remove duplicate rows from a result set):
+--------------------------
+select distinct age from student1 order by age asc
+
+==========================================
+NULL & IS NOT NULL
+-----------------
+select * from student1 where age is null  and city is null
+select * from student1 where age is not null
+
+=================================
+LIMIT:
+--------------------------
+ select * from student1 order by name desc limit 3(gives value 0 to 2)
+ select * from student1 where age>20 desc limit 3
+
+=============================================
+OFFSET:it starts indexing by specifying
+---------------------------------------
+ select * from student1  limit 3 offset 1 (starts from 2 )
+
+============================================================
+DELETE:
+-------------------------------
+delete from student1 where id=1
+delete from student1 where id in(5,6);
+
+======================================================
+TRUNCATE:
+--------------------------------------
+trancate table student;(it delets all the data in the table student bt not table)
+
+============================================================
+DROP:
+--------------------
+drop table student;(it deletes table alltogether)
+--------------------
+alter table  student1
+drop column student1col
+--------------------
+drop database anup;
+
+==================================================================
+ROLL BACK AND COMMIT:(agr hmne kuch commit kiya to wo rollback nh hota)
+----------------------
+select * from student1
+commit;
+update set age=66 where id=1
+rollback;
+
+==========================================================
+PRIMARY KEY:
+------------
+-provide a unique ID for every row in a database table. 
+-primary key is unique,only one in table,not null and auto increament
+-----------------------------
+create table pri
+ (
+ id int not null ,
+ name varchar(30),
+ city int,
+ primary key(id),
+ foreign key(city) references city(id) on delete cascade
+ );
+
+ insert into pri
+ values
+ (1,"Anup ",1),
+ (2,"monti ",2),
+ (3,"sam ",3),
+ (4,"ram ",4),
+ (5,"ramesh ",5),
+ (6,"rajesh ",6),
+ (7,"tommy",7)
+
+===========================================================
+FOREIGN KEY:
+-------------
+-allow us to enforce data consistency. 
+-Usually they work with primary keys to connect two database tables, like a virtual bridge.
+
+-foreign key accept null value and dublicate value
+(This key is to link two tables,foeign key in one table(child table) is used to point 
+PRIMARY KRY in another table(parent table))
+--------------------
+create table city
+ (
+ id int not null primary key,
+ name varchar(30) not null
+)
+
+==================================================================
+CHANGE COLUMN NAME:
+--------------------
+1) alter table student2
+change old_name  new_name datatype;
+
+2) alter table student2
+rename old_name to new_name;
+
+==============================================================
+INNER JOIN:
+--------------------
+select * from student2 inner join city on student2.city=city.id
+
+select * from student2 left join city on student2.city=city.id { it brings all the data 
+of student2 
+and data of city that matches data of student2 }
+
+select * from student2 cross join city on student2.city=city.id { table1(4 rows) x 
+table2(3 rows)= 12 rows }
+
+==============================================================
+JOIN MULTIPLE TABLES:
+-----------------------
+select * from student2 inner join city
+on student2.city=city.id
+inner join courses 
+on student2.course=courses.id
+
+=================================================================
+GROUP BY:
+------------
+-The GROUP BY statement groups rows that have the same values into summary rows.
+-The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(),
+ AVG()) to group the result-set by one or more columns.
+
+select city,city(TABLE).name,count(city(not table)) from student2 
+inner join city
+on student2.city=city.id
+group by (city)
+---------------------------------------
+
+select course,courses(t).name,count(course) as Total from student2
+inner join courses(t)
+on student2.course=courses.id
+group by course
+
+=================================================================
+HAVING:
+-----------------------------------
+-The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate 
+functions.
+-The HAVING clause is often used with the GROUP BY clause to filter groups based on a specified 
+condition. If you comit the GROUP BY clause, the HAVING clause behaves like the WHERE clause.
+-The HAVING clause is used in the SELECT statement to specify filter conditions for a group of
+rows or aggregates.
+
+select course,courses.name,count(course) 
+as Total from student2 
+inner join courses
+on student2.course=courses.id
+group by course
+having count(course) > 1
+
+====================================================================
+SUB QUERY:
+----------------------------------
+select name from student2
+where city(nt)=(select id from city
+ where name ='kerala')
+--------------------------------
+
+select name from student2
+ where  exists ( select id from city where
+ name="kerala") { agr table me kerala h  to sabhi students k nam return kro, otherwise kuch
+ v nh return krega}
+-----------------------------------------------
+
+select name from student2
+ where  not exists ( select id from city where
+ name="pune") { agr table me pune nh to sabhi students k nam return kro,otherwise return kuch
+ v nahi}
+
+============================================================
+DEFAULT: it gives default value to the some column
+----------------------
+create table pri
+ (
+ id int not null ,
+ name varchar(30) default "Anup"
+ city int,
+ primary key(id),
+ foreign key(city) references city(id) on delete cascade
+ );

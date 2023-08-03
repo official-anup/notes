@@ -1,0 +1,171 @@
+"""
+every element and tag in html is objects
+"""
+
+
+
+
+1)js is an interpreted,client side,event based,object oriented language
+-1995 at netscape corporation(livescript)
+-js programs are run by an interpreter built into users web browser
+-case senstive
+-dynamically modify an html page without refreshing an page
+-validation
+-support bt all major browser and enabled by default
+-full intergration with html/css
+-used to create cookies
+
+2)FRAMEWORKS:
+Angular,jQuery,Ext.js, Node.js,Aurelia
+
+3)Libraries:
+react,Vue.js,Ember.js,Polymer,Backbone.js
+-----------------------------------------------------------------
+*)IMPORTANT FUNCTIONS:
+----------------------
+1)Alert();-->inside script code like print();
+2)Confirm ,for validation
+3)consol.log(),
+4)document.write(),writes directly to the html documents inside script
+5)promt(msg,default), creates an dialogue for user input 
+======================================================
+1)VARIABLE:are containers to store value
+-local and global varibale
+===================================
+DOM:
+1)var x=document.getElementById("main").innerHTML
+    //inner.html consider all the things as a text not tag that we write
+=======================================
+OPERATOR:
+---------
+-An operator is a symbol that tell the compiler which arithmetic or logical
+operation to be performed between the respective operands.
+1)Arithmetic:
+-------------
++,-,*,/,%,++(increases integer value by one),--
+
+=========================================================
+2)Binary:
+--------------
+
+
+==========================================================
+3)Ternary & ternary operator:
+-----------------------------
+&&,||,<condition>?<true>:<false>
+
+==========================================================
+3)Assignment:
+----------------------
+c+=a(ie. c=c+a),this is add and assignment
+c-=a(ie. c=c-a),this is substract and assignment
+c*=a(ie. c=c*a)
+c/=a(ie. c=c/a)
+c%=a(ie. c=c%a)
+============================================================
+4)comparision:
+-------------
+==,!=,>,<,>=,<=
+
+=============================================================
+1)function
+2)promt
+3)conditiobal statements
+=============================================================
+!)ARRAY:
+-------------
+-array is an continuous groups of memory loactions
+-it is used tp store multiple values into a single variable
+a)METHOD 1)
+------------
+     1)initializing while declaring:
+    ------------------------
+     var house=["1bhk","2bhk","3bhk"]
+    
+     2)initializing after declaring:
+    ------------------------
+      house[0]="1bhk"
+      house[0]="2bhk"
+      house[0]="3bhk"
+
+b)METHOD 2)
+-----------
+    1)var house=new Array()
+       house=["1bhk","2bhk","3bhk"]
+===============================================================
+1)LOOP:
+--------------------------
+a)for loop:
+--------------------------
+  <script>
+        for(i=1;i<11;i++)
+        {
+            document.write(i,"---->hello world! <br>")
+        }
+        document.write("Loop ended!")
+    </script>
+-------------------------------------------------
+b)while loop:
+-------------
+-while loop is also called as an entry control loop
+-it executes the conditions as long as the contions is true
+-once the conditions is false it breaks
+
+ var i=1
+        while(i<11)
+        {
+          document.write(i,"<br>")
+          i++
+        }
+-------------------------------------------------
+c)FOR EACH LOOP:
+----------------
+-forEACH loop is used to get data from js array or object
+-this loop calls a function once for each element in an array,in order 
+--------------
+<script>
+        var car=["car1","car2","car3","car4"]
+        car.forEach(carFun)
+        function carFun(item,index,Array)
+        {
+           document.write(item,"--->index ",index,",","Array is---->",Array,"<br>")
+        }
+    </script>
+==========================================================
+1)CONTINUE:
+----------
+-wo ek condition wo leave krke baki execute krta h
+
+<script>
+        for(var i=0;i<11;i++)
+        {
+            //if(i==5)
+            if(i%2==0)
+            {
+                continue
+            }
+            document.write(i,"<br>")
+        }
+    </script>
+====================================================================
+1)BREAK:
+------------------------
+-the break statement is used to break the execution  of the current loop or switch case
+-
+ <script>
+      for(var i=1;i<11;i++)
+      {
+        if(i==8)
+        {
+            break
+        }
+        document.write(i,"<br>")
+      }
+    </script>
+
+=============================================
+1)SWITCH CASE:
+----------------
+-switch statement is used to choose in between many cases
+-it works as nested if-else if-else statement
+

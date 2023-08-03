@@ -1,0 +1,114 @@
+1. in user table add new column imagepath
+
+2. In models.py file
+
+class User(models.Model):
+
+     name=models.CharField(max_length=20,primary_key=True)
+     password=models.CharField(max_length=50)
+     mobno = models.IntegerField()
+     email=models.CharField(max_length=50)
+     imagepath=models.CharField(max_length=50)
+          
+     #__str__() function gives us object data .
+
+     def __str__(self):
+          return "{},{},{},{},{}".format(self.username,self.password,self.mobno,self.email,self.imagepath)
+
+     class Meta:
+          db_table="user"
+
+
+
+3. In register.html
+
+    <form action="/saveUserData" method="POST" name="registerForm" enctype="multipart/form-data">
+    
+        {% csrf_token %}
+
+        <input type="file" name="photo"><br><br>
+		
+        <input type="submit" value="register">
+
+
+    </form>
+
+
+
+
+4. In views.py file
+
+
+# call=invoke=request
+def saveUserData(request):
+
+    print(type(request))
+    name=request.POST['name']
+    password=request.POST['password']
+    mobno=request.POST['mobno']
+    email=request.POST['email']
+    photo=request.FILES['photo']
+    imagepath='/upload/'+photo.name
+
+    with open('myapp/static/upload/'+photo.name, 'wb+') as destination:  
+                for chunk in photo.chunks():  
+                    destination.write(chunk)
+
+    
+    User.objects.create(name=name,password=password,mobno=mobno,email=email,imagepath=imagepath)
+   
+    return render(request,'login.html',{'message':'registration successful.please login now'})
+
+
+
+
+
+def logins(request):
+
+    uname=request.GET["uname"]
+    upass=request.GET["upass"]
+    subject=request.GET["subject"]
+    
+    if uname=="admin" and upass=="admin123":
+        return render(request,'questionsmanagement.html',{'message':"welcome admin"})
+
+    try:
+        userfromdb=User.objects.get(name=uname)
+    except:
+        return render(request,'login.html',{"message":"wrong username"})
+
+    if(userfromdb.password==upass):
+
+        questions=Question.objects.filter(subject=subject)
+        question=questions[0]
+        
+        request.session['imagepath']=userfromdb.imagepath
+
+        request.session['qno'] = 0
+        request.session['username']=uname
+        request.session['subject']=subject
+        request.session['answers']={}
+        request.session['score']=0
+
+        return render(request,'question.html',{'question':question})
+    
+    else:
+        
+        return render(request,'login.html',{"message":"wrong password"})
+
+
+
+
+5. In Question.html
+
+<head>
+
+{% load static %}
+
+</head>
+
+<body>
+
+<img src="{% static request.session.imagepath %}" width="100px" height="100px">
+
+</body>

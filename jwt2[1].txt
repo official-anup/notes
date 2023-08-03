@@ -1,0 +1,106 @@
+					Simple JWT(jason web token) install
+
+python.exe -m pip install --upgrade pip
+
+py manage.py createsuperuser
+
+
+
+1. open below web page  
+
+https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html
+
+
+2. install simple JWT
+
+pip install djangorestframework-simplejwt
+
+
+3.In settings.py file
+
+REST_FRAMEWORK = {
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+    
+}
+
+4. In urls.py file
+
+from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
+
+
+urlpatterns = [
+    ...
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    ...
+]
+
+
+5. in settings.py
+
+INSTALLED_APPS = [
+    
+    'rest_framework_simplejwt',
+    
+]
+
+
+6. In views.py file
+
+from rest_framework.decorators import api_view,authentication_classes,permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+
+@api_view(['GET'])
+#@authentication_classes([TokenAuthentication])
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+def getallusers2(request):
+	---
+
+
+
+7.To generate token , we need to use postman
+
+
+1. URL 
+
+	http://127.0.0.1:8000/api/token/
+
+2. method - post
+
+3. select body-raw-JSON
+
+	{
+        	"username": "abcd",
+        	"password": "abcd"
+        
+         }
+
+This will give generate below response
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2NDMwODg5OSwiaWF0IjoxNjY0MjIyNDk5LCJqdGkiOiI0ZTITc3Nzc0NzdhYjVkZjdkZTI4MDBhZmFjNCIsInVzZXJfaWQiOjF9.K_vyTSIFhOiSa2rcG9UWzfGE7hbsTQ6QexjzYgZa9JA",
+    
+"access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2NDMwODg5OSwiaWF0IjoxNjY0MjIyNDk5LCJqdGkiOiI0ZTITc3Nzc0NzdhYjVkZjdkZTI4MDBhZmFjNCIsInVzZXJfaWQiOjF9.FhOiSa2rcG9UWzfGE7hbsTQ6QexjzYgZa9JA"
+}
+
+value of access key is JWT token we need to pass while giving request.
+
+
+8.use get method and give request to API method
+
+	http://127.0.0.1:8000/getallusers2
+
+Don't forget to add token in authorization header
+
+authorization  Bearer token
+
+above token means value of access key
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc2MTMxNDc2LCJpYXQiOjE2NzYxMzExNzYsImp0aSI6ImQyMWRlNGM4MDFjOTQ4NjM4N2JlMTI2OGVhZTdlNzgzIiwidXNlcl9pZCI6MX0.lo0m1D_j8a8FHr_wADby-7gCsh2K1_u7_dWHSQP8Y-U

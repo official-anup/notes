@@ -1,0 +1,523 @@
+1)HTML tags and elements :
+--------------------------
+A)Elements :
+----------
+-The element is an individual component of the HTML web page or document that consists 
+of a start tag, its attributes, an end tag, and everything in between.
+-They usually contain a start tag, content, and an end tag.
+-HTML Elements hold the content.
+-They specify the general content.
+- For example, <p>This is an example of a paragraph.</p>
+
+B)Tags :
+-------
+-HTML tag (either opening or closing) marks the start or end of an element.
+-They begin with < symbol and end with > symbol. Whatever is written inside < and > 
+are called tags.
+-HTML Tags hold the HTML element.
+-HTML tags are like keywords. Each tag has a unique meaning.
+-For example, <a> is an opening anchor tag and </a> is a closing anchor tag.
+
+=============================================================================================
+2)Do all HTML tags have an end tag?
+-----------------------------------
+-No, all HTML tags do not have an end tag. 
+-For example, the <br> tag is used to break the line, and <image> tag is used to insert 
+an image into a document. 
+-They are considered self-closing tags and do not require an end tag.
+
+=============================================================================================
+3)Which HTML tags are used while displaying the data in the tabular form?
+-------------------------------------------------------------------------
+-1	<table> - Defines a table.
+
+2	<tr> - Defines a row in a table.
+
+3	<th> - It defines a header cell in a table.
+
+4	<td> - Defines a cell in a table.
+
+5	<caption> - This tag defines the table caption.
+
+6	<colgroup> - This tag specifies a group of one or more columns in a table for 
+                    formatting.
+7	<col>- It is used with <colgroup> element to specify column properties for each 
+               column. 
+
+8	<tbody> - This tag groups the body content in a table.
+
+9	<thead> - It groups the header content in a table.
+
+10	<tfooter> - It groups the footer content in a table.
+
+============================================================================================
+4)What is HTML5? What are some of its new features that were not present in HTML?
+----------------------------------------------------------------------------------
+-HTML5 is the latest version of the Hypertext Markup Language. 
+Some of the new features of HTML5 are:
+
+-HTML5 supports SVG, canvas, and other virtual vector graphics. 
+-In HTML, vector graphics can only be used with Flash, VML (Vector Markup Language), 
+or Silverlight. 
+-HTML5 allows JavaScript to run within a web browser. 
+-The previous version allowed JavaScript to run in the browser interface thread.
+-HTML5 is not based on SGML. It comes with enhanced parsing rules for improved compatibility.
+-In HTML5, web SQL databases are used to store data temporarily. 
+Previously, only the browser cache was used.
+-Some elements have been removed – applet, isindex, noframes, acronym, dir, font, frame, 
+frameset, and big are removed. 
+-New elements have been added – time, summary, aside, audio, command, and data.
+
+============================================================================================
+5)What are the most commonly used lists used while designing a page?
+------------------------------------------------------------------------
+-The following are the most commonly used lists that are used while designing a page:
+
+-unordered list (<ul> tag) – displays elements in a bulleted format.
+-ordered list (<ol> tag) – displays elements in a numbered format.
+-definition list (<dl>, <dt> and <dd> tags) – displays elements in definition form like 
+  in a dictionary.
+
+============================================================================================
+6)What are HTML Attributes?
+------------------------------------------------------------------------
+Ans. HTML attributes provide additional information about HTML elements. 
+-They are defined directly after the tag name. 
+-They only appear in opening tags and not in closing tags. 
+-Some commonly used HTML attributes include src Attribute, alt Attribute, 
+id Attribute, and href Attribute. 
+
+============================================================================================
+7)What is semantic HTML?
+----------------------------------
+-Semantic HTML is a coding style. 
+-It uses HTML markup to reinforce the semantics or meaning of the content in webpages and web 
+applications rather than just defining its look or appearance. 
+-It introduces meaning to the code we write.
+-For example: <form>, <table>, and <article>, these tags clearly define its content.
+
+============================================================================================
+8)What is the HTML article element?
+-------------------------------------
+Ans. The HTML <article> Element specifies independent and self-contained content in a document, 
+page, application, or site which is independently distributable or reusable. 
+-Since it is independent of the document or website, it can be viewed, reused, and distributed 
+separately. 
+
+-For example, syndication. The HTML article element is used in the following: 
+Forum post
+Blog post
+Newspaper article
+
+============================================================================================
+9)Explain the layout of HTML.
+--------------------------------------------------------
+Ans. HTML layout represents how all the elements in the document are arranged. 
+-It is a vital part of basic page design and is important for creating a website to appear 
+professional and attractive. 
+-Every website has a specific layout to display content in a specific manner. 
+-The following HTML elements are used to define the different parts of a webpage:
+
+<header>: define a header for a document or a section.
+<nav>: defines a container for navigation links
+<section>: it defines a section in a document
+<article>: define an independent, self-contained article
+<aside>: it defines content aside from the content
+<footer>: define a footer for a document or a section
+<details>: define additional details
+
+============================================================================================
+10) What is the difference between a block-level element and an inline element?
+---------------------------------------------------------------------------------
+A)Block-level element :
+-----------------------
+-They start on a new line.
+-Stretch to fill the full width available to them.
+-They have a top and a bottom margin.
+-Examples of block-level elements in HTML: <div>, <img>, <form>, <main>, <table>, <video>.
+
+
+B)Inline element :
+-----------------
+-Do not start on a new line and can begin within a line.
+-Take up as much width as necessary. Its width only extends as far as it is defined by its tags.
+-Inline elements do not have a top and a bottom margin. 
+-Examples of inline elements: <span>, <img>, <strong>, <code>, <input>, <time>, <i>.
+
+============================================================================================
+11)How to write text on image in HTML ?
+------------------------------------------
+-To write text on an image in HTML, you can make use of CSS to position the text element 
+on top of the image
+
+
+============================================================================================
+12)How can comments be added in CSS?
+--------------------------------------
+Ans. We can add comments in CSS using /* and */.
+
+
+============================================================================================
+13) What are the new input types in HTML5 for forms?
+------------------------------------------------------
+date - Allows the user to select a date	<input type=”date”>
+
+datetime - Allows the user to select date and time using UTC date and time format	
+           <input type=”datetime”>
+
+datetime-local - To select the date and time as per the local time	
+                <input type=”datetime-local”>
+
+month - Select month and year	
+         <input type=”month”>
+
+time - The time of day	
+       <input type=”time”>
+
+week - Enables you to select the week and year	
+       <input type=”week”>
+
+color - Enables you to enter a simple color value 	
+        <input type=”color””>
+
+email - Validates the input using the standard email format	
+       <input type=”email”>
+
+search - Searches a data set 
+
+============================================================================================
+14)What is a marquee?
+------------------------
+Ans. Marquee tag is a non-standard HTML element that causes text to scroll up, down, left,
+or right automatically. 
+-You can put the text which you want to scroll on a web page within the following tag:
+
+<marquee>……</marquee>
+
+============================================================================================
+15)What happens if you open the external CSS file in a browser?
+------------------------------------------------------------------------
+Ans. If you try to open the external CSS file in a browser, the browser will not open the file. 
+-This is because the file has a different extension. 
+-The only way to use an external CSS file is to reference it using the <link/> tag within another
+HTML document.
+
+============================================================================================
+16)Which tags are used to separate a section of texts?
+-------------------------------------------------------
+Ans. The following three tags are used to separate a section of texts:
+
+1)<br> – to separate the line of text. It breaks the current line and conveys the flow to the 
+next line
+
+2)<p> – It contains the text in the form of a new paragraph.
+
+3)<blockquote> – defines a large quoted section. 
+
+============================================================================================
+17)Explain the use of an iframe tag.
+--------------------------------------
+Ans. The <iframe> tag specifies an inline frame.
+- It is used to display a web page within a web page (to embed another document within the 
+current HTML document). 
+
+-For example – The src attribute is used to specify the URL of the document that occupies the 
+iframe.
+
+Syntax: 
+<iframe src=”URL”></iframe>
+
+============================================================================================
+18)What is the difference between LocalStorage and SessionStorage Objects?
+--------------------------------------------------------------------------
+A)LocalStorage :
+----------------
+-It stores the data without an expiry date.
+-The data can be shared between multiple windows of the browser.
+-Data is not deleted when the browser window closes.
+
+B)SessionStorage :
+-----------------
+-Stores the data for only one session.
+-Data is accessible only in the current window of the browser.
+-The data is deleted if the browser window closes.
+
+============================================================================================
+19)What are the different media types and formats supported by HTML?
+---------------------------------------------------------------------
+Ans. HTML supports a variety of media formats for sound, music, videos, movies, and animations. 
+The different formats supported by HTML are: 
+
+A)Images: jpg, jpeg, png, gif, svg, apng, BMP ico
+
+B)Audio: RealAudio, WMA, MIDI, AAC, WAV, MP3, MP4
+
+C)Video: MPEG, AVI, QuickTime, RealVideo, WMV, Flash, WebM, and MP4
+
+============================================================================================
+20)Explain an image map in HTML.
+--------------------------------
+Ans. An image map is defined by the <map> tag. 
+-Using this the image map tag, we can linking the different web pages using a single image. 
+-We can add one or more clickable areas in a single image using <area> tags.
+
+============================================================================================
+21)How to create multi-colored text on a web page?
+--------------------------------------------------
+Ans. We can use <font color =”color”> </font> to create multi-colored text on a web page 
+for the specific texts that you want to color.
+
+============================================================================================
+22)How to add a favicon in HTML?
+------------------------------------
+Ans. Below is the code to add a favicon. 
+-Access the code of your webpage and in the <HEAD> section add the following code. 
+
+<link rel=”icon” type=”image/png” href=”/favicon.png”/> 
+
+<link rel=”icon” type=”image/png” href=”https://example.com/favicon.png”/>
+
+============================================================================================
+23)
+============================================================================================
+24)
+============================================================================================
+25)
+============================================================================================
+26)
+============================================================================================
+27)
+============================================================================================
+28)
+============================================================================================
+29)
+============================================================================================
+30)
+============================================================================================
+
+
+============================================================================================
+
+============================================================================================
+
+============================================================================================
+
+============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

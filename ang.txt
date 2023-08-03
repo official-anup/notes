@@ -1,0 +1,36 @@
+import { Component, OnInit } from '@angular/core';
+// import { Account} from '../account/account.component';
+
+interface MyInterface
+{
+  show():void
+}
+class Impl implements MyInterface
+{
+  show(): void {
+    alert("show method called.")
+  }
+}
+
+@Component({
+  selector: 'app-interface',
+  templateUrl: './interface.component.html',
+  styleUrls: ['./interface.component.css']
+})
+
+
+export class InterfaceComponent implements OnInit{
+obj:MyInterface=new Impl()
+// account:Account=new Account()
+
+// display():void
+// {
+//   this.obj.show()
+// }
+
+constructor(){}
+ngOnInit(): void {
+    this.obj.show()
+
+}
+} 

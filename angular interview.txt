@@ -1,0 +1,1876 @@
+
+1. What is Angular ?
+-----------------------
+-Angular is web development framework for HTML , CSS and JavaScript . 
+
+======================================================================================
+
+2. What are the prerequistic to learn angular ?
+------------------------------------------------------------------
+-Before learning angular we must know HTML , CSS and JavaScript . 
+
+======================================================================================
+
+3. What is typescript ?
+----------------------
+-Typescript is superset of javascript . Typescript is static typing language 
+whereas javascript is dynamic typing language .
+
+-Typescript code is converted into javascript and then it is executed by browser . 
+
+======================================================================================
+4. Difference between static and dynamic type language ?
+------------------------------------------------------------------
+-In static type language like TypeScript programmer needs to specify data type of 
+variable during writing code whereas in dynamic typing language like javascript 
+there is no need to specify data type .
+
+======================================================================================
+5. How variables and methods are defined in TypeScript ?
+------------------------------------------------------------------
+
+   syntax for variables :-
+
+	variable name :  data type=value ;
+
+   e.g.	age : number=23;
+
+
+  syntax for methods :-
+
+	method name(argument1:data type , argument2:data type ,--) : return type
+          {
+                #code
+          }
+
+	
+   e.g. calculateSquare(no:number):number
+	{
+		return no*no;
+	}	
+
+	display(age : number , city : string) : void
+	{
+		console.log(age + " " + city);		
+	}
+
+-If method return type is void means this method will NOT return any value .
+- It just perform some operation but do not return any value .
+
+	
+======================================================================================
+
+6. Tell me different data types present in TypeScript ?
+------------------------------------------------------------------
+
+1. number type :- It is used to represent numerical values .
+
+		       e.g. age : number = 20 ;
+
+
+2. string type :- It is used to represent characters .
+
+		       e.g  city : string = 'pune'
+
+	like javascript , we can ' ' , " " both for string values
+
+
+3. boolean type : It is used to represent true or false value.
+
+			e.g. isFound : boolean = true ;
+
+
+4. array type :- It is used to represent list of values .
+
+			e.g. students:string[] = ["ramesh","rakesh","rupesh"];
+
+
+5. any type :- It is default type in typescript . If no type is specified then 
+it is "any" type . We can store value of any type in such variable ;
+
+			e.g. x:any =10;
+			
+			     x="angular";
+
+6. void type :- If method return type is void means this method will NOT return any 
+value . It just perform some operation but do not return any value .
+
+			
+			display(age : number , city : string) : void
+			{
+				console.log(age + " " + city);		
+			}
+
+
+======================================================================================
+
+7. How angular is installed on local machine ?
+-----------------------------------------------
+
+-To install angular on our machine , we need to follow below stapes
+
+Install node.js
+Install Angular CLI
+
+
+-Angular requires Node.js version 10.9.0 or later.
+
+-To check your version, run node -v in a terminal/console window.
+-To get Node.js, go to nodejs.org.
+
+
+-To install the CLI, open a terminal/console window and enter the following command:
+
+		npm install -g @angular/cli
+
+
+-Angular CLI is a command-line interface tool  which we use to create , run  angular app
+
+
+
+
+======================================================================================
+8. How to create and run Angular Application ?
+-----------------------------------------------
+-To create a new workspace and initial starter app : 
+
+-Run the CLI command ng new and provide the name my-app, as shown here: 
+
+ng  new  my-app 
+
+
+-The ng new command prompts you for information about features to include in the initial
+app. Accept the defaults by pressing the Enter or Return key. 
+
+
+-The Angular CLI installs the necessary Angular npm packages and other dependencies. 
+This can take a few minutes. 
+-The CLI creates a new workspace and a simple Welcome app, ready to run. 
+
+======================================================================================
+
+#Running Application
+-----------------------------------------------
+-The Angular CLI includes a server, so that you can easily build and serve your app locally.
+-Go to the workspace folder (my-app).
+-Launch the server by using the CLI command ng serve, with the --open option.
+
+ng serve –open
+
+-The --open (or just -o) option automatically opens your browser to http://localhost:4200/.
+
+-The ng serve command launches the server, watches your files, and rebuilds the app as you make changes to those files.
+
+
+======================================================================================
+
+9. What are 4 building blocks of Angualr ?
+-----------------------------------------------
+-Basic Building blocks of angular are :-
+
+Components
+
+Services
+
+Pipes
+
+Directives
+
+1.  Components :
+----------------
+-Components are the key features of Angular. 
+
+-The whole application is built by using different components.
+Component is consist of 3 things :-
+
+HTML file (View)
+CSS File ( Style)
+Component Class (Programming Code)
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent   {           }
+
+@Component  decorator indicate that particular class is Component class .
+
+
+
+2.Services :
+-------------
+-In Angular, services are a way to organize and share code and data across 
+multiple components. 
+-Services are used to provide common functionality or 
+data that can be accessed by different parts of an application.
+
+
+Services in Angular are typically used for:
+-------------------------------------------
+1)Data Sharing: Services act as a central source of data that can be shared among 
+multiple components. They can store and manage application state, fetch data from 
+APIs, and provide that data to different components.
+
+2)Business Logic: Services encapsulate complex business logic or calculations that are 
+used by multiple components. They help in separating concerns and keeping components 
+lean and focused on their specific tasks.
+
+3)External Interactions: Services are often used to interact with external resources, 
+such as APIs, databases, or web sockets. They provide a layer of abstraction and handle
+the communication and data manipulation required to interact with these resources.
+
+-Service is typescript class  just like component class .
+
+-It is annotated with @Injectble  decorator .
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class HttpClientService 
+{
+    // some business logic methods
+}
+
+-Service class contains some business logic methods which are called by 
+different component classes from our angular App .
+
+
+
+3) Pipes :
+---------
+-In Angular, pipes are a feature that allows you to transform data in the template. 
+-Pipes are used to format and manipulate data before it is displayed to the user. 
+-They are denoted by the "|" symbol in the template syntax.
+
+-Angular provides several built-in pipes that you can use out of the box, such as:
+
+DatePipe: Formats dates according to the specified format.
+CurrencyPipe: Formats currency values based on the given currency code and locale.
+DecimalPipe: Formats decimal numbers according to the specified format.
+PercentPipe: Formats numbers as percentages.
+UppercasePipe: Converts a string to uppercase.
+LowercasePipe: Converts a string to lowercase.
+
+
+-A pipe takes in data as input and transforms it to a desired output.
+
+{{ ”hello” | uppercase }} 
+
+-It will convert String hello to uppercase HELLO .
+
+-Angular has a lot of predefined pipes which are used to format the data .
+
+-Angular also allows us to define our own pipes also .
+
+
+
+
+4) Directives:
+---------------
+-In Angular, directives are a powerful feature that allows you to extend the functionality 
+of HTML elements or create custom reusable components. 
+-Directives are essentially classes that add behavior to existing HTML elements or attributes.
+-Angular extend HTML with new attributes called Directives . 
+
+
+e.g.
+
+show  : boolean = true .
+  
+
+  <div  *ngIf="show; else elseBlock">Text to show</div>
+
+    <ng-template #elseBlock>Alternate text while primary text is hidden
+    </ng-template>
+
+
+-ngIf is directive here .
+
+
+======================================================================================
+
+10. What is class in typescript ?
+----------------------------------
+-Technically , Class is a container where we define variables and 
+functions together .
+-To represent real world entity in our application  , we define class .
+
+
+e.g. To represent students from real world , we define student class .
+
+class  Student
+{         constructor(private rollno : number , private name : string)
+         {
+	
+         }
+}
+
+
+-To represent employees from real world , we define Employee class .
+
+class  Employee
+{         constructor(eno : number , salary : number)
+         {
+	
+         }
+}
+
+
+
+-To represent Accounts from real world , we define class Account .
+
+class Account
+{
+    constructor(accno : number , balance : number)   {       }
+ 
+    void deposit (amount : number) {balance = balance + amount;}
+
+}
+
+
+
+======================================================================================
+
+11. What is Constructor ?
+----------------------------
+-constructor is a special function which initializes variables from a class .
+
+-Once constructor initializes variables we say that object is created .
+
+-constructor constructs object hence it is called constructor .
+
+class Account
+{
+    constructor(accno : number , balance : number)   {       }
+ 
+    void deposit (amount : number) {     balance = balance + amount;     }
+
+}
+
+Here constructor(accno : number , balance : number)  will initialize accno 
+and balance variables . When we call constructor function , we pass values 
+for these variables . 
+e.g. Account(1,1000) will call constructor function and variables accno and 
+balance will be initialized to 1 and 1000 respectively .
+
+
+
+
+======================================================================================
+12. What is Object ?
+----------------------
+-object is an instance of a class . 
+-Class is a template using which objects are created . 
+
+e.g. Mechanical Engineers draws diagram of car on paper . That diagram can be 
+considered as a class . When cars are actually manufactured then those cars are 
+called objects . 
+
+-In order to call variables and functions from a class we must create object .
+
+-object is created using  new  and constructor .
+
+e.g. new Account(1 , 1000) will create object of Account class .
+
+Here Account(1 , 1000)  will call constructor from Account class  and this constructor
+ will initialize variables accno and balance to 1 and 1000 respectively .
+
+Now to access variables and methods/functions from an object we must define object name .
+
+
+Syntax to create object  in Typescript :-
+
+
+Object name : class name = new  constructor()
+
+Example of an object in Typescript :-
+myAccount  :  Account = new Account(1,1000)
+
+-Now ,  we can use this object name to access  variables and functions from an object .
+
+-It is similar to what we have seen in JavaScript’s  object  concept .
+e.g.
+var myObj = {rno : 1 ,marks : 100};
+
+-Here to access variables rno and marks from an object we use object name .
+e.g. alert(myObj.rno) will display value of rno .
+
+-Syntax to access variables and functions from an object :-
+
+object name.variableName
+objectName.FunctionName()
+
+
+======================================================================================
+
+13. What is Component ?
+--------------------------
+-Components are the key features of Angular. 
+-Angular application is built by using different components. 
+-In object oriented language , we identify objects required to solve problems , similarly 
+in Angular we identify Components required to solve problem as Angular is component based 
+framework .
+
+
+       Component consist of 3 things :-
+
+
+HTML file (View)
+CSS File ( Style)
+Component Class (Programming Code)
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+
+export class AppComponent   {           }
+
+@Component  decorator indicate that particular class is Component class .
+
+======================================================================================
+
+14. Explain @Component  decorator ?
+---------------------------------------
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+
+export class AppComponent   {           }
+
+
+- @Component  Decorator  marks that this class is Component class .
+
+- @Component  Decorator accepts one JavaScript object  having key and value pairs .
+Here  we specify 3 things
+
+- selector :-  It is used to select  component for running .   Generally ,We specify 
+this selector in  app.component.html  file , which is the root html file .
+
+- templateUrl :-  It specify name of HTML file associated with this component
+
+- styleUrls :- It specify CSS files which are used to style html file associated 
+with this component .
+
+
+======================================================================================
+15. what is difference between template and templateURL ?
+----------------------------------------------------------
+@Component({
+  selector: 'app-root',
+  template  :    `  <h1> I am HTML heading </h1> `  ,
+  styleUrls: ['./app.component.css']
+})
+
+
+export class AppComponent   {           }
+
+
+-Using template , we can write HTML content in Type Script File itself instead 
+of writing it separately in HTML file .
+
+-When we write HTML content in separate file , we specify that file name using 
+templateUrl  .
+
+-Template should not be used to write large HTML content .
+
+======================================================================================
+
+16. How to add new Component ? 
+------------------------------
+-To add new component , we need to execute below command :-
+
+ 	ng generate component  Student
+
+
+-It will create a new folder  Student  and inside that 4 files will be present .
+
+1. student.component.html
+2. student.component.css
+3. student.component.ts
+4. student.component.spec.ts
+
+
+-To run student.component.html file  ,  we need to add selector of StudentComponet  
+into app.component.html file .
+
+e.g.  In app.component.html file , we need to add below statement 
+
+<app-student></app-student>
+
+======================================================================================
+
+17. Explain Nested components ?
+---------------------------------
+-By default app.component.html file is the first file which is displayed in the browser . 
+-Hence whichever component selector is present in that file , that component html file is 
+displayed in the browser .
+
+-We can run more that one componet at a time like below :-
+
+-In app.component.html file , we will add 2 selectors :-
+
+<app-student></app-student>
+<app-add-student></app-add-student>
+
+
+-Now we are running 2 component’s  html files , first Student Compoent and  second 
+AddStudentCompoent .
+
+-So in this example , AppComponent  will have StudentCompoent and AddStudentComponent  
+ as a nested components .
+
+======================================================================================
+
+18. How to make Component BootStrap Component ?
+----------------------------------------------------
+-By default AppComponent is a bootStrap component means it's output is shown to client when 
+we run angular application . It is because of below 2 settings :-
+
+1) index.html
+	
+	<body>
+		<app-root></app-root>
+	</body>
+
+- <app-root> is selector of AppComponent . Hence when application is run index.html 
+is displayed in whose body app.component.html file is shown . 
+
+2) in app.module.ts file , AppComponent is mentioned as bootstrap component .
+
+	bootstrap: [AppComponent]
+
+-So if we want to make any other component as a bootstrap component then we need to change 
+above settings . so to make StudentComponent as a bootstrap component :-
+
+
+1) index.html
+	
+	<body>
+		<app-student></app-student>
+	</body>
+
+
+2)in app.module.ts file , 
+
+	bootstrap: [StudentComponent]
+
+
+
+
+======================================================================================
+
+19. what is one way data binding ?
+-----------------------------------
+-When we bind value of variable from component class to HTML element (View Template ) , 
+we call it one way data binding .
+-It is binding from Component to  View  Template .
+
+
+-We have 2 ways to do this :-
+
+1)String Interpolation
+2)Property Binding
+
+======================================================================================
+20.Explain String Interpolation with example .
+----------------------------------------------
+-String variable value from component class is bound to  view template .
+
+e.g.  String variable  msg‘s value "hello" will be displayed in the input box .
+
+
+In app.component.html file :-
+
+<input value='{{msg}}'>
+
+
+In app.component.ts file :-
+
+msg : string = 'hello';
+
+
+-String Interpolation  is converted into property binding internally .
+
+======================================================================================
+
+21. what is Property Binding ?
+---------------------------------
+-Component class variable’s  value is  used as a value of HTML element’s property .
+
+
+e.g. HTML input element’s value property is bound with value of msg variable from 
+component class .
+
+In app.component.html file :-
+
+<input  [value]="msg">
+
+
+In app.component.ts file :-
+
+msg : string = 'hello';
+
+
+
+======================================================================================
+
+22. what is Attribute  Binding 
+---------------------------------
+-With attribute binding we can set the value of an attribute directly. 
+-Angular team recommends to use Property binding when possible and use attribute 
+binding only when there is no corresponding element property to bind.
+
+<th [attr.colspan]="columnSpan"> # This is property binding
+
+<th attr.colspan="{{columnSpan}}"> # This is String Interpolation
+
+class EmployeeComponent {
+    columnSpan: number = 2;
+}
+
+======================================================================================
+23. Explain 2 way Data Binding ?
+---------------------------------
+-In two way data binding ,  component  class variable value is applied to HTML element 
+and When HTML element value changes , it’s new value is applied to variable from 
+componet class . Hence it is 2 way data binding .
+
+From Componet to view Template and 
+
+From View Template  to Component 
+
+[(ngModel )]  is used for 2 way data binding .
+
+e.g. 
+
+<input  [(ngModel)]=‘firstName'>
+
+-Here firstName is the variable from componet class . Value of this variable will be 
+displayed in the input box and when we change input box value , value of variable 
+firstName will also be chaged automatically .
+
+-ngModel directive  is defined inside Angular system module called FormsModule. 
+
+-For us to be able to use ngModel directive in our root module - AppModule, we will 
+have to import FormsModule first.
+-Here are the steps to import FormsModule into our AppModule
+
+1. Open app.module.ts file
+
+2. Include the following import statement in it
+
+    import { FormsModule } from '@angular/forms';
+
+3. Also, include FormsModule in the 'imports' array of @NgModule    
+
+   imports: [BrowserModule, FormsModule]
+
+
+======================================================================================
+
+24. what is Event Binding ?
+---------------------------
+-In Angular, event binding is a mechanism that allows you to listen for and respond 
+to specific events that occur in your application's user interface. 
+-It enables you to capture user interactions such as button clicks, mouse movements, 
+keystrokes, and more.
+
+-Event binding involves binding a method or function defined in your component's class 
+to a specific event in the template. 
+-When the event occurs, the associated method is executed, allowing you to perform custom 
+logic or trigger other actions.
+
+Syntax :-
+<button (click)="handleButtonClick()">Click Me</button>
+-In ts file there will be handleButtonClick() function which handle this function.
+
+<element  ( event name )=‘Event Handler Function name ()' >
+					
+#Handling Click Event
+----------------------
+
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'my-app',
+    template: `<button (click)='onClick()' >Click me</button>`
+})
+
+export class AppComponent {
+    onClick(): void {
+        console.log('Button Clicked');
+        document.write("button is clicked")
+        alert("button is clicked")
+    }
+}
+
+-Every time we click the button, 'Button Clicked' message is logged to the console. 
+You can see this message under the Console tab
+
+
+
+
+#Handling Change Event
+----------------------
+-Whenever we select any option from select element , onchange event occurs 
+-We can handle this  change  event like below :-
+
+
+In app.component.html file :-
+
+
+<select  [(ngModel)]="selectedLanguage"  (change)="display()">
+   <option value="c"> c</option>
+    <option value="c++"> c++</option>
+</select>
+
+You selected :  {{selectedLanguage}}
+
+
+
+In app.compoent.ts file :-
+
+
+export class AppComponent  
+{
+  selectedLanguage : string ;
+
+  display()
+  {
+      alert(this.selectedLanguage);
+  }
+}
+
+-display() will execute whenever we select any option from select element .
+
+
+======================================================================================
+
+25. what is angular directive ?
+--------------------------------
+-Directive is a special feature added by Angular which makes HTML element more 
+dynamic .
+-There are three kinds of directives in Angular:
+
+1)Component Directive — directives with a template. E.g. @Component 
+
+2)Structural directives—change the DOM layout by adding and removing DOM elements. 
+ E.g.  ngIf  , ngFor directives
+
+3)Attribute directives—change the appearance or behavior of an element, component,
+ or another directive. E.g . ngStyle , [ ( ngModel ) ]  directive
+
+======================================================================================
+
+26. Explain Component Directive ?
+--------------------------------
+
+- @Component Directive is used to define component class whose variables and functions
+ will be used in HTML which makes HTML more dynamic .
+
+
+@Component  (
+	{ 
+		selector: 'app-root', 
+		templateUrl: './app.component.html', 
+		styleUrls: ['./app.component.css'] 
+	}
+
+)
+
+export class AppComponent 
+{
+
+	 title = 'This is a sample Component!'; 
+}
+
+
+======================================================================================
+
+27. what is Structural Directive ?
+----------------------------------
+-Structural Directive is used to change the structure of a HTML page .  
+e.g. using ngIf directive we can hide or show some html element , using 
+ngFor directive we can add new rows in a html table .
+
+ngIf Directive :-
+
+@Component({
+  selector: 'app-ng-if-simple',
+  template: `
+  <div  *ngIf="show">   Angular is Fun  </div>
+`
+})
+
+export class NgIfSimpleComponent  {
+  show: boolean = false;
+}
+
+-As show variable value is false , therefore HTML <div> element will not be 
+displayed on browser .
+
+
+======================================================================================
+
+ngFor Directive :-
+----------------------
+- ngFor is usually used to display an array elements .
+Since ngFor is a structural directive it is prefixed with *
+
+<tr *ngFor='let employee of employees'>
+            <td>{{employee.code}}</td>
+            <td>{{employee.name}}</td>
+ </tr>
+
+employees: any[] = [
+    {
+       code: 'emp101', name: 'Tom‘
+    }
+     ,
+    
+    {
+        code: 'emp102', name: 'Alex'
+        
+    }   ];
+
+
+
+======================================================================================
+
+
+#Attribute Directive:
+----------------------
+-The attribute directive changes the appearance or behavior of a DOM element. 
+-These directives look like regular HTML attributes in templates. 
+
+-The ngModel directive which is used for two-way is an example of an attribute 
+directive. Some of the other attribute directives are listed below:
+
+
+-NgSwitch: It is used whenever you want to display an element tree consisting of 
+many children. The Angular places only selected element tree into the DOM based on some condition.
+
+
+-NgStyle: Based on the component state, dynamic styles can be set by using NgStyle. 
+Many inline styles can be set simultaneously by binding to NgStyle.
+
+
+=================================================================================
+
+#ngSwitch Example :-
+--------------------------------
+In app.component.html file :-
+
+<ul [ngSwitch]="person"> 
+
+<li *ngSwitchCase=“Mohan”>  Hello Mohan  </li> 
+
+<li *ngSwitchCase=“Sohan”>   Hello Sohan  </li> 
+
+</ul>
+
+In app.component.ts
+
+class AppComponent {
+   person : string = ‘Mohan’
+}
+
+Output :-
+. Hello Mohan
+
+
+======================================================================================
+
+#ngStyle Example :-
+------------------
+-ngStyle directive is used to achieve dynamic styling to HTML elements .
+
+e.g. Suppose we want display persons from different country with different color , 
+then it is possible with ngStyle directive .
+
+people: any[] = [
+    {
+      "name": "Peter Mark",
+      "country": 'UK'
+    },
+    {
+      "name": "John Mill",
+      "country": 'USA'
+    },
+    {
+      "name": "Rohan Jadhav",
+      "country": 'India'
+    },
+ ];
+
+
+
+
+getColor(country) {
+    switch (country) {
+      case 'UK':
+        return 'green';
+      case 'USA':
+        return 'blue';
+      case 'India':
+        return 'red';
+    }
+  }
+
+
+
+In app.component.html :-
+
+<ul *ngFor="let person of people">
+  <li [ngStyle]="{'font-size.px':25}"
+      [style.color]="getColor(person.country)">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+======================================================================================
+
+28. what is interface ?
+--------------------------
+-An interface is an structure that defines the syntax for classes to fallows.
+-Interface defines properties,methods and events which are members of the interface.
+-It contains only the declarations of the members.We cannot define its variable.
+
+-ex:To validate price*quantity all in number type.
+
+-In Angular, an interface is a TypeScript feature that allows you to define the 
+structure and contract of an object. 
+-It is used to specify the shape of an object and the types of its properties 
+and methods.
+
+
+interface User {
+  name: string;
+  age: number;
+  email: string;
+  // Optional property
+  phoneNumber: string;
+}
+
+// Usage
+const user: User = {
+  name: 'John Doe',
+  age: 25,
+  email: 'john@example.com',
+  phoneNumber: '1234567890'
+};
+
+-----------------------------------------------------------------------
+
+interface MyInterface
+{
+     show(); // show() is just declared & not defined
+}
+
+-All methods from interface are public by default .   
+-We should write a class which defines  undefined methods from the interface . 
+-Such class is called as Implementation class of interface .
+
+class MyClass implements MyInterface
+{
+  show()
+  {
+    alert('Hello');
+  }
+}
+
+
+Implements keyword is used to define implementation  class .
+
+We can not create object of interface . But we can create object of implementation  
+class .
+
+
+class InterfaceExComponent
+{
+ 	obj: MyClass  = new MyClass();
+
+	 dispay() 
+	{
+    		this.obj.show();
+  	}
+}
+
+Using object of implementation class  , we call methods from interface .
+
+======================================================================================
+
+29.What is use of ngOnInit() method ?
+----------------------------------------
+-OnInit is predefined interface in Angular . So any class which implements this 
+interface has to define ngOnInit()  method from this interface .
+
+-In Angular , we  use constructor to initilize variable from component class  
+and This ngOnInit()  method is used to write additional initilizalition logic .  
+
+e.g. Filling the array from component class  with the contents from Database 
+
+class InterfaceExComponent implements OnInit 
+{
+
+ obj: MyClass  = new MyClass();
+
+  ngOnInit() 
+  {
+    this.obj.show();
+  }
+}
+
+-ngOnInit() is called immediately after constructor call .
+
+======================================================================================
+
+30.How to format data in angular ?
+---------------------------------------
+-A pipe takes in data as input and transforms it to a desired output.
+
+-Built in pipes include lowercase, uppercase, decimal, date, percent, currency 
+
+
+Syntax :-
+
+Data  |   Pipe 
+
+
+e.g. 
+
+uppercase  pipe  transforms text to all upper case.
+
+{{  “angular” | uppercase }}  => ANGULAR
+
+
+======================================================================================
+
+31. How do we pass parameters while using pipe ?
+------------------------------------------------
+-A pipe can accept any number of optional parameters to fine-tune its output. 
+
+-To add parameters to a pipe, follow the pipe name with a colon ( : ) and 
+then the parameter value (such as currency:'EUR'). 
+
+If the pipe accepts multiple parameters, separate the values with colons .
+
+
+e.g. To display date in a specific format , we can sepcify that format like 
+below 
+
+<p>The hero's birthday is {{ birthday | date:"MM/dd/yy" }} </p>
+
+
+{{ Unique | slice : 1 : 4  }}  will render niq .  Here slice pipe has accepted 2 
+values  which are separated by  : 
+
+======================================================================================
+32. Explain custom pipe ?
+---------------------------
+-Angular  uses  PipeTransform interface  to create custom pipe .
+
+-Angular 2 also has the facility to create custom pipes. The general way to define 
+a custom pipe is as follows.
+
+import { Pipe, PipeTransform } from '@angular/core'; 
+@Pipe({name: 'Pipename'}) 
+
+export class Pipeclass implements PipeTransform { 
+
+transform(parameters): returntype   {     } 
+} 
+
+Where,
+
+'Pipename' − This is the name of the pipe.
+Pipeclass − This is name of the class assigned to the custom pipe.
+Transform − This is the function to work with the pipe.
+Parameters − This are the parameters which are passed to the pipe.
+Returntype − This is the return type of the pipe.
+
+
+======================================================================================
+
+33. what is Service ?
+-----------------------
+-Service  is  a special  Angular  class . 
+
+-Variables and methods defined in Service  class is used by different components 
+from the application . 
+
+-A service in Angular is generally used when you need to reuse variable or  method  
+across multiple components. 
+
+e.g.  in service  class , we will define a method which will fetch the  all employee  
+records from a database . Then we  use this method in any component class .
+
+-To generate service , we need to use below command :-
+
+ng  generate  service  ServiceClassName
+
+e.g.
+
+ng  generate  service Display
+
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DisplayService 
+{
+
+  sum(a,b)
+  {
+      return a+b;   
+  }
+}
+
+-Here , we have defined  a service class DisplayService and  we have defined one method 
+sum(a,b)  into it . Now this sum(a,b) can be called  by any component  class .
+
+- @Injectable() indicates that  this class is  a service  class .
+
+-providedIn: 'root‘ indicates  that this Service class is available to all component 
+classes from root module AppModule .
+
+======================================================================================
+
+34.How Dependancy Injection is done in angular ?
+-------------------------------------------------
+-We know to call a method from a class , we need object  of  that  class . 
+-Generally we create object  ourselves but in Service  class case , it is recommended 
+not to create object programmatically ( explicitly ) . 
+
+-Instead we should just declare the object . Object will be created by Angular and it
+will be injected into our Component  class automatically . This is know as Dependency  
+injection .
+
+export class AddNumberComponent  implements  OnInit 
+{
+answer : number;
+  
+constructor(private myService : DisplayService) { }
+
+ ngOnInit()  {    this.answer=this.myService.sum(10,20);    }
+
+}
+
+myService : DisplayService is just declaration of object . We are not creating object ,
+ which we do normally using new and constructor call .
+
+======================================================================================
+
+35. what is Singleton Service ?
+---------------------------------
+-In all component classes if we use dependency injection technique to create object of a  
+service class   , then only one instance of Service class will be available  . Hence it 
+is called as Singleton Service means only one instance ( object  )  of service class is 
+present  and same object is used by all component  classes .
+
+
+-Hence such singleton service class object can be used to share some data across all 
+component  classes .
+
+
+e.g. If we want background color of all textboxes in all component classes should be 
+black , then in service class , we can define a variable colorChoice and initialize 
+it  with value black . Then we will use this variable value in all component classes
+ to set background color of input .
+
+======================================================================================
+
+36. what is use of @Input  Decorator ?
+---------------------------------------
+- @Input  is used to pass data from parent component to child component .
+
+-Suppose we have Employee  Component with  field  employeeName 
+
+@Component({
+  selector: 'app-employee’})
+
+class  EmployeeComponent
+{
+         @Input
+          employeeName : string ;
+}
+
+In app.componnet.html file :-
+<app-employee  [employeeName]  = “David” > </app-employee>
+
+-Here AppComponent is parent component  and  EmployeeComponent  is a child  component .
+-We are passing value “David”  from parent component for   child component ‘s employeeName  
+field .
+
+
+======================================================================================
+
+37. what is @Output  Decorator ?
+---------------------------------
+- @Output is used to pass data from child component to  parent component .
+
+-Suppose we have Employee  Component as a child component  and AppComponent  as  a Parent
+ Component .
+
+@Component({
+  selector: 'app--employee',
+   template:  `  <button  (click)=‘generate()'> Generate  Custom Event  </button> ` })
+
+export class ChildsComponent {
+ 
+    @Output()  customEvent = new EventEmitter(); 
+   generate() 
+  { 
+      
+    this. customEvent .emit(10);   /*   This will raise customEvent and emit ( sends )  
+10 value to parent  */
+      } 
+}
+
+
+
+In  Parent  component , AppComponent , we will define a function which will be called 
+whenever  custom event  is raised in  child componnet  . 
+
+@Component({
+  selector: 'app-root',
+  template :  ` 
+  
+    <app--employee  (customEvent )=eventHandler($event)></app--employee> 
+` 
+})
+export class AppComponent  {
+
+   eventHandler(data: any) 
+   { 
+     console.log(data);  /*  will print 10  on console  */
+   } 
+}
+
+
+
+Here When we click on button , it will call generate()  which will raise  customEvent   . 
+This customEvent  will sends   value   10  to  parent  component .
+			
+======================================================================================
+
+38. Explain Template-driven forms .
+------------------------------------
+-Handling user input with forms is the cornerstone of many common applications. 
+-Applications use forms to enable users to log in, to update a profile, to enter sensitive 
+information, and to perform many other data-entry tasks.
+
+-Angular provides two different approaches to handling user input through forms
+
+Reactive forms 
+
+template-driven forms 
+
+
+-Template-driven forms  are  very much  similar  to  basic HTML  forms . 
+-Here We use  [( ngModel )]  directive  for two way data binding  .
+-Most of the form related code is written in HTML template itself , hence it is called as 
+template driven forms .
+
+e.g.
+
+<form>
+
+	<input  [(ngModel)]="first"><br><br>
+	<input  [(ngModel)]="second"><br><br>
+	<input  [(ngModel)]="result"><br><br>
+	<button (click)="calculateSum()">Sum</button><br><br>
+
+</form>
+
+
+
+
+class AddNumbersComponent 
+ {
+	  first : string ="10";
+	  second: string ="20";
+	  result : number;
+	  calculateSum()  
+  	{
+   
+	          this.result = parseInt(this.first) + parseInt(this.second);
+ 
+  	}
+}
+
+Values of first , second and result variable will be displayed on textboxes from html 
+template form . To use [(ngModel )]  directive we must add FormsModule in imports array 
+of ngModule directive in app.module.ts file .
+
+======================================================================================
+
+39. Explain Reactive Forms with example .
+-------------------------------------------
+-In reactive forms  forms related maximum code is written in a component  class .
+
+						Grouping form controls
+
+Forms typically contain several related controls. Reactive forms provide  way of grouping 
+multiple related controls into a single input form.
+
+export class ProfileEditorComponent {
+
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl('')
+    })
+  });
+}
+
+
+
+
+						FormBulider service
+
+
+Creating form control instances manually can become repetitive when dealing with multiple forms. 
+
+The FormBulider service provides convenient methods for generating controls.
+
+Use the following steps to take advantage of this service.
+
+1. Import the  FormBulider  class.
+
+import { FormBuilder } from '@angular/forms';
+
+2. Inject the  FormBulider  service.
+
+constructor(private fb: FormBuilder) { }
+
+3. Generate the form contents.
+
+Use the group()  method to create the profileForm controls.
+
+
+
+
+import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+@Component({
+  selector: 'app-profile-editor',
+  templateUrl: './profile-editor.component.html',
+})
+export class ProfileEditorComponent {
+  profileForm = this.fb.group({
+    firstName: [''],
+    lastName: [''],
+    address: this.fb.group({
+      street: [''],
+      city: [''],
+      state: [''],
+      zip: ['']
+    }),
+  });
+
+  constructor(private fb: FormBuilder) { }
+}
+
+ 
+======================================================================================
+
+40. what is Module in angular ?
+----------------------------------
+-Modules are a great way to organize an application and extend it with capabilities from 
+external libraries.
+
+-Angular libraries are NgModules, such as FormsModule, HttpClientModule, and RouterModule.
+
+-NgModules  groups  related  components, directives, pipes , Services into one block .
+
+-Every Angular app has at least one module, the root module. You bootstrap that module to 
+launch the application.
+
+The root module is all you need in a simple application with a few components. 
+
+As the app grows, you refactor the root module into feature modules that represent collections 
+of related functionality. You then import these modules into the root module.
+
+
+
+The Angular CLI generates the following basic AppModule when creating a new app.
+
+// imports
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// @NgModule decorator with its metadata
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+
+
+
+
+@NgModule  Decorator marks AppModule  class as a NgModule .
+
+@NgModule takes a metadata object that tells Angular how to compile and launch the application.
+
+declarations—this application's lone component.
+
+imports—import BrowserModule to have browser specific services such as DOM rendering .
+
+providers—the service providers.
+
+bootstrap—the root component that Angular creates and inserts into the index.html host web page.
+
+The default application created by the Angular CLI only has one component, AppComponent, so it is 
+in both the declarations and the bootstrap arrays.
+
+
+						The declarations array
+
+The module's declarations array tells Angular which components belong to that module. As you create 
+more components, add them to declarations.
+
+You must declare every component in exactly one NgModule class. If you use a component without declaring 
+it, Angular returns an error message.
+
+The declarations array only takes declarables. Declarables are components, directives and pipes. All of a 
+module's declarables must be in the declarations array. Declarables must belong to exactly one module. 
+The compiler emits an error if you try to declare the same class in more than one module.
+
+
+These declared classes are visible within the module but invisible to components in a different module 
+unless they are exported from this module and the other module imports this one.
+
+======================================================================================
+
+41. What is Feature modules ? 
+-----------------------------
+-Feature modules are NgModules for the purpose of organizing code.
+
+-As your app grows, you can organize code relevant for a specific feature. 
+-This helps apply clear boundaries for features. 
+-With feature modules, you can keep code related to a specific functionality or feature separate 
+from other code. 
+
+How to make a feature module
+
+
+Assuming you already have an app that you created with the Angular CLI, create a feature module using the CLI 
+by entering the following command in the root project directory. You can omit the "Module" suffix from the name 
+because the CLI appends it:
+
+
+
+
+This causes the CLI to create a folder called my with a file inside called my.module.ts with the following contents:
+
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@NgModule({
+  imports: [
+    CommonModule
+  ],
+  declarations: []
+})
+export  class  MyModule { }
+
+Feature modules import CommonModule instead of BrowserModule, which is only imported once in the root module. 
+CommonModule only contains information for common directives such as ngIf and ngFor which are needed in most 
+templates
+
+
+
+
+Adding  Component in a Feature Module :-
+
+ng generate component my / First
+
+This generates a folder for the new component within the my folder and updates the feature module with the 
+FirstComponent info .
+
+In a file  my.module.ts  file , you will find below details :-
+
+@NgModule({
+  imports: [
+    CommonModule
+  ],
+  declarations: [
+    FirstComponent
+  ],
+})
+
+Please observe , FirstComponent  is added into declaration section .
+
+
+
+
+					Importing a feature module in root module AppModule :-
+
+To import feature module my  into the AppModule,  add it to the imports array:
+
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+		MyModule // add the feature module here
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+
+
+			Rendering a feature module’s component template
+
+To execute  feature  module’s  FirstComponnet  using app.componnet.html file , you need to  add export 
+ FirstComponnet  statement in a my.module.ts file .
+
+
+Add below line in my.module.ts  file  , just beneath the declarations array
+
+
+exports: [
+  FirstComponent
+]
+
+
+Next, in the AppComponent, app.component.html, add the tag <app-first> , selector of FirstComponent . 
+
+
+
+ng generate module ModuleName
+
+e.g. ng   generate  module  My
+
+======================================================================================
+
+42. what is Routing in angular ?
+--------------------------------
+-We want the applications we build to be as fast and responsive as possible. 
+-In Angular, a common best practice to improve responsiveness is to build singe-page apps. 
+
+-With single-page apps, your users stay on a single page, but their view of that page changes 
+depending on what the user wants to do.
+
+-To handle the navigation from one view to the next view, you use the Angular router. The router 
+enables navigation by interpreting a browser URL as an instruction to change the view.
+
+
+
+
+				Routing using app-routing-module.ts  file 
+
+
+Suppose we have 2 components , HomeComponet  and  AboutUsComponent .
+
+In app-routing-module.ts  file , we define URL / Path  for the components .
+
+
+const routes: Routes = [
+  {path:"home", component:HomeComponent}, 
+  {path:"aboutus", component:AboutusComponent} 
+];
+
+
+These paths will be used  to  execute html  files associated with these components .
+
+
+
+
+In app.componet.html  file , we add below statements :-
+
+
+<nav> 
+  <a routerLink = "/home">Home</a> 
+  <a routerLink = "/aboutus">About Us </a> 
+</nav>
+<router-outlet></router-outlet>
+
+
+<router-outlet>  tag indicate the location where  Html Pages related to routing will be 
+displayed . e.g.  If we click on Home  link , then home.component.html  file will be 
+displayed  in the place where <router-outlet>  tag is written .
+
+
+
+
+				Routing using  navigate()  method :-
+
+Router  class contains  navigate()  method which can be used for routing .
+
+In  previous  application’s  app.component.html  file  add :-
+
+<input type="button" value="go to home" (click)="goHome()">
+
+
+Update  app.componet.ts file as below :-
+
+
+class AppComponent {
+
+  constructor(private myRoute : Router){}
+
+  goHome()
+  {
+    this.myRoute.navigate(["/home"]);
+  }
+
+}
+
+======================================================================================
+
+43. Explain HttpClient class using example .
+---------------------------------------------
+					HttpClient class
+
+-Most front-end applications need to communicate with a server over the HTTP protocol, 
+in order to download or upload data and accesss other back-end services. 
+-Angular provides a simplified client HTTP API for Angular applications, the HttpClient service class in 
+@angular/common/http.
+
+
+Requesting data from a server :-
+
+-Use the HTTPClient.get() method to fetch data from a server. The aynchronous method sends an 
+HTTP request and fetches the data from a server .
+
+-To use HttpClient class  , We  must add HttpClientModule in the imports  array in app.module.ts  
+file as HttpClientModule contains HttpClient class.
+
+
+imports : [   HttpClientModule  ] 
+
+
+
+We  should  call  methods  from HttpClient  class  in  a  service  class  .
+
+class HttpClientService 
+
+{
+
+  constructor( private httpClient : HttpClient )   {    }
+ 
+  getStudents()
+  {
+        return this.httpClient.get<Student[]>('http://localhost:8085/students');
+  }
+
+}
+
+
+Here  requested URL http://localhost:8085/students  , will return  JSON Array having  details 
+of all students  .  This JSON array  will be converted into  Student[]  automatically  by Angular .  
+
+
+
+
+Get  Specific  Student ‘s Details  using   get()  method  :-
+
+class HttpClientService 
+{
+
+  constructor( private httpClient : HttpClient )   {    }
+ 
+public viewStudent(rno) 
+{ 
+    return this.httpClient.get<Student>("http://localhost:8085/students" + "/"+ rno);
+}
+
+}
+
+
+Here  requested URL will return  JSON String having  details of that  student  object whose roll no 
+is passed here   .  This JSON String  will be converted into  Student  object  automatically  by Angular .  
+
+
+
+
+			Sending Details of  particular Student  using post()  :-
+
+class HttpClientService 
+{
+
+  constructor( private httpClient : HttpClient )   {    }
+ 
+public createStudent(student) {
+    
+    return this.httpClient.post<Student>("http://localhost:8085/students", student);
+  }
+
+}
+
+
+Here , we are sending Student object to server . Server may save details of this student object in a 
+database .
+
+
+
+Updating Details of  particular Student  using  put ()  :-
+
+class HttpClientService 
+{
+
+  constructor( private httpClient : HttpClient )   {    }
+ 
+public updateStudent(student) 
+  {
+    
+    return this.httpClient.put<Student>("http://localhost:8085/students", student);
+  }
+
+}
+
+
+Here , we are sending Student object to server . Server will update the details of this student 
+object in a database .
+
+
+
+Deleting  particular Student  using  delete ()  :-
+
+class HttpClientService 
+{
+
+  constructor( private httpClient : HttpClient )   {    }
+ 
+   public deleteStudent(student) 
+  { 
+        return this.httpClient.delete("http://localhost:8085/students" + "/"+ student.rno);
+  }
+
+}
+
+
+Here , we are sending  roll number  of that Student object  which we want to delete to server . 
+Server will delete the details of this student object in a database .
+
+
+
+Calling Methods from HttpClientService  class in  a Component  class :-
+
+class AddstudentComponent  {
+
+  student: Student = new Student(7,90);
+
+  constructor(private httpClientService: HttpClientService) { }
+
+  createStudent(): void 
+  {
+    this.httpClientService.createStudent(this.student)
+        .subscribe( data => {
+          alert("Student created successfully.");
+        });
+  };
+
+
+
+
+
+updateStudent(): void {
+    this.httpClientService.updateStudent(this.student)
+        .subscribe( data => {
+          alert("Student updated successfully.");
+        });
+  };
+
+
+viewStudent(): void {
+    this.httpClientService.viewStudent(this.student.rno)
+        .subscribe( response => {
+          this.student=response;
+        });
+  };
+
+
+  deleteStudent() :void
+  {
+    this.httpClientService.deleteStudent(this.student)
+    .subscribe( data => {
+      alert("Student Deleted successfully.");
+    });
+
+
+
+======================================================================================
+
+44. Explain SessionStorage's use in angular .
+---------------------------------------------
+-With web storage, web applications can store data locally within the user's browser.
+
+-Before HTML5, application data had to be stored in cookies, included in every server request. 
+
+-Web storage is more secure, and large amounts of data can be stored locally, without affecting 
+website performance.
+
+-Unlike cookies, the storage limit is far larger (at least 5MB) and information is never 
+transferred to the server.
+
+
+Web storage is per origin (per domain and protocol). All pages, from one origin, can store 
+and access the same data.
+
+
+
+HTML web storage provides two objects for storing data on the client:
+
+
+window.localStorage - stores data with no expiration date
+
+
+window.sessionStorage - stores data for one session (data is lost when the browser tab is closed)
+
+
+
+1) To add  item  in a sessionStorage object use  setIntem(item,value) .
+
+sessionStorage.setItem("userName", “ramesh”);
+
+
+2) To read item from sessionStorage  object use getItem(item)
+
+    String  uname =sessionStorage.getItem('userName');
+
+
+3) To add  item  in a localStorage object use  setIntem(item,value) .
+
+localStorage.setItem("userName", “ramesh”);
+
+
+4) To read item from localStorage  object use getItem(item)
+
+    String  uname =localStorage.getItem('userName');
+
+======================================================================================
+
+45 . what is use of <router-outlet> tag ?
+---------------------------------------------
+- <router-outlet> is used to decide location where html pages will be opened .
+

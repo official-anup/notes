@@ -1,0 +1,524 @@
+Q)WHAT IS THE DIFFERENCE BETWEEN THE REPOSITORY AND BRANCH ?
+-----------------------------------------------------------
+-A repository is your whole project (directories and files) that you clone on your computer. 
+-A repository contains all the information about your project, including a history of all the changes. 
+-Each change is entered into the repository in the form of a "commit".
+-
+
+
+-A branch is a version of your repository, or in other words, an independent line of development.
+-A repository can contain multiple branches, which means there are multiple versions of the repository. 
+-The purpose of versioning your code after all, is that you can work on multiple aspects of your 
+project at the same time.
+- there is the default branch called "master", and master points to the most recent commit. 
+-Each commit is identified by a number.
+===============================================================================================
+Q)Push and Pull 
+------------------
+-The git push command is used to transfer or push the commit, which is made on a local branch in your
+computer to a remote repository like GitHub. 
+-The command used for pushing to GitHub is given below.
+eg:git push 'remote_name' 'branch_name'
+
+
+
+-If you make a change in a repository, GIT PULL can allow others to view the changes. It is used to 
+acknowledge the change that you've made to the repository that you're working on.
+
+eg:git pull 'remote_name' 'branch_name'.
+
+-
+===============================================================================================
+FETCH AND PULL :
+----------------
+FETCH :
+---------
+-git fetch really only downloads new data from a remote repository.
+-But it doesn't integrate any of this new data into your working files.
+-Fetch is great for getting a fresh view on all the things that happened in a remote repository.
+-Fetch will never manipulate, destroy, or screw up anything.
+
+PULL :
+------
+-git pull is the most common way to update your repository.
+-git pull, a combination of git fetch + git merge.
+-Update your local working branch with commits from the remote, and update all remote tracking 
+branches.
+
+===============================================================================================
+GIT STATUS AND GIT DIFF:
+-----------------------
+GIT STATUS:
+----------
+-git status will show the changes not staged for commit and untracked files.
+
+
+GIT DIFF:
+---------
+-git diff shows the changes between the commits, commits and a working tree, changes between 2 
+files on disk or 2 blob objects or the changes between the working tree and the index or a tree.
+
+===============================================================================================
+GIT MEARGE AND GIT REBASE :
+-------------------------
+GIT MEARGE:
+----------
+-merging means combining something into a single entity.
+-Git Merge is a technique that is used to include the changes from one branch to the other branch.
+-Git merge is one of the merging techniques in git, in which the logs of commits on branches are 
+intact.
+-Git mearge should be used when the target branch is shared branch
+
+GIT REBASE :
+-----------
+-Git Rebase is similar to git merge, but the logs are modified after merge in this technique. 
+-Git rebase was introduced to overcome the limitation of merging, i.e., to make logs of repository 
+history look linear.
+-Git rebase is a command that allows developers to integrate changes from one branch to another.
+-Git Rebase should be used when the target branch is private branch
+
+===============================================================================================
+Q)What happened if .git gets deleted ?
+-------------------------------------
+- The folder will no longer be under versioning control.
+
+===============================================================================================
+Q)What is the use of Staging area or Indexing in Git?
+---------------------------------------------------
+1)staging helps you split up one large change into multiple commits.
+2)staging helps in reviewing changes.
+3)staging helps when a merge has conflicts: 
+4)staging helps you keep extra local files hanging around - Usually, 
+files that should not be committed go into .gitignore
+5)staging helps you sneak in small changes.
+
+===============================================================================================
+Q)Which are the different Git repository hosting functions.
+----------------------------------------------------------
+-Below are few repository functions :
+
+1) Github
+
+2) Gitlab
+
+3) Bitbucket
+
+4) SourceForge
+
+5) GitEnterprise
+
+===============================================================================================
+Q)What is the difference between Git and SVN?
+-------------------------------------------
+-Git is an open-source distributed version control system developed by Linus Torvalds in 2005. 
+-Its emphasis on speed and data integrity in which there is no centralized connectivity is needed. 
+-It is powerful and cheap branching with easy merge in which each developer has his repository and 
+have a local copy in which they can change history. It supports non-linear development branches and 
+applications with a large number of codes files.
+
+
+-Apache Subversion is an open source software version and revision control system under Apache 
+license.
+-SVN has a Centralized Model.
+-In SVN there is central repository has working copy that also make changes and committed in 
+central repository.
+-In SVN we required Network for runs the SVN operation. 
+-SVN is much easier to learn as compared to git.
+-SVN control the large number of binary files easily.
+-In SVN we create .svn directory in each folder.
+-SVN has simple and better user interface .
+
+-Features of SVN:
+-Directories are versioned
+-Copying, deleting, and renaming.
+-Free-form versioned metadata .
+-Atomic commits.
+-Branching and tagging.
+-Merge tracking.
+-File locking.
+
+===============================================================================================
+Q)What does the command git config do?
+-------------------------------------
+-It is used to set identity.
+-The git config command is a function that sets configuration variables. It controls git look 
+and operation.
+-The git config accepts arguments to specify on which configuration level to operate.
+eg:local or global config.
+-The System-level configuration includes all users on an operating system and all repositories. 
+System-level configuration file is located in a git config file of the system root path.
+
+
+
+
+===============================================================================================
+Q)What is the git repository ? How to create it ?
+-------------------------------------------------
+-A Git repository is a virtual storage of your project. It allows you to save versions of your code, 
+which you can access when needed. 
+-To create a new repo, you'll use the git init command. 
+-git init is a one-time command you use during the initial setup of a new repo.
+
+===============================================================================================
+Q)What is the functionality of git ls-tree?
+------------------------------------------
+-git ls-tree allows you to view a tree object along with the name, the mode of each item, 
+and the blob’s SHA-1 value.
+
+===============================================================================================
+Q)What does git stash, git stash apply, git stash pop, and git stash drop commands do?
+-----------------------------------------------------------------------------
+1)git stash :
+------------
+-git stash temporarily shelves (or hide)changes you've made to your working copy so you can 
+work on something else, and then come back and re-apply them later on. 
+-Stashing is handy if you need to quickly switch context and work on something else
+
+
+2)git stash apply :
+-----------------
+-apply the changes without removing stored files from stash area.
+
+3)git stash pop :
+---------------
+-apply the changes as well as remove stored files from stash area.
+
+4)git stash drop :
+-----------------
+-The git drop stash command allows you to delete a specific stash.
+-when you drop a stash, all other stash indexes are re-indexed. This means that, 
+for example, if you drop a stash at index 1, stashes at index 2 and 3 become stashes 
+1 and 2 respectively. Therefore, you should be extra careful with this, especially when 
+you want to drop multiple stashes. In that case you should remove them in reverse order 
+(i.e. larger index first). For example, suppose you want to delete stashes 1, 2 and 3; the
+correct way to drop them would be in reverse, i.e. 3, 2, 1.
+
+===============================================================================================
+Q)git annotate :
+----------------
+-
+
+===============================================================================================
+Q)git cherry pick :
+-----------------
+-Cherry picking is the act of picking a commit from a branch and applying it to another. 
+-git cherry-pick can be useful for undoing changes. 
+-For example, say a commit is accidently made to the wrong branch. You can switch to the correct 
+branch and cherry-pick the commit to where it should belong.
+
+===============================================================================================
+Q)Git reset :
+-------------
+-git reset is more straight-forward, it is simply setting the HEAD to a certain commit.
+-move the tip of a branch to a different commit. 
+-This can be used to remove commits from the current branch. 
+-It moves the branch backwards by commits.
+
+Q)git revert :
+-------------
+-git revert aimed to revert effects of previous commit.
+-undoes a commit by creating a new commit. 
+-This is a safe way to undo changes, as it has no chance of re-writing the commit history.
+
+===============================================================================================
+
+===============================================================================================
+
+===============================================================================================
+
+===============================================================================================
+
+===============================================================================================
+
+===============================================================================================
+
+===============================================================================================
+
+===============================================================================================
+
+===============================================================================================
+
+===============================================================================================
+
+===============================================================================================
+===============================================================================================
+VERSION CONTROL SYSTEM:
+-------------------------
+-Version control is a system that records changes to a file or set
+of files over time so that you can recall specific versions later.
+
+1)Local Version Control Systems
+2)Centralized Version Control Systems
+3)Distributed Version Control Systems
+
+--------------------------------------------------------------------------------------------
+1)Git is a version control system that tracks projects dev,easily recover files,
+it tracks who introduce an issue and when and we can also roll back to previously 
+working state.
+
+-GIT is a type of DevOps tool that is used for the management of source code. It
+is freely available and is an open-source version control system. It is used to 
+handle every sort of project efficiently.
+-GIT is used in securing codes, enabling multiple developers to work together.
+
+2)git is website and github is hosting service like gitlab and big bucket
+
+3)git captures snapshot,not differences
+-almost every operation is local
+-git has intigrity
+-git generally only adds data
+-Superfast and efficient performance.
+-Cross-platform
+-Code changes can be very easily and clearly tracked.
+-Easily maintainable and robust
+-Offers an amazing command line utility known as git
+bash.
+-Also offers GIT GUI where you can very quickly re-scan,
+state change, sign off, commit & push the code quickly
+wr iuBlalewiBICkS:
+
+
+3)three stage architecture:
+
+https://r.search.yahoo.com/_ylt=AwrO6W41Ixhk_kk19XFNBQx.;_ylu=c2VjA3NyBHNsawNp
+bWcEb2lkAzM2MGNiZTNiM2QxMzdmYzYzMmVkYjZjYWVkZjA2M2IxBGdwb3MDMgRpdANiaW5n/RV=2/
+RE=1679332277/RO=11/RU=https%3a%2f%2fcodetej.in%2f3-git-three-stage-architectur
+e%2f/RK=2/RS=F9BlNPkPEJ_dUtyCsbzAS5KC4vw-
+=====================================================================================
+COMMNADS :
+----------
+-clear :
+- pwd : To see current directory.
+
+-$ git init :To set repository.
+
+- ($ git config --list --show-origin),command to see whether this identity set or not.
+
+-git status :To see which new file is added.
+
+- git add --a :Add file contents to the index.Means it will move the files to the 
+staging area.This --a, for all file.
+
+- git add file_name :To add one file.
+
+-git commit :Record changes to the repository.
+
+- git log :Show committed logs.
+
+-git diff :It shows the differences between two logs.
+    -Only tracked files can be send to the direct commit and those files which are not tracked
+     those need to be staged.
+
+-cd .., you need a whitespace between cd and .. This command is to exist from the 
+current folder.
+
+-git commit -a -m "intial 1" :This cmd is to skip the stagging part.
+
+=====================================================================================
+GIT IGNORE :
+----------
+-It is used to ignore files while sending to commit.
+-For this we have to make .gitignore file and add there those files which you wants
+to ignore.
+
+- .html or *.html ,error.log or *.log
+
+-git restore --staged file1.txt : This command is to unstaged the staged files.It will not 
+work after committed.
+
+-git checkout -f : This is to restore files.This will return the last committed data.
+-git checkout file1.txt :To restore one file
+
+-git checkout -b Dev1 :To create Dev1 branch 
+-git checkout master :To go into master branch
+
+----------------------------------------------------------------------------------------
+UNSTAGING AND UNMODIFYING THE FILES :
+---------------------------------
+-Unmodifying those which are not staged or committed.
+-git restore --staged file1.txt : This command is to unstaged the staged files.
+-git checkout -f : This is to restore files.This will return the last committed data.
+-git checkout file1.txt :To restore one file
+
+----------------------------------------------------------------------------------------
+RENAMING AND MOVING FILES :
+--------------------------
+-If we manually delete the file then git will show that the file is deleted and new file
+is yet to be staged.But we dont create new file but we renamed it.
+-After rename just hit the "add" commond ,then git will undersatnd the file is renamed.
+
+-git mv file4.txt file3.txt :This cmd is to rename through git.
+
+-If we are adding file to the .gitignore file but it still showing this is to be staged.
+Then hit the cmd ,git rm --catched file3.txt.
+
+=====================================================================================
+PUSH AND PULL :
+-------------
+-Do all the operations untill commit then,
+  $ git remote add origin https://github.com/anupmonti/pull_push.git
+
+-Then,Git status.IF the origin is master then,
+  $ git push origin master
+
+-Otherwise,it will be main,then,
+  $ git push origin main
+
+-------------------------------
+-If this will not happend and it will show error..
+  error :git@github.com :permission denied(publicity).
+         fatal :could not read from remote repository.
+         please make sure you have the correct access rights and repository exists.
+
+-Then,go to the setting and generate SSH key  and give name and in browser type generate
+ssh key:
+
+  $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  -Type enter enter untill key is generate.
+
+-Then hit the cmd, $ eval "$(ssh-agent -s)"
+-It will return this , Agent pid 352
+
+-Then type this,
+    $ ssh-add ~/.ssh/id_rsa (Here id_rsa is file generated in the drive,check)
+
+-Then click to the step 3,then it will open new page :
+  
+   $ tail< ~/.ssh/id_rsa.pub (here,id_rsa.pub is the second file which is generated.)
+
+-Then it will return a key,copy this and paste to the setting of github generate key.
+First give name to the key and press confirm key.
+
+=====================================================================================
+BEANCHING :
+---------- 
+-In Git, a branch is a new/separate version of the main repository.
+-Branches allow you to work on different parts of a project without impacting the main branch.
+-When the work is complete, a branch can be merged with the main project.
+-You can even switch between branches and work on different projects without them interfering
+with each other.
+
+------------------------------------------
+-git checkout -b Dev1 :To create Dev1 branch 
+-git checkout master :To go into master branch
+-git branch :To see how many branch we have.
+
+1) git push origin Dev1
+-Then check git,there will be 2 branch one is master and another is Dev1.
+
+2)Dev1 will modify the code then he will add and commit.
+
+3)pull request by Dev1
+
+4)Then chckeout to master,and master will merge the all the branches :
+   $ git merge Dev1
+-It will show that whatever changes done by the developers will reflect in master branch and
+new final code will generate.
+
+
+=====================================================================================
+ALIAS FOR GIT :
+--------------
+- git config --global alias.s status (Its mean after this we can use "s" for status ie. git s)
+
+=====================================================================================
+steps:
+------
+1)create account and repository in it.
+2)After creating an repository it will show page with some commonds.
+3)Download git and open it.
+4)Type this commond in git bash: $ git config --list --show-origin
+5)then type this commonds  one by one with ur updation:
+ 
+    $ git config --global user.name "John Doe"
+    $ git config --global user.email johndoe@example.com
+  -Above 5th step is to set indentity in git.
+
+6)Then type ($ git config --list --show-origin) comond to see whether this identity set or not.
+
+7)To push folder into git repository then open git bash in folder that u wanted to push.
+
+8)Then type, $ git status, initially it will show tha git repository is not set.
+
+9)To set repository type,  $ git init.This cmd will create .git folder in folder that we want
+to push and shows all untracked files in red color in git bash.
+
+10)To push those all files we have all tracked files,bcz untracked files cant be push.
+
+11)To convert into tracked type, $git add .(. means all files or to track perticular file then
+type its path).
+
+12)The type, $ git status.It will show that all the files are tracked and shows in green color.
+
+13)Then commit this tracked status with this cmd, $ git commit –m “initial"
+
+14)Then change brach from master to main with this cmd, $ git branch -M main
+
+15)Then type this, $ git remote add origin http://github.com/anupalone08058956196120/project1.git
+
+16)Then type,$ git push -u origin main.Then check whether folder or files is added in git 
+repository.
+
+------------
+FOR CLONING:
+------------
+17)Open git bash in that folder(consider dev1) in which we want to clone project from repository.
+
+18)Then type cmd, $ git clone http://github.com/anupalone08058956196120/project1.git
+-Above url is from parent git repository which we want to clone in our system.
+Then check folder  dev1,all project is cloned successfully.
+
+19)Then open git bash in dev1 folder.Check status with cmd, $ git status.It will show nothing
+to commit.
+
+20)If developer made changes in sample.py file then open git bash from dev1 folder and type cmd,
+   
+   $ git add sample.py(this file name is taken for understanding)
+-Then check status it will show tracked with green color.
+
+21)Then commit this tracked status with this cmd, $ git commit –m "task1".(task1 is message for
+   understading)
+
+22)Then type,$ git push -u origin main.Then check whether folder or files is added in git 
+repository and it will show who made changes.
+
+==============================================================================================
+BRANCHING:
+----------
+23) first clone the project,$ git clone http://github.com/anupalone08058956196120/project1.git
+
+24)cd pythonProject
+
+ 25)$ git status
+
+26)$ git branch
+
+27)made changes to the code which which have cloned
+
+28)$ git status.It will show that new changes file is unbranched.
+
+29)$ git add file_name.py
+
+30)$ git status.It will show that file is branched in green color. 
+
+31)$ git commit –m "task1".
+
+32)For creating sub branch, $ git checkout -b task1.
+
+33)If we want to add another file then start from origin.
+
+34)$ git branch.It will show 2 branch,main and task1.
+
+35)$ git checkout main.If we want to add another file then start from main then add and commit.
+
+36)$ git checkout task1.It will enter in task1.
+
+37)push the changes, $ git push -u origin task1.Then check github it will show 2 branches.
+
+38) add reviewer.Also add reviwer by add collaborator.Then request pull by clicking compaire 
+and pull of hosting git(jo invite krta h uske account me)
+
+39)If reviwer approved then  merge pull request. 
+
+40)change branch projection rule for owner repository.
+

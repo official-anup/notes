@@ -1,0 +1,76 @@
+Q)Tell me about your self?
+--------------------------
+-Hi,my name is Anup Alone.I have done my engg in Information Technology from rastrasant 
+tukdoji maharaj university ,nagpur.I am a python developer and my main work in my
+organization is related to the backend development.I have good knowledge of Django
+framework and the MySql database.Apart from working as backend 
+developer i have expossure of working in the front-end technologies.I have good knowledge of
+HTML,CSS,jS,bootstrap and angular.Sometime I was also being involved in the client interaction like
+whatever their requirements will be,I am the resposible for handling that things as well.
+Thats all about me.
+
+----------------------------------------------------------------------------------------------
+Q) What was your role in the project?
+-I worked as a member a member also as Team Lead for some time.
+-My main work is on the backend development.
+-I was also responsible for the create and communicate a clear list of expectation.
+-Projct report everyday.
+
+--------------------------------------------------------------------------------------------
+Q)What is your day to day responsibilities as a djnago developer ?
+--------------------------------------------------------------
+1)I am responsible for handling the day to day issues and fine tuning the applications for enhanced 
+performance.
+2)Iam actively involved in developing the methods/functions for Create, Read, Update and Delete (CRUD) 
+in Active Record.
+3)I am working on the back-end part of the applications in Django using Python to create the APIs and 
+maintaining the databases.
+4)Iam responsible for implementing the MVT architecture in developing the web application with the 
+help of Django framework.
+5)Im involved in software development life cycle (SDLC) of tracking the requirements gathering,
+analysis, detailed design, development,system testing and user acceptance testing
+
+6)I take part in code reviews and technical documentation for reference and reporting.
+7)I contribute to analysis and design of new requirements and fault/Bug fixes.
+8)I contribute to regular team meetings.
+9)I am responsible for enhancing the functionalities of current software systems.
+10)I analyse and fix faults reported within the existing code base.
+11)Iam responsible for developing the entire frontend and backend modules using Python on Django Web 
+Framework.
+12)I am managing code versioning with GitHub and responsible for the deployment to staging 
+and production servers.
+13)
+
+--------------------------------------------------------------------------------------------
+
+
+-My project name is Online Asessment system which is Like online examination apllication.
+-Basically this project Contains students details of the school and after registration they
+can give Online exams on the portal.This has majorly three components which are student,superadmin
+and Teachers which are responsible for adding questions and ans.And this project is very beneficial
+as our education system is evolving with the time.
+
+-Now coming to the low level design for this project we use python as a programming language and uses 
+django framework to create any kind of api and user interface.We use mysql database to store the data
+and perform the crude operation by using django orm and for designing purpose we use html,css,js and 
+bootstrap.
+
+-Now coming to my roles and responsibilities then there are 3 people who are working on 
+this project 1 is for the front end and 2 is for the backend part i was working on the backend 
+part of the application in django using python to create the api's and maintaining the database i am 
+responsible for handling the day-to-day issues and fine-tuning the application for enhanced performance
+and implementing the mvt architecture in developing this project i am working closely with the front-end
+developers to integrate the api and i am managing the code versioning with github so that's all about 
+my project.
+
+
+---------------------------------------------------------------------------------------------------
+Q)what is the most challenging situation you face ?
+---------------------------------------------------
+-Actually there was one situation when the person who started this project initially as a front-end 
+developer left so my manager asked me to take his duties as well till the time we find another resource
+so i contributed as a front-end developer in this project for a while although i had no knowledge in html 
+css ,javascript or bootstrap but i learned all those technologies and implemented the functionalities so it 
+was a quite challenging situation for me at that moment.
+
+

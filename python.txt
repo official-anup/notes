@@ -1,0 +1,2778 @@
+INTERVIW QUE:
+------------
+Q)What is server ?
+--------------------
+-It is virtual environment to run an application.
+
+--------------------------------------------------------------- 
+Q)Which server is provided by the django?
+-wsgi server
+
+----------------------------------------------------------------
+Q)What is the flow of django?
+A)
+1)It first loads the manage.py file
+2)then setting.py file
+3)Then django points to the root folder.
+4)Then,django points to the application folder using installed apps.
+5)Then,django laods project level urls.py file.
+6)Then,urls.py file in application folder
+7)Then it forward to the views.py where bussiness logic happens and page renderes and shows to the user.
+
+
+B)The first address point inside the Django app is the urls.py in the management 
+app. That file will direct you towards the urls.py in the app you want to go to. That will forward 
+you to views.py, where the code logic happens. The functions in there will direct you towards a 
+specific template to render and return to the user to see in the browser. 
+
+
+---------------------------------------------------------------
+Q)Why do we need virtual env  in python?
+-When we have to use different versions of the python and we have single application 
+host like windows then we create virtual env for the application.
+
+----------------------------------------------------------------
+Q) What is venv ?
+-It is an isolated running evironment that allows user and applications to install
+and upgrade packages without interfering others applications.
+
+-------------------------------------------------------------------
+Q)sort vs sorted
+1)sort:sort() is a method of list class.
+-It return none.Means it modifies original list.
+
+2)sorted() :Its is built in function for sorting iterables(list,set,tupple,dict,string).
+-It returns new object.Means it returns new modified sorted object.
+
+-------------------------------------------------------------------
+Q)Whats is seeding in db?
+-Filling dummy data in db for testing purposes.
+
+-------------------------------------------------------------------
+Q)What is aggreegations?
+-Those are operations of db column.
+-eg:sum,min,max,avg etc. 
+
+-------------------------------------------------------------------
+Q)How do we specify folder as python module?
+-We make file __init__.py file to make folder as module.
+
+-------------------------------------------------------------------
+Q) What is dunder methods?
+-use to create advanced classes.
+-Dunder bcz it have __(double underscore before this).
+1)__new__(self) return a new object (an instance of that class). It is called before 
+__init__ method.
+
+2)__init__(self) is called when the object is initialized. It is the constructor of a class.
+
+3)__del__(self) for del() function. Called when the object is to be destroyed. Can be used
+ to commit unsaved data or close connections.
+
+4)__repr__(self) for repr() function. It returns a string to print the object. Intended for
+ developers to debug. Must be implemented in any class.
+
+5)__str__(self) for str() function. Return a string to print the object. Intended for users
+ to see a pretty and useful output. If not implemented, __repr__ will be used as a fallback.
+
+6)__bytes__(self) for bytes() function. Return a byte object which is the byte string 
+representation of the object.
+
+7)__format__(self) for format() function. Evaluate formatted string literals like % for 
+percentage format and ‘b’ for binary.
+
+-------------------------------------------------------------------
+Q)Difference between methods and functions?
+-
+
+-------------------------------------------------------------------
+Q)What are serializers?
+-Serializers in Django REST Framework are responsible for converting objects into data
+ types understandable by javascript and front-end frameworks,ie.in json formate.
+-simply it converts query set into json and vise-a-versa with de-serialization.
+
+-------------------------------------------------------------------
+Q)Difference between put and patch?
+-PUT and PATCH requests are HTTP verbs and both relate to updating the resources at a
+ location.
+1) PUT is a method of modifying resources where the client sends data that updates
+ the entire resource.PUT is similar to POST in that it can create resources, but it
+ does so when there is a defined URL wherein PUT replaces the entire resource if it
+ exists or creates new if it does not exist.
+-For example, When you want to update the Candidate name and email, you have to send
+ all the parameters of the Candidate including those not to be updated in the request
+ body, otherwise, it will simply replace the entire resource with the name and email.
+
+2)PATCH does partial update e.g. Fields that need to be updated by the client, only 
+that field is updated without modifying the other field.
+-So in the previous example, we have to send only the name and email field in the 
+request body.
+
+-------------------------------------------------------------------
+Q)what is the use of the namespaces in web developement ?
+-It is a system where it contains names for every obejcts presents.
+-A namespace is a simple global object that contains methods,properties,and other
+ objects.Like packages.
+
+-------------------------------------------------------------------
+Q)What are the latest trends in full stack development?
+1)Increased use of frameworks.
+2)JS enhansment.
+3)Developement of the compatible extentions.
+
+-------------------------------------------------------------------
+Q)Is it possible to reduce the load time of an application ?
+1)Image compression.
+2)Keep js and css in external files.
+3)Reducing redirects.
+4)Load css and js files asynchronously.
+
+-------------------------------------------------------------------
+Q)What is the use of CORS(Cross-Origin Resource Sharing) ?
+-It is  an mechanism that allows to be requested at the same time from other domains.
+-It allows a way for web pages to access API,data or assets from other pages or domains.
+
+-------------------------------------------------------------------
+Q)Pair programming?
+-pair programming is the practice of having two programmers share single workstation.
+-The prgrammer who writes code is the driver and other is navigator who looks each line
+of code.They randomly change the roles.
+-Technique in which two programmers work on a project at the same terminal at the same 
+time.
+
+-------------------------------------------------------------------
+Q)Long polling?
+-Long polling pattern in web developement pattern that is used to improve data push from
+ the server to client.
+-If the requested information is not available in the server then server holds the request
+and waits for information available.
+
+-------------------------------------------------------------------
+Q)GraphQL and REST
+-GraphQL does not work with the dedicated resources.
+
+-------------------------------------------------------------------
+Q)API
+-(API) is a way for two or more computer programs to communicate with each other. It is
+ a type of software interface, offering a service to other pieces of software.
+-An API helps software developers to access web tools
+
+-Representational State Transfer (REST) is an architectural style that defines a set of 
+constraints(limitations) to be used for creating web services. REST API is a way of 
+accessing web services in a simple and flexible way without having any processing.
+
+-------------------------------------------------------------------
+Q)Explain Iversion of control.
+
+
+-------------------------------------------------------------------
+Q)What is data attributes?
+-It can be seen as a data field that represents the characteristics or features of a
+ data object. For a customer, object attributes can be customer Id, address, etc.
+- We can say that a set of attributes used to describe a given object are known as attribute 
+vector or feature vector. 
+
+----------------------------------------------------------------------
+Q)what is blue,green and rolling deployement?
+-A blue environment contains older code and green contains up to date code.
+-Rolling deployment replaces old version of the application with the new versions.
+
+-------------------------------------------------------------------
+Q)Two face committe.
+-Two face committe(2pc) allows databases to revert their pre-transation state in the
+ event of an error conditions.
+
+-------------------------------------------------------------------
+Q)Genrator and iterator
+1)GENERATOR
+-Generators are iterators which can execute only once. 
+-Generator uses “yield” keyword and "next"  keyword for printing.
+-Generators are mostly used in loops to generate an iterator by returning all the 
+values in the loop without affecting the iteration of the loop.
+-Every generator is an iterator.
+
+
+def sqr(n):
+    for i in range(1, n+1):
+        yield i*i 
+a = sqr(3)  
+print(next(a))
+print(next(a))
+print(next(a))
+
+Output: 
+1
+4
+9
+---------------------------
+ITERATOR :
+----------
+-It takes sequence or iteration as a input and prints it one by one.  
+-An iterator is an object which contains a countable number of values and it is used 
+to iterate over iterable objects like list, tuples, sets, etc.
+-Iterators are used mostly to iterate or convert other objects to an iterator using 
+iter() function.       
+-Iterator uses iter() and next() functions. 
+-Every iterator is not a generator.
+
+iter_list = iter(['A', 'B', 'C'])
+print(next(iter_list))
+print(next(iter_list))
+print(next(iter_list))
+
+Output:
+A
+B
+C
+
+-------------------------------------------------------------------
+Q)What are decoraters?
+-Extending the functionalities of the existing functions without modifying them.
+-It is useful when we want to increase the functionality whithout modifying the function.
+-A Decorator is just a function that takes another function as an argument, add some kind of
+ functionality and then returns another function. 
+-All of this without altering the source code of the original function that you passed in.
+  
+eg:
+def decor(fun1):
+    def inner():
+        fun1() # existing functionality
+        print("hello 1") # new functionality
+    return inner
+def printer():
+    print("hello 2")
+    print("hello 3")
+    
+printer=decor(printer)
+printer()
+
+------------------------------------
+# without using alias we can use @decor to the function which we have to modify.
+"""
+def decor(fun1):
+    def inner():
+        fun1() # existing functionality
+        print("hello 1") # new functionality. we can write new functionality before 
+                          the existing one.eg:first we can write print then fun1().
+    return inner
+
+@decor
+def printer():
+    print("hello 2")
+    print("hello 3")    
+printer()
+
+
+-------------------------------------------------------------------
+Q)map() function.
+--------------------
+-It is used to apply a function on all elements of a specified iterable.
+-It consist of two parameter,function and iterable.
+eg: def add(n):
+        return n*3
+
+num=[1,2,3,4,5]
+result=map(add,num)
+print(list(result))
+
+l=[44,56,34,23,6]
+l2=list(map(lambda n:n+5,l))
+print(l2)
+
+
+-------------------------------------------------
+Q) reduce() function:
+----------------------
+-reduce() function takes an iteration as an argumnet and reduce to the single value.
+-It reduces a sequence to a single output value by applying a function repeatedly in order to output 
+a single value.
+
+WAP using lambda to sum of all elements in the list[2,3,45,64,4,2,4]
+
+l1=[2,3,45,64,4,2,4]
+list1=reduce(lambda x,y :x+y, l1)
+print(list1)
+
+# using for loop
+sum=0
+for i in l1:
+    sum=i+sum
+print(sum)
+
+-------------------------------------------------------------------
+Q)Filter() function :
+----------------------
+-In Python, the filter() function is used to create a new iterable object by applying a 
+filtering condition to each element of an existing iterable (such as a list, tuple, or set). 
+-The resulting iterable contains only the elements that satisfy the specified condition.
+
+eg:
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+def is_even(n):
+    return n % 2 == 0
+even_numbers = filter(is_even, numbers)
+even_numbers_list = list(even_numbers)
+print(even_numbers_list)
+
+--------------------------
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = list(filter(lambda x:x%2==0, numbers))
+print(even_numbers)
+
+------------------------------------------------------------------------------------
+Q)what is __init__(),used to call class obejct.
+-The __init__.py file lets the Python interpreter know that a directory contains
+ code for a Python module. It can be blank. Without one, you cannot import modules
+ from another folder into your project.
+
+-The __init__ method is similar to constructors in C++ and Java. Constructors are
+ used to initialize the object’s state. 
+
+-------------------------------------------------------------------
+Q) Difference Between Modules and Packages in Python:
+------------------------------------------------------
+1)Module:The module is a simple Python file that contains collections of functions 
+and global variables and with having a .py extension file. It is an executable file 
+and to organize all the modules we have the concept called Package in Python.
+
+-A module is a single file (or files) that are imported under one import and used. 
+E.g.
+    import my_module
+
+
+2)Package:The package is a simple directory having collections of modules. This
+directory contains Python modules and also having __init__.py file by which the
+interpreter interprets it as a Package. The package is simply a namespace. The 
+package also contains sub-packages inside it.
+
+-A package is a collection of modules in directories that give a package hierarchy.
+   from my_package.abc import a
+
+-------------------------------------------------------------------
+
+Q)range and xrange:
+1)RANGE:
+-It returns a list of integers.
+-Since range() returns a list of elements, it takes more memory.
+-Its execution speed is slower.
+-Since it returns a list, all kinds of arithmetic operations can be performed.
+
+2)XRANGE()
+-------------------------
+Q)Library and modules
+Q)how memory is managed
+
+Q)generator and yield.
+Q)self keyward
+Q)functions of data types
+Q)static analysis?
+Q)Pickiling and unpickling
+Q)open and with
+Q)different ways to read and write file in python.
+Q)Python path
+Q)Diamond problem
+Q)how to initialize empty set,dict,list,tupple without using their actual names.
+Q).py and .pyc
+Q)_a,__a,___a
+
+------------------------------------------------------------------------------
+Q)how to read multiple values from single input python?
+- x, y = input(),  input()
+- x, y = input().split()
+
+----------------------------------------------------------------------------
+Q)how to copy and delete dict?
+Q)how to achieve multithreading and multiprocessing 
+Q)What is GIL(global interpreter lock)
+Q)namesppaces and its type 
+Q)unit test in python
+Q)map,filter and reduce
+Q)monkey patching
+Q)how an object is copied in python.
+Q)copy and deep copy
+
+---------------------------------------------------------------------------
+Q)LIST AND DICT COMPREHENDION:
+-Comprehension is a way of writing compact code in python.
+-Every code cannot be converted into comprehension bt Every comprehension can be converted into
+ normal code.
+
+ADVANTAGES:
+-Less code,compact and elegent code,faster execution.
+
+
+List Comprehension:
+Syntax:
+   1) [expression for variable in iterable]
+   2) [expression for variable in iterable if conditions]
+   3) [expression for variable in iterable if condition1 if condition2]
+   4) [expression if conditions else expression for variable in iterable ]
+   5) [ expression for for ]
+      eg:
+        [i*j for i in range(3,6) for j in range(5,7)]
+
+Example:
+Common Way:
+
+l = []
+for i in range(10):
+    if i%2:
+        l.append(i)
+print(l)
+
+Using List Comprehension:
+ls = [i for i in range(10) if i%2]
+print(ls)
+
+Output:
+[1, 3, 5, 7, 9]
+-------------------------------
+Syntax :
+{key:value for (key,value) in iterable if conditional}
+
+Example:
+Common Way:
+
+d = {}
+for i in range(1,10):
+   d[i] = i*i
+print(d)
+
+Using Dict Comprehension:
+d1={n:n*n for n in range(1,10)}
+print (d1)
+
+Output:
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+
+---------------------------------------------------------------------
+Q) how  data is strored,types of  memory
+-Memory management contains private heap which contains python object and data structure.
+-The heap is managed by the interpreter.Programmer will not have any of the access.
+-Allocation of heap space for python objects taken care of by python memory manager.
+-Built in garbage collector recycles all unused memory.
+
+TYPES OF MEMORY:
+-----------------
+1)STACK MEMORY:
+-This memory can be accessed by directly.
+-It allocates memory for the global references,functions and calls.
+-stack memory is managed by the compiler.
+-It allocate memory at compile time.
+
+2)HEAP MEMORY:
+--------------
+-This memory cannot be access directly but by the memory refernences.
+-This memory is managed by the interpreter.
+-It allocated values for values and obejcts.
+-It allocated memory at execution time.
+-
+-------------------------------------------------------------------
+Q)all data types and differences
+Q)interpretation n compiler
+Q)What is your day to day activity as full stack developer? 
+
+-------------------------------------------------------------------
+Q)How python program is executed?
+1)First code is send to the interpreter then interpreter converts it into a interpreted
+ language then it converts to the native language ie. machine language then it executed 
+finally.
+-Debugging can be done modularly and on a per-line basis.
+
+-------------------------------------------------------------------
+2)First compiler compile source code(hello.py).Then compiler converts into bytecode(hello.pyc).
+-computer dosent understand bytecode ,so pvm coverts bytecode into machine code(hello.exe)
+ using interpreter,then program executed.
+
+-------------------------------------------------------------------
+Q)Diff between remove,pop and del in list
+-remove() deletes the matching value that we pass.
+-pop() deletes the last element.
+-del() deletes the value by indexing that we provides.
+
+-------------------------------------------------------------------
+Q)Pickiling and unpickling
+-Pickiling converts an obejct in memory to a bytes stream that can be stored on a disk or sent
+over a network.Also called as seriliazation.
+-UnPickiling used to load a picked files back into a python program.
+
+-------------------------------------------------------------------
+Q)What is negative indexing?
+-Refering elements from end to start. 
+
+-------------------------------------------------------------------
+Q)append() and extend() :
+-In append() single element is added a the end,its length is increase by one.
+-In extend(),all elements of iterables are added at the end of of the list,it increases the
+elements by how much it iterates,it only adds iterated elements.
+
+
+-------------------------------------------------------------------
+Q)What are keywards?
+-These are reserved words used as functions,identifiers and more.
+-They help to define data structure and syntax of the language.
+-There are 33 keywards 
+-eg:False,none,true,if,else,return,continue,break,pass etc
+
+-------------------------------------------------------------------
+Q)What are literals?
+-Literals refers the data that is given in a varibale or constant.
+-4 types.String literals,numeric literals,boolean literals,special literals(eg.None).
+
+-------------------------------------------------------------------
+Q)How to concatinate two tupples?
+-print(t1+t2)
+
+-------------------------------------------------------------------
+Q)What are functions?
+-Functions are organised,reusable piece of code that performs task many time as we called.
+-Used to create better modularity for apllications which use high degree of coding.
+-There are so many built in functions like print() etc.
+
+-------------------------------------------------------------------
+Q)What are classifiers?
+-A classifiers used to predict the class of any data point.
+-classifiers are special hypotheses that are used to assign class lables to any particular
+data points.
+-It is also used to train the data in machine learning.
+
+-------------------------------------------------------------------
+Q)Inserting into list.
+-list.insert(4,10).Here 4 is index and 10 is value.
+
+-------------------------------------------------------------------
+Q)How to remove duplicates from list?
+-Method 1:First list converts into set and then back to the list.
+  l=[1,2,3,1,3,2,4,5,53]
+s1=set(l)
+l1=list(s1)
+print(l1)
+
+-Method 2:Use list(dict.fromkeys(list_variable))
+    eg: print(list(dict.fromkeys(l1)))
+l=[1,2,1,3,2,4,5,53,53,99]
+result=list(dict.fromkeys(l))
+print(result)
+
+
+-Method 3:Using simple for loop:
+l=[1,2,33,2,1,2]
+print(f"Original list is {l}")
+l2=[]
+for i in l:
+    if i not in l2:
+        l2.append(i)
+print(l2)
+
+-------------------------------------------------------------------
+Q)What is recursion?
+-Recursion is a function calling itself one or more times in it body.
+-One important thing is to terminate a recursion statement,because there would be an problem 
+of infinite loop if recursion is not terminated.
+
+-------------------------------------------------------------------
+Q)what is list comprehension?
+-list comprehension is used to transform one list into another list.
+-Elements can be aditonally included in the new list and each element can be transformed as
+needed.
+-eg:print[i for i in range(100)].It will give list of 100 elements.
+
+-------------------------------------------------------------------
+Q)What is the use of bytes()?
+-It returns a bytes object.
+-It is used to convert objects into bytes,or creates empty bytes obejct of the specified size.
+
+-------------------------------------------------------------------
+Q)Types of operators?
+-Arithmatic,relationals,boolean,assignment,logical,bitwise,identity,membership (For more details
+see operator1.py file).
+
+-------------------------------------------------------------------
+Q)What is the use of "with" statement?
+-Used in file handling.
+-With the "with" statement we run the code without close() statement.
+
+
+-------------------------------------------------------------------
+Q)what is __init__()?
+-it is reserved method in python.
+-It is known as constructor in the world of OOP.
+-When an object is created from class,the init method is called to access the class attributes.
+
+-------------------------------------------------------------------
+Q)Tools for static analysis?
+-There are 2 static analysis tools to find bugs in python are Pychecker and pylint.
+-Pychecker detects bugs from the source code and warns about its style and coplexity.
+-pylint checks whether the module matches up to a set coding standard or not.
+
+-------------------------------------------------------------------
+Q)How can an object be copied in python?
+-Not all objects can be copied in python,but most can.
+-We can use "=" operator to copy an object to a variable.
+
+-------------------------------------------------------------------
+Q)str() converts number into string.
+
+-------------------------------------------------------------------
+Q)Encapsulation:
+-Means binding the code and data together.
+eg:A python class.
+-In encapsulation whatever you are creating must be used
+ in class it self not ouside the class i.e by calling by object
+
+-------------------------------------------------------------------
+Q)Split():
+-It is used to split into shorter string using defined separators.
+
+-------------------------------------------------------------------
+Q)WAP using lambda to sum of all elements in the list[2,3,45,64,4,2,4]
+
+l1=[2,3,45,64,4,2,4]
+list1=reduce(lambda x,y :x+y, l1)
+print(list1)
+
+# using for loop
+sum=0
+for i in l1:
+    sum=i+sum
+print(sum)
+-----------------------------------------------------------------------
+
+Q)How to remove spaces in string?
+-By using strip() or replace() or lstrip() function.
+-strip() fucntion is used to remove the leading and trailing white spaces.
+-replace() function removes all the white spaces in the string.
+
+eg:print(str1.replace(" ","")
+
+-----------------------------------------------------------------------
+
+Q)What are the file processing modes?
+-read,write,read-write,append
+
+-----------------------------------------------------------------------
+Q)What is unittest ?
+-It is a unit testing framework in python.
+-It supports sharing of setup and shutdown of code for test,aggregation 
+of test into collection,test automation and independece of the test from the
+reporting framework.
+
+-----------------------------------------------------------------------
+Q)How do you delete a file in python?
+-By using 1)os.remove(filename) (2) os.unlink(filename)
+
+-----------------------------------------------------------------------
+Q)What is early binding?
+-It is popular concept in OOPs
+-It is used to assign values during compile time to save time during the execution
+of the entire project.
+
+-----------------------------------------------------------------------
+Q) Multiple inheritance is not supported in java but in python.
+
+------------------------------------------------------------------------------------
+Q)update value of dict:
+dict["anup"]=100
+
+Q)#common elements in sets
+s1={2,3,4,5,67,5}
+s2={3,5,7,8,9,6,7,8}
+print(s1.intersection(s2))
+
+
+# to find common letters in strings
+s1=input("Enter first string:")
+s2=input("Enter second string:")
+print(set(s1) & set(s2))
+
+
+
+s1=input("Enter first string:")
+s2=input("Enter second string:")
+
+for i in s1:
+    if i in s2:
+       print(i)
+
+
+#concatinate string:
+print(s1+s2)
+
+
+#reverse list
+fruits = ['apple', 'banana', 'cherry']
+fruits.reverse()
+print(fruits)
+
+
+fruits = ['apple', 'banana', 'cherry']
+s=str(fruits)
+s=s.split(",")
+s=s[::-1]
+print(s)
+
+
+#palidron
+n=int(input("enter the number :"))
+num1=n
+# num2=121
+rev=0
+while(n>0):
+    dig=n%10
+    rev=rev*10+dig
+    n=n//10
+if(num1==rev):
+    print("palidron")
+else:
+    print("not palidron")
+
+
+def pali(str):
+    if str==str[::-1]:
+        print("yes")
+    else:
+        print("no")
+pali("nitin")
+
+
+#Increase the values of dict by 1 :
+dict1={"anup":12,"monti":23,"megha":45}
+for i in dict1:
+    dict1[i]=dict1[i]+1
+print(dict1)
+
+
+#Print randon number using random module.
+import random as r 
+# n=r.random()
+n=r.randint(10,20)
+print(n)
+
+
+copy list
+l1=[3,4,2,4,35]
+l2=l1
+l2.append(6)
+
+print(l1)
+print(l2) # 6 will add in both the list bcz both the list are stored in the
+            same location
+
+#range function
+l1=[3,4,2,4,35]
+
+
+#ASCII value 
+value="A"
+print(ord(value))
+
+
+# shuffling a list 
+from random import shuffle
+l1=["anup","monti","minti","megha"]
+shuffle(l1)
+print(l1)
+
+
+#Floar division
+print(5//2) # 2
+print(-7//2) # -4
+print(7.0//2) # 3.0
+print(-7.0//2) # -4.0
+
+
+#string manipulation
+s1="anupalone"
+print(s1[:-1]) # it removes only last element
+print(s1[::-1]) # it reverse every charecter
+
+
+#output is :[2, 3, 34, 4, 4, 3, 3, 'anup', 2, 3, 34, 4, 4, 3, 3, 'anup']
+l1=[2,3,34,4,4,3,3,"anup"]
+print(l1*2)
+
+---------------------------------------
+#Armstrong number :sum of the cube of every digit= number(153)
+n=int(input("Enter the number :"))
+temp=n
+sum=0
+while(temp>0):
+    dig=temp%10
+    sum=sum+dig**3
+    temp=temp//10
+if(n==sum):
+    print("yes")
+else:
+    print("no")
+
+---------------------------------------
+#PERFECT NUMBER:
+-a perfect number is a positive integer that is equal to the sum
+of its positive divisors, excluding the number itself.
+-6 is perfect bcz,6 is divided by 1,2 and 3 and its sum is 6.
+
+n=int(input("enter the number :"))
+sum=0 
+for i in range(1,n):
+    if(n%i==0):
+        sum=sum+i
+      
+if(sum==n):
+      print("yes")
+else:
+        print("no")
+
+-----------------------------------------
+#STRONG NUMBER:
+-Sum of factorial of each number must be same as number itself.
+-eg:1!+4!+5!=145(it is strong number)
+
+
+-----------------------------------------
+#SECOND LARGEST NUMBER IN THE LIST:
+
+l=[3,4,1,5,7,87,98,34,23]
+l.sort()
+print("second largest :",l[-2])
+
+-----------------------------------------
+#Swap first and last element of the list:
+
+l=[2,3,4,5,6,7,8,9]
+print(f" Before swaping,first element is {l[0]} and last element is {l[-1]}")
+print(l)
+l[0],l[-1]=l[-1],l[0]
+print(f" After swaping,first element is {l[0]} and last element is {l[-1]}")
+print(l)
+
+-----------------------------------------
+#WHICH VOWELS PRESENT IN THE STRING:
+
+l1=["a","e","i","o","u"," "]
+name=input("Enter your name:") 
+for i in name:
+    if i in l1:
+        print(i)
+
+# COUNT OF VOWELS PRESENT IN THE LIST:
+l1=["a","e","i","o","u"]
+count=0
+name=input("Enter your name:") 
+for i in name:
+    if i in l1:
+        print(i)
+        count=count+1
+print("count of vowels appears in the string is :",count)
+
+
+vowels = ["a","e","i","o","u"," "]
+name = input("Enter a string: ")
+name = name.casefold()
+count = {}.fromkeys(vowels,0)
+for i in name:
+   if i in count:
+       count[i]+= 1
+print(count)
+
+---------------------------------------
+#sum of list:
+l=[1,2,3,4,5,6,7,8,9]
+rint(sum(l))
+sum=0 
+for i in l:
+    sum+=i 
+print(sum)
+
+
+#break elements of list into small chunks:
+l=[1,2,3,4,5,6,7,8,9,0]
+start=0
+end=10
+for i in range(start,end,3):
+    print(l[i:i+3])
+
+---------------------------------------
+#
+-------------------------------------------------------------------------------
+Q)*args (Non-Keyword Arguments):
+--------------------------------
+- *args in function definitions in python
+-is used to pass a variable number of arguments to a function. 
+-It is used to pass a non-key worded, variable-length argument list.
+
+# 1) *args:This arguments used to pass without argument name.
+def sum(*num):
+    sum=0
+    for i in num:
+        sum+=i
+    print(sum)
+sum(10)
+sum(10,20)
+sum(10,20,30)
+sum(10,20,30,40)
+-------------------------------------------------------------
+- **kwargs (Keyword Arguments):
+--------------------------------
+-A keyword argument is function where you provide a name to the variable as you 
+pass it into the function.
+-One can think of the kwargs as being a dictionary that maps each keyword
+to the value that we pass alongside it. That is why when we iterate over
+the kwargs there doesn’t seem to be any order in which they were printed out.
+
+
+def fun1(*args,**kwargs):
+    print(args)
+    print(kwargs)
+fun1(1,"hello",name="anup")
+
+-------------------------------------------------------------------------------
+Q) Call by value and call by reference:
+
+
+-------------------------------------------------------------------------------
+Q)
+
+
+
+
+
+
+=======================================================
+1)PIP:performance improvement plan
+2)diff bet pass,commets
+3)Modules and packages
+Q)factorial using recursion also by simple for loop.
+Q)WAP 
+
+
+Q)diff bet break,continue and pass
+-Break causes program to exit from the loop once condition is meet.
+-continue causes program to skip the statement in the current iteration of loop and returns
+the control to the beginning of the loop.
+-pass causes program control without executing the code.It is a null statement.This statement
+is ignored by the interpreter but the statement results in no operation.
+-PASS is a keyward represents nothing to execute.Used to avoid syntactical error.
+
+4)how to return value from function
+------------------------------------------------------------------------------------------
+1)What is python:
+-in 1991 ,by guido van rossum
+-it is programming language.simple,general-purpose,dynamically-typed(interpreates
+ data types at run time),high level,object oriented language(we can create class
+and objects).
+-it is interpreated language which supports multiple paradigms ie. functional 
+approach,procedural approach,oop approach for writing programs.
+-It enables programmers to focus on solutions rather than syntax.
+-Automatic memeory mang.
+-
+
+GENERAL PURPOSE:
+----------------
+-can be used in many domains such as machine learning,AI,analytics makes it 
+general purpose.
+
+----------------------------------------------------------------------------
+-Python is both interpreated(portability but not speed,easy to debug) and compiled(speed
+but not portability).
+-python is compiled-interpreted.Python is neither true compiled and interpreted.
+-But python is always refered as interpreted language.
+-----------------------------------------------------------------------------
+LIST:
+------
+-mutable,with square brackets with comma separated value,slower than tuple,
+less memory efficient.
+-comprehension is available for only list ie. converting in compact code.
+-supports packing bt not unpacking
+
+TUPPLE:
+-------
+-Onced assigned,tupple elemets can't be change.
+-Used to store read only collectios.
+-immutable,with round brackets with comma separated value bt round brackets 
+are optional,takes less memory.
+-comprehension is not available
+-supports both packing and unpacking.(a,b,c=(1,2,3)),ie it converts one arguments
+into different
+
+-----------------------------------------------------------------------------
+CONSTANTS:
+----------
+- we define this with const keyword in c and final keyword in java.
+-we can't create or define contants in python.
+-we cant take feel of contants in python by defining them in capital letter,bt we can
+letter change this.
+eg:PI=3.14
+
+-----------------------------------------------------------------------------
+IS operator:
+------------
+-identity operator.
+-returns true or false.
+-cheks memory reference/adress of two objects.If we assign same value for two variable
+then there addresses are same.
+-if we create two list l1 and l2 with same contents then its adresses are different.
+
+== operator:
+-------------
+-comparision operator.
+-it checks actual value of two obejcts.
+-return ans in true and false.
+
+l1=[10,20,30]
+l2=[10,20,30]
+print(l1 is l2) # false,because both have different memory addresses.
+print(l1==l2) # true,because both have same content.
+
+
+#Append list into another list:
+-extend() can be used for sets,tupple etc.This method return none,it only modify the list.
+-append add single element bt extend add multiple elements.
+list1.extend(iterable)
+
+l=[1,322,4242,232,"anup"]
+l2=[1,22,234,12,"monti"]
+l.extend(l2)
+print(l)
+
+l=[1,322,4242,232,"anup"]
+l2=[1,22,234,12,"monti","ram"]
+for i in l2:
+    l.append(i)
+print(l)
+
+
+# Last element of dict:
+d1={"name":"anup","roll":12,"city":"pune"}
+key=list(d1.keys())
+print(key[-1],"-->",d1[key[-1]])
+
+=====================================================================================
+JOIN:
+-----
+-join() takes all items of iterable and joins them into one string.
+-ITERABLE-Iterable is an obejct that returns elements one by one.
+
+ l1=["a","b","c"]  # we cannot found int value here.
+ str1="".join(l1)
+ str2=":".join(l1)
+ str3=":name:".join(l1)
+ print(str1) # abc
+ print(str2) # a:b:c
+ print(str3) # a:name :b:name:c
+
+#ON SET,HERE ORDER IS NOT MAINTAIN:
+s1={"a","b","c"}
+s2="".join(s1)
+print(s2)
+
+#On DICT,HERE IT COLLECYS KEYS:
+d1={"name":"anup","age":26,"city":"pune"}
+d1="".join(d1)
+print(d1)
+=====================================================================================
+SPLIT:
+------
+-Split() method breaks up a string at specified separator and returns a list of string.
+-bydefault separator is whitespace.
+-sty:string.split(separator,maxsplit)
+# find the count of words in the string
+
+s1="hello this is python"
+# print(len(s1))
+words=s1.split()
+print(len(words))
+
+===================================================================================
+#REVERSE INTERNAL ELEMENTS OF THE WORDS:
+s1="anup alone"
+word1,word2=s1.split()
+print(word1,word2)
+word3=word1[::-1]
+word4=word2[::-1]
+print(word3,word4) # puna enola
+
+
+s1="anup anil alone"
+s2=s1.split()
+for i in s2:
+    print(i[::-1],end=" ")
+
+
+str1=input("enter the string:")
+# words=str1.split()
+words=str1
+words="".join(words[::-1])
+print(words)  # randomly comment2,3 line one by one and see results.
+
+===================================================================================
+#common elements in sets
+s={2,3,4,5,67,5}
+s2={3,5,7,8,9,6,7,8}
+print(s.intersection(s2))
+------------------------------------------------
+#COMMON ELEMENTS IN LIST:
+s=[2,2,3,4,5,67,5]
+s2=[]
+for i in s:
+    if s.count(i)>1 and i not in s2:
+        s2.append(i)
+print(s2)
+------------------------------------------------
+
+#WAP TO COUNT NUMBER OF ITEMS HAVING LIST AS A VALUE:
+data={"jay":["male",23],"anup":"male","monti":"male","vijay":["male",24]}
+count=0
+for i in data:
+    if isinstance(data[i],list):
+        count=count+1
+print(count)
+
+------------------------------------------------
+# COUNT NUMBER OF VOWELS IN A STRING:
+s="this is string to check number of vowels."
+# v="AaIiOoEeUu"
+v=["A","a","E","e","I","i","O","o","U","u"]
+count=0
+for i in s:
+    if i in v:
+        count=count+1
+print(count)
+
+------------------------------------------------
+# REVERSE STRING USING FOR LOOP:
+s="anupalone"
+print("original string :",s)
+r_string=""
+for i in s:
+    r_string=i+r_string
+print("Reverse string is :",r_string)
+
+------------------------------------------------
+# COUNT THE NUMBER OF WORDS
+s="my name is anup and monti is my brother"
+l=s.split()
+count=0 
+for i in l:
+    count+=1
+print(count)
+
+------------------------------------------------
+#WAP TO DISPLAY HOW MANY TIME WORDS APPEARS:
+s="my name is anup and monti is my brother"
+l=s.split()
+d={}
+print(l)
+for i in l:
+     if i not  in d.keys():
+        d[i]=0
+     d[i]=d[i]+1
+print(d)
+
+
+s="my name is anup and monti is my brother"
+l=s.split()
+d={}.fromkeys(l, 0)
+for i in l:
+    d[i]+=1
+print(d)
+
+
+s="my name is anup and monti is my brother"
+l=s.split()
+d={}
+print(l)
+for i in l:
+     if i not  in d.keys():
+        d[i]=1
+     else:
+        d[i]=d[i]+1
+print(d)
+
+------------------------------------------------
+# WAP TO SORT STRING HAVING ALPHABETS FIRST THEN NUMBERS:
+s="ab4bw443b54b5"
+alphabets=[]
+numbers=[]
+for i in s:
+    if i.isalpha():
+        alphabets.append(i)
+    else:
+        numbers.append(i)
+        
+j="".join(sorted(alphabets)+sorted(numbers))    
+print(sorted(alphabets)+sorted(numbers))
+print(j)
+
+------------------------------------------------
+# a3b4c5 to aaabbbbccccc
+s=input("Enter the string:")
+output=""
+for i in s:
+    if i.isalpha():
+        var=i
+    else:
+        num=int(i)
+        output=output+(var*num)
+print(output )
+
+------------------------------------------------
+#FIBONACCI SERIES:
+
+n=int(input("Enter the number of terms :"))
+first=0
+second=1 
+count=0
+if n<=0:
+    print("Enter positive number !")
+elif n==1:
+    print("Fibonacci series is :")
+    print(first)
+else:
+    for i in range(n):
+    # while(count<=n):
+        temp=first
+        first=second
+        second=temp+first
+        print(first,end=" ")
+        # count=count+1
+
+
+n=int(input("Enter the number of terms :"))
+a,b=0,1 
+print(a)
+while(b<n):
+    print(b)
+    a,b=b,a+b
+
+
+a,b=0,1 
+print(a)
+for n in range(1,100):
+    while(b<n):
+        print(b,end=" ")
+        a,b=b,a+b
+------------------------------------------------
+
+# print your name 10 times without loop or manually:By using RECURSION
+
+count=1
+def printer(name):
+    global count
+    if count<=10:
+        print(name)
+        count+=1
+        printer(name)
+printer("Anup")
+
+------------------------------------------------
+# ITERATE ON LIST WITHOUT LOOP FROM START TO END :
+
+l=eval(input("Enter the list :"))
+start=eval(input("enter the satrt index :"))
+end=eval(input("enter the end index :"))
+def iterate(l,start,end):
+    if start<0 or start>=end:
+        return
+    print(l[start])
+    iterate(l,start+1,end)
+iterate(l,start,end)
+
+------------------------------------------------
+# PRINT THOSE NUMBER WHOSE COUNT IS ONE:
+
+l=[1,2,2,2,3,3,3,4,5,5,5,6,6,6]
+l2=[]
+for i in l:
+    if l.count(i)==1:
+        l2.append(i)
+print(l2)
+print([i for i in l if l.count(i)==1])
+
+------------------------------------------------
+s="sky is blue"  #output: blue is sky
+word=s.split()
+print(word)
+word2=word[::-1]
+word2=" ".join(word2)
+print(word2) 
+"""
+
+------------------------------------------------
+# PRINT THOSE NUMBER WHOSE COUNT IS ONE
+l=[1,2,2,2,3,3,3,4,5,5,5,6,6,6]
+l2=[]
+for i in l:
+    if l.count(i)==1:
+        l2.append(i)
+print(l2)
+print([i for i in l if l.count(i)==1])
+
+
+----------------------------------------------
+s="a,a,a,b,b,c,c,c" # output= a:3,b=2,c=3
+l=s.split(",")
+print(l)
+new_list=[]
+final_list=[]
+for i in l:
+    if i not in new_list:
+        # print(f"{i}:{l.count(i)}",end=",")
+        final_list.append(f"{i}:{l.count(i)}")
+        new_list.append(i)
+print(final_list)
+print(" ".join(final_list))
+
+------------------------------------------------
+#FILE HANDLING:
+
+f=open("interview.txt","r")
+words=0
+lines=0
+char=0
+for i in f:
+    lines+=1
+    line=i.strip("\n")
+    char+=len(line)
+    l=line.split()
+    words+=len(l)
+print("Number of lines :",lines)
+print("Number of charecters :",char)
+print("Number of words :",words)
+------------------------------------------------
+
+------------------------------------------------
+===================================================================================
+MENU DRIVEN PROGRAM:
+--------------------
+-A menu driven program in Python is a program that takes input from a user by 
+displaying a list of options and allows users to choose the input from the list 
+of options. A simple example of a menu-driven program is an ATM (Automated teller 
+machine).
+-It uses while loop to achieve the task.
+-eg:student management system etc.
+
+===================================================================================
+PYTHON 2 AND 3:
+---------------
+-First version is 0.9.0 in 1991
+-Two major version,python 2.0(in 2000) and python 3(in 2008).
+
+-There is no backward compatibility.
+-python 2 and 3 is quite different.
+-You cant port python 3 code in python 2.
+-In other language everything from old works in new.
+
+1)Division:
+---------
+-python 2  returns int(12/3=4) ,python 3 returns float(12/3=4.0).
+
+2)Print:
+-In python 2 print is statement(eg. print "hello") ,in python 3 print is function
+ (eg.print("hello")). 
+
+3)-Python 2 has both input() and raw_input(),this cant ignore escape charecter.
+-Python 3 has only  input().
+
+4)-Python 2 has both range() and xrange().
+-Python 3 has only  range().
+
+5)Storing charecter:
+-Python 2 stores in ASCII
+-Python 3 stores in unicode value.
+
+===================================================================================
+# ITERATING DICT FROM NESTED LIST:
+
+student={
+    "jay":{"details":{"roll":1,"marks":[10,20,30,40,50]}},
+    "viru":{"details":{"roll":2,"marks":[12,40,50,22,54]}},
+    "basanti":{"details":{"roll":3,"marks":[19,22,34,40,59]}},
+    "thakur":{"details":{"roll":4,"marks":[14,21,30,40,50]}},
+    
+}
+# print(student["jay"]["details"]["marks"])
+total_subejct=5
+for i in student:
+    #  print(i) # keys
+    percentage=sum(student[i]["details"]["marks"])/total_subejct
+    print(f"{i} has {percentage} %")
+
+-----------------------------------------------
+
+# A-Z : 65-90
+# a-z : 97-122
+# print(ord("a")) # 97
+# print(chr(97))  # a
+# print(chr(ord("B")+32))  #b
+
+# IF ALL THE STRING ELEMENTS ARE IN THE UPPER CASE:
+s=input("Enter the string :")
+lower_string=""
+for i in s:
+    asc=ord(i)+32
+    print(chr(asc),end="")
+
+#IF INPUT CHARECTERS ARE UPPER AND LOWER BOTH:
+s=input("Enter the string :")
+lower_string=""
+for i in s:
+    asc=ord(i)
+    if asc>64 and asc<91:
+       lower_string+= chr(asc+32)
+    
+    else:
+        lower_string+=chr(asc)
+print("Lowercase string is :",lower_string)
+
+---------------------------------------------------------------
+#BINARY:
+-------
+num=50
+binary=format(num,"b")
+binary=str(binary)
+print("Binary of number is :",format(num,"b"))
+integer=int(binary,2)
+print(f"Integer value is :{integer}")
+inverse=" "
+for i in binary:
+    if i=="0":
+        inverse+="1"
+    else:
+        inverse+="0"
+print(f"Inverse of the binary is {inverse}")
+print(f"Integer value is :{int(inverse,2)}")
+
+
+num=50
+binary=bin(num)
+binary=binary[2:len(binary)]
+print(f"Binary of {num} is :{binary}")
+
+reverse=" "
+for i in binary:
+    if i=="1":
+        reverse+="0"
+    else:
+        reverse+="1"
+print(f"Reverse of {binary} is {reverse}")
+print(f"Integer of {reverse} is :{int(reverse,2)}")
+
+-------------------------------------------------------
+
+############### FIND MAX PRODUCT PAIR FROM ARRAY (37)##################################
+def max_product(arr):
+    lenght=len(arr)
+    if lenght<2:
+        print("No such pair exist")
+        return
+    a=arr[0]
+    b=arr[1]
+    for i in range(0,len(arr)):
+        for j in range(i+1,len(arr)):
+            if (arr[i]*arr[j]>(a*b)):
+                a=arr[i]
+                b=arr[j]   
+        return a,b
+arr=eval(input("Enter the array :"))
+print("Maximum product is :",max_product(arr))
+===================================================================================
+
+DOC STRING:
+----------
+-This is doc string,when first line after the function written down.This is a string 
+literal which executes after the class,method,function,module.
+-Python interpreter cant ignore doc string like comment.
+-Python interpreter allocates memory for the doc string.
+
+eg:
+------
+def square(n):
+    '''Takes in a number n, returns the square of n'''
+    return n**2
+
+print(square.__doc__)
+--------------------------------
+
+1)When we use it in function then it should tell us about argument type,return types,
+description.
+
+2)When we use it in class then it should tell us about how many methods are used,
+attributes of class and object.
+
+3)When we use it in module then it should tell us about list of classes and functions.
+
+4)When we use it in packages then it should tell us about list of modules and functionalities.
+
+
+====================================================================================
+# SUPER() FUNCTION:
+-It is used to access the properties of the parant class.
+-This function returns a temporary object which contains reference to parent class.
+-It makes inheritance more managible and extensible.
+
+------------------------------------------------------------------------------------
+# LAMBDA FUNCTION: We can only write expression and print statements.No if 
+else,no loop.We cant assign value in the expression.
+-It is memory efficient,fast execution,can be used with the filter(),map(),reduce().
+-It can be used as function arguments.
+
+# sty: lambda arg_lis:expression
+
+square=lambda x:x*x
+print(square(2))
+
+fun1=lambda a,b=50:(a+b,a-b)
+add,sub=fun1(10)
+print(add)
+print(sub)
+
+====================================================================================
+CLOSURE:
+-------
+# Closure is a technique by which data gets attached to the code.
+# Closure are function objects that rememberes the value in the enclosing scope
+(inner function) even if they are not present in the memory.
+#2 conditons:first,function must be nested and second is that inner function must be 
+called from current function
+
+def outer():
+    def inner():
+        x=200 
+        print("hello")
+        return x 
+    return inner
+inner=outer() # here inner is alias to the outer function.
+print(inner())
+
+=====================================================================================
+DECORATERS:
+-----------
+-Extending the functionalities of the existing functions without modifying them.
+-It is useful when we want to increase the functionality whithout modifying the function.
+-A Decorator is just a function that takes another function as an argument, add some kind 
+of functionality and then returns another function. 
+-All of this without altering the source code of the original function that you passed in.
+
+def decor(fun1):
+    def inner():
+        fun1() # existing functionality
+        print("hello 1") # new functionality
+    return inner
+def printer():
+    print("hello 2")
+    print("hello 3")
+    
+printer=decor(printer)
+printer()
+-------------------------------------------------
+# without using alias we can use @decor to the function which we have to modify.
+"""
+def decor(fun1):
+    def inner():
+        fun1() # existing functionality
+        print("hello 1") # new functionality. we can write new functionality before the existing one.
+                            eg:first we can write print then fun1().
+    return inner
+
+@decor
+def printer():
+    print("hello 2")
+    print("hello 3")    
+printer()
+-------------------------------------
+def add(addition):
+    def inner():
+        result=addition()
+        num3=float(input("Enter thired number :"))
+        result=result +num3
+        return result
+    return inner
+@add
+def addition():
+    num1=float(input("Enter first number :"))
+    num2=float(input("Enter second number :"))
+    result=num1+num2
+    return result
+    
+# addition=add(addition) # uncomment this when we will not use @decor..here decor name is for unserstanding,
+                         we can is any name.Here we used @add
+
+print("Addition is :",addition())
+
+=====================================================================================
+SELF:
+-----
+-Self contains memory reference current object.
+-reference variable is used to call class objects.
+-Jitne v refernce variable bnayenge sb ko class object ki ek ek copy jayegi.
+
+=====================================================================================
+RECURSION:
+---------
+-When function calls itself inside the function defination,then that function is called recursive function 
+and process is called recursion.
+
+ADVANTAGES:
+------------
+-clean code,complex problems can be solved
+
+DISADVANTAGES:
+------------
+-Hard to debug,logic can't be understand easily
+-Not memory efficient.
+
+import sys
+print(sys.getrecursionlimit())
+sys.setrecursionlimit(200)
+print(sys.getrecursionlimit())
+
+i=0
+def hello():
+    global i
+    print("hello",i)
+    i+=1
+    hello()
+hello()
+
+=====================================================================================
+NAMESPACE:
+----------
+-Names are the identifiers and also called as variables created for the python object.
+-A namespace in python is a collection of names assigned to the python object.
+eg: a=20
+   print(id(a))
+   print(id(20)),both print will return same id.
+
+-A namespace is a system that has a unique name for each and every object in Python.
+-An object might be a variable or a method. Python itself maintains a namespace in 
+the form of a Python dictionary.
+
+1)Built-in namespace:
+---------------------
+-Built-in namespace are those which is created by python when we start the interpreter.
+-The built-in namespace contains the names of all of Python’s built-in objects.
+-To see,print(dir()).
+-eg:len,print etc.
+
+2)Global or module namespace:
+-----------------------------
+-Are those namespaces which are created for the particular module.
+-With this we can create same name variable in different modules.
+
+3)Local namespaces:
+------------------
+-That namespace is local to the function and remains in existence until the function 
+terminates.
+
+=====================================================================================
+PYTHON VIRTUAL MACHINE(PVM):
+----------------------------
+-It is a program which provides programming environment.
+-It convertes byte code into machine code.
+
+=====================================================================================
+GET() IN DICT:
+--------------
+-get() returns the value of spcified key.
+-It it used when we dont know the key.
+eg: get(key,default value)
+
+data={"jay":["male",24],"vijay":"male","anup":"male","monti":["male",23],"minti":["female",21]}
+print(data.get("monti","nahi mila"))
+
+-aagr key ki value nh milti to default value print hoti.
+
+=====================================================================================
+TELL AND SEEK:
+--------------
+1)tell()
+-this method is used to find the current position of a file pointer from the beginning of
+the file.
+-position starts from 0.It just like indexing in string.
+eg:File_name.tell()
+
+f=open("rrr2.txt","r")
+print(f.tell())
+f.read(3)
+print(f.tell())
+f.read() # last me jayega cursor
+print(f.tell())
+f.close()
+
+
+2)seek():
+-seek() method is used to change the posiotn of the pointer.
+-eg:file_name.seek(position)
+
+f=open("rrr2.txt","r")
+print(f.tell())
+f.read(3)
+print(f.tell())
+f.read() # last me jayega cursor
+print(f.tell())
+f.close()
+=====================================================================================
+TO SEE VERSION OF THE PYTHON:
+-----------------------------
+1)By using IDLE:
+----------------
+-When we open idle then on the very first line we can see the version of the python.
+
+2)By using cmd:
+---------------
+-Open cmd and type python,it will show the version.
+-Sometimes this "python" command is not worked and shoes error like internal or external
+command is not found then, wee can use "py" command.
+-Pyhton --version,python -v,py -v
+
+3)with sys module:
+------------------
+import sys
+print(sys.version)
+
+=====================================================================================
+WAYS OF CLOSING FILE:
+--------------------
+1)NORMAL WAY:
+------------
+file_name.close()
+
+2)BY USING EXCEPTION HANDLING:
+-----------------------------
+try:
+   f=open("file_name","mode")
+   # operations
+finally:
+f.close()
+
+3)USING  "WITH" STATEMENTS:
+---------------------------
+eg: withn open("file_name","mode") as f:
+    # operations
+
+=====================================================================================
+1)MODULE:
+---------
+-Module is a python file that is intended to import into the script file directly.
+-It contains class,methods and varibales to be used in other files.
+- In module we do not run function,ie. we do not make object for this and we dont 
+call it or we dont write print function,we only return the execution.
+
+2)SCRIPTS:
+-Script is a python file that is intended to run.
+-In scripts we call the function and it give the result by printing it.
+-Its code is written outside the scope of the classes and functions.
+
+3)PACKAGES:
+----------
+-Collection of related modules that work to provide certain functionality.
+-It contain one file ie. init.py which specifies that this is the package.
+
+4)LIBRARY:
+----------
+-It is a collection of packages.It contains 100's of modules in it.These modules 
+provide wide range of functionalities.
+
+=====================================================================================
+CALLABLE OBEJCTS:
+----------------
+-Objects which can be called whenever required.
+-Objects having __call__() method in their class.
+
+eg:
+callable(python obeject)
+-It will return true if object is callable.Otherwise false.
+
+----------------------------------------------------
+-Function and class are callable,but reference variable of class is not callable but
+we can make it callable,and integer value is not callable in function.
+
+=====================================================================================
+
+IIFE(Immediatly invoked function expression):
+
+lambda x:(x+10)(10)
+
+=====================================================================================
+HIHER ORDER FUNCTION :
+---------------------
+-A function which takes other function as a arguments.
+
+1)FILTER :
+---------
+-This function is used to filter out elements of iterable.
+
+sty:filter(function_name, iterable)
+
+=====================================================================================
+Q)How to achieve Multiprocessing and Multithreading in Python?
+--------------------------------------------------------------
+1)Multithreading :
+------------------
+-It is a technique where multiple threads are created or start by a process to do different tasks, 
+at about the same time. just one after the other.
+-This gives you the illusion that the threads are running in parallel, but they are actually run in a
+concurent manner.
+-In Python, the Global Interpreter Lock (GIL) prevents the threads from running simultaneously.
+
+
+2)Multiprocessing :
+---------------
+-It is a technique where parallelism in its truest form is achieved.
+-Multiple processes are run across multiple CPU cores, which do not share the resources among them.
+-Each process can have many threads running in its own memory space.
+-In Python, each process has its own instance of Python interpreter doing the job of executing the
+instructions.
+
+
+=====================================================================================
+Q)What is GIL. Explain ?
+------------------------
+-The Global Interpreter Lock (GIL) of Python allows only one thread to be executed at a time. 
+-It is often a hurdle, as it does not allow multi threading in python to save time.
+
+-The Python Global Interpreter Lock or GIL, In simple words, is a mutex (or a lock) that allows only 
+one thread to hold the control of the Python interpreter.
+
+-This means that only one thread can be a state of execution at any point In time. 
+-The Impact of the GIL isn't visible to developers who execute single threaded programs, but it can 
+be a performance bottleneck in CPU bound and multi threaded code.
+
+-Since the GIL allows only one thread to execute at time even in a multi - threaded architecture with 
+more than one CPU core,the GIL has gained a reputation as an "infamous" feature of Python.
+-Basleally, GIL In Pythan doesn’t allow multithreading which can sometimes be considered as a 
+disadvantage.
+
+=====================================================================================
+Q)WHAT ARE UNITTEST IN PYTHON ?
+-------------------------------
+-Unit Testing Is the first level of software testing where the smallest testable parts of a software 
+are tested. 
+-This is used to validate that each unit of the software performs as designed. 
+-The unittest test framework is python's xUnit style framework.
+-This is how we can import it.... import unittest 
+
+-Unit testing is a software testing method by which Individual units of source code are put under 
+various tests to determine whether they are fit for use (Source). 
+
+-It determines and ascertains the quality of your code.
+-The unit test framework in Python is called unittest, which comes packaged with Python.
+
+-The developers are expected to write automated test scripts, which ensures that each and every 
+section or a unit meets its design and behaves as expected.
+
+-Unit testing makes your code future proof since you anticipate the cases where your code could 
+potentially fail or produce a bug. 
+-Though you cannot predict all of the cases, you still address most of them.
+
+=====================================================================================
+Q)What does term MONKEY PATCHING refer to in pyhton ?
+------------------------------------------------------
+-Tn Python,the term monkey patch refers to dynamic (or run-time) modifications of a class or module. 
+-In Python,we can actually change the behavior of code at run-time.
+
+=====================================================================================
+Q)What is higher order function ?
+-A function which takes other function as a parameter.
+
+---------------------------------------------------------------------------------
+Q)discard() and remove() of set datatype:
+---------------------------------------
+-s1.discard(100),it will give original set if the 100 will not find.
+-And i case of the remove() it will through the error if it will bot find the element.
+
+---------------------------------------------------------------------------------
+-In python 3 unicode is replaced by the str type.
+
+--------------------------------------------------------------------------------------------
+RANGE:
+-------
+-Range is a class which executes a range() constructor/method.
+-Start,stop,step
+
+---------------------------------------------------------------------------------
+Q)What is web scraping ?
+-Collecting data in unstructured way and convert in structured format.
+
+---------------------------------------------------------------------------------
+Q)Dogpile effect ?
+-----------------
+-It accures when cache expires and website are hit by numerous requests at the same time.
+-This can be avoid by the using semaphore lock.
+
+---------------------------------------------------------------------------------
+Q)What are the context manager in python ?
+-------------------------------------
+-A context manager usually takes care of setting up some resource, e.g. opening a connection, 
+and automatically handles the clean up when we are done with it.
+-Probably, the most common use case is opening a file.
+
+eg:with open(r'/path/to/file.txt', 'r') as f: 
+  for line in f:
+    print(line)
+-where first r is used  to ignore escape sequence.
+
+-can help you to decide when something you are planning to implement would be more readable 
+and easier to safely use if it was structured as a context manager.
+
+-There are two ways to implement a context manager. The first one is defining a class with 
+implementations for the __enter__ and __exit__ methods. 
+-The second one is by creating a generator and using the contextlib.contextmanager decorator.
+
+
+---------------------------------------------------------------------------------
+
+=====================================================================================
+OOP :
+------
+1)object - It is an instance of the class.
+
+2)class - It is the blueprint of the object.
+
+3)Encapsulation :
+----------------
+-It is used to protect our data
+-It describes the idea of wrapping data and the methods that work on data within one unit. 
+-This puts restrictions on accessing variables and methods directly and can prevent the 
+accidental modification of data. 
+-To prevent accidental change, an object’s variable can only be changed by an object’s 
+method. Those types of variables are known as private variables.
+
+-A class is an example of encapsulation as it encapsulates all the data that is member 
+functions, variables, etc. The goal of information hiding is to ensure that an object’s 
+state is always valid by controlling access to attributes that are hidden from the outside 
+world.
+
+4)Polymorphism :
+----------------
+-The word polymorphism means having many forms. 
+-It refers to the use of a single type entity (method, operator or object) to represent 
+different types in different scenarios.
+-In programming, polymorphism means the same function name (but different signatures) being 
+used for different types. 
+
+eg: + operator in int and string.
+
+5)Abstaction :
+---------------
+- It is used to hide our important data.
+- Abstraction focuses on hiding the internal implementations of a process or method from the 
+user. 
+-In this way, the user knows what he is doing but not how the work is being done.
+
+- A class which contains one or more abstract methods is called an abstract class. 
+
+eg:allows people to use a car to drive without knowing the complexity of the parts that form 
+the car.
+
+
+6)Inheritance - Acquiring properties of the parent class.
+
+
+---------------------------------------------------------------------------
+1)Class:
+----------
+-Class is a template/blueprint/prototype for creating objects.
+-Every object belong to some class.
+-Class is a collection of attributes and methods.
+-Class is a collection of objects.
+-Technically, class is a user-defined datatype.
+
+---------------------------------------------------------------------------
+CONSTRUCTOR :
+------------
+-It is a special method for initializing objects with attributes.
+-It is __init__() method.
+-First argument is self.
+
+1)parameterised constructor :
+-where we pass parameter while creating an object
+
+eg:e1=Employee(1,"anup")
+
+2)Non-parameterised constructor  :
+-where we pass parameter in constructor itself.
+  
+eg: class Emp:
+       def __init__(self):
+          self.id=1
+          self.name="anup"
+
+3)default ie. built in constructor :
+  
+eg:class DemoClass:
+    num = 101
+
+    # a method
+    def read_number(self):
+        print(self.num)
+
+
+# creating object of the class
+obj = DemoClass()
+
+# calling the instance method using the object obj
+obj.read_number()
+
+-------------------------------------------------------------------------------------------
+BUILT IN CLASS FUNCTIONS :
+-------------------------
+1)getattr(object_name, attribute_name) :
+
+eg: class Emp:
+    
+2)setattr(object_name, attribute_name,new_value)
+3)delattr(object_name, attribute_name)
+4)hassattr(object_name, attribute_name),it returns true and false.
+
+----------------------------------------------------------------------------------
+BUILT IN CLASS ATTRIBUTES:
+-------------------------
+1)__dict__ :- Dictionary containing class's namespace
+2)__doc__  :-Class documentation string and tells what is the purpose of the class.
+3)__name__ :- Class Name
+4)__module__:- Module name in which class is defined
+5)__bases__:- List of base classes
+
+--------------------------------------------------------------------------------
+1)Instance varibales :
+-If the value of a variable varies from object to object, then such variables are 
+called instance variables.
+
+eg:If e1 object is created for Emp class then it has different values than e2 object
+
+
+#Creating instance variables.
+1)Using constructor
+- self.name="anup"
+
+2)Using instance method
+-ie. creating a display method
+class Emp:
+   def __init__(self,nm,ag):
+       self.name=nm
+       self.age=ag
+    
+   def display(self):
+       print(self.name,self.age)
+        
+e1=Emp("Anup",1)
+e2=Emp("Monti",2)
+e1.display()
+
+
+3)Outside class
+-e1.name="megha"
+
+-----------------------------------------------------------------------------------
+2)Class varibales :
+-Class variables are defined within the class construction. Because they are owned by the 
+class itself, class variables are shared by all instances of the class. 
+-They therefore will generally have the same value for every instance unless you are using 
+the class variable to initialize a variable.
+
+eg:class Shark:
+    animal_type = "fish"
+
+---------------------------------------------------------------------------------
+INSTANCE METHOD :
+----------------
+-Instance methods are the default methods defined in Python classes. 
+-They are called instance methods because they can access instances of a class (objects).
+
+-An instance method can access and even modify the value of attributes of an instance. 
+-It has one default parameter:-self
+
+
+
+-These are not functions but the conventions in python.
+1)setter() :Set values of instance varibales. 
+2)getter() :Get values of instance varibales.
+
+---------------------------------------------------------------------------------
+STATIC METHOD :
+-------------
+-Method which performs on external data.
+-It can also perform operations on class data.
+-No need to pass object or class reference.
+- A static method is a method which is bound to the class and not the object of the class.
+-It can’t access or modify class state.
+-It is present in a class because it makes sense for the method to be present in class.
+
+class Bank:
+    rate=12.5 
+    @staticmethod
+    def simple_interest(prin,n):
+        si=(prin*n*Bank.rate)/100
+        print(si)
+prin=float(input("Enter the principle amount :"))
+n=float(input("Enter the number of years :"))
+Bank.simple_interest(prin,n)
+
+---------------------------------------------------------------------------------
+Inheritance :
+------------
+- Acquiring properties of the parent class.
+-Deriving a new class from an existing class so that new class inherits all members of the 
+existing class is called iheritance.
+
+
+"""
+-Parent's class constructor also available for the child class.
+-But when child class has constructor then child's class constructor will executes not parent's class.
+"""
+class Father:
+    def __init__(self):
+        print("Father class constructor called.")
+        self.vehical="Scooter"
+        self.hous="1BHK"
+
+class Son(Father):
+    def __init__(self):
+        super().__init__()
+        print("Son's class constructor called.")
+        self.vehical="BMW"
+        self.hous="2BHK" # if child has different variable then it will not override 
+                         the parent class varibales.
+
+s=Son()
+print(s.vehical)
+print(s.__dict__)
+
+---------------------------------------------------------------------------------
+Heirarchical inheritance :
+-------------------------
+-One parent and many child's.But one child cannot access other child's property.
+
+class Parent:
+    def __init__(self,nm,ag):
+        self.name=nm
+        self.age=ag
+class Person(Parent):
+    def __init__(self,nm,ag,mk):
+        super().__init__(nm,ag)
+        self.marks=mk
+        
+class Student(Parent):
+    def __init__(self,nm,ag,sal):
+        super().__init__(nm,ag)
+        self.salary=sal 
+c1=Student("anup",26,80000)
+print(c1.__dict__)
+c2=Person("Monti",21,100)
+print(c2.__dict__)
+  
+---------------------------------------------------------------------------------
+MULTILEVEL INHERITANCE :
+------------------------
+-It will have  parent and  child class further inherited into new class(grand child) forming 
+multiple levels.
+
+"""
+class Human(object):
+    def __init__(self):
+        print("Human constructor called.")
+        self.name=input("Enter your name :")
+
+class Emp(Human):
+    def __init__(self):
+        print("Emp constructor called.")
+        self.salary=float(input("Enter your salary :"))
+
+class Manager(Emp):
+    def __init__(self):
+        print("Manager constructor called.")
+        self.bonus=float(input("Enter your bonus :"))
+
+m1=Manager() # it will print only manager class constructor bcs it has its own constructor.
+print(m1.__dict__)
+
+---------------------------------------------------------------------------------
+single inheritance :
+------------------
+-It will have one parent and one child class.
+
+---------------------------------------------------------------------------------
+Multiple inheritance:
+---------------------
+-One base ie. object class and multiple parent classes Then form a child class.
+-Left inherited paprent will have high priority.
+
+eg: class child(parent1,parent2):
+
+---------------------------------------------------------------------------------
+HYBRID INHERITANCE and MRO(Method resolution order):
+-----------------------------------------------
+-It contains multiple types of inheritance.
+
+MRO :
+-----
+-Method resolution order (MRO) represents how properties are searched in inheritance.
+-First it search in child class then parent class.
+-MRO Follows ‘Depth First Left to Right approach’.
+
+eg:
+class A:
+    pass
+class B:
+    pass
+class C:
+    pass
+class X(A,B,C):
+    pass
+class Y(B,C):
+    pass
+class P(X,Y):
+    pass
+print(P.mro())
+
+---------------------------------------------------------------------------------
+CYCLIC INHERITANCE :
+--------------------
+-When the properties are inherited from the class itself. 
+
+---------------------------------------------------------------------------------
+Encapsulation :
+----------------
+-It is used to protect our data
+-It describes the idea of wrapping data and the methods that work on data within one unit. 
+so that it cannot access outside the class with the object.
+-To avoid accidental modifications.
+-Encapsulation can be achieved by declaring the data members and methods of class as private.
+
+There are 3 access specifiers : 
+-Public:Accessible anywhere by using obejct refernce,
+-Private: Accessible within the class or via methods (__).
+-Protected :Accessible within the class and its subclass(_).
+
+-This puts restrictions on accessing variables and methods directly and can prevent the 
+accidental modification of data. 
+-To prevent accidental change, an object’s variable can only be changed by an object’s 
+method. Those types of variables are known as private variables.
+
+-A class is an example of encapsulation as it encapsulates all the data that is member 
+functions, variables, etc. The goal of information hiding is to ensure that an object’s 
+state is always valid by controlling access to attributes that are hidden from the outside 
+world.
+
+
+class main():
+    var1="anup"
+    _var2="anil"
+    __var3="alone"
+
+    def __init__(self,name,sal):
+        self.name=name
+        self.sal=sal
+
+    def printd(self):
+        print("my name is",self.name,"and my salry is",self.sal)
+
+m1=main("anup",444)
+m2=main("m2",555)
+print(m2._main__var3)
+print(m2._var2)
+m1.printd()
+# print(anup.__var3)
+
+---------------------------------------------------------------------------------
+Polymorphism :
+----------------
+-The word polymorphism means having many forms. 
+-It refers to the use of a single type entity (method, operator or object) to represent 
+different types in different scenarios.
+-In programming, polymorphism means the same function name (but different signatures) being 
+used for different types. 
+
+eg: 1)+ operator in int and string.
+    2)Len() in list(returns number of items) and string(returns number of char),dict(It returns 
+    number of keys),
+
+
+---------------------------------------------------------------------------------
+Method overrinding :
+-------------------
+eg 1: In this we override the string method and write our own.
+
+class A: 
+    # pass 
+    def __str__(self):
+        return "This is A class object."
+a1=A()
+print(a1)   #<__main__.A object at 0x000001C1673B5790>
+
+---------------------------------
+eg 3 :In this according to the type of object correct method is called
+
+"""
+class BMW:
+    def fuel_type(self):
+        print("Fuel type is Disel") 
+    
+    def max_speed(self):
+        print("Max speed is 200 km/hr.")
+       
+class Ferrari:
+    def fuel_type(self):
+        print(" Fuel type is Petrol") 
+    
+    def max_speed(self):
+        print("Max speed is 150 km/hr.")
+        
+def car_details(obj):
+    obj.fuel_type()
+    obj.max_speed()
+        
+b=BMW()
+f=Ferrari()
+
+car_details(b)
+print("----------------------")
+car_details(f)
+
+---------------------------------
+eg 2: In this we override the method.
+
+class Cart:
+    def __init__(self,basket1,basket2,basket3):
+       self.clothes=basket1
+       self.electromics=basket2
+       self.other=basket3 
+    
+    def __len__(self):
+        print("Total length of the cart :")
+        return len(self.clothes+self.electromics+self.other)
+       
+c1=Cart(["Pant","Shirt","Shorts"],["Earphone","mobile","charger"],["Bucket","chair"])
+print(len(c1))
+
+
+---------------------------------------------------------------------------------
+METHOD OVERRRIDING :
+-------------------
+-When same name and same parameter's function executes at the same time then second method of 
+function override the first function.
+-Specially jis class ka object bnaya h wo override krega inherited class ko.
+-Multiple functions with the same name and same number of parameters.
+-in overriding same function is provided to the different class 
+and first class inherit in the second class,then function in second 
+class override the function of the first class.
+
+class class1:
+    def display(self,name=""):
+        print("This is first class"+name)
+        
+class class2(class1):
+    def display(self,name=""):
+        print("This is important class"+name)
+obj1=class2()
+obj1.display(" Anup")
+
+---------------------------------------------------------------------------------
+METHOD OVERLODING :
+-------------------
+-A function can be called with different number of arguments.
+-It means same method but different arguments.
+
+eg:
+class cls:
+    def display(self,name=" "):
+        print("Welcome to the python"+name)
+obj1=cls()
+obj1.display()
+obj1.display("Anup")
+
+eg 2:
+class Area:
+    def find_a(self,a=None,b=None): 
+        if a!=None and b!=None:
+            print("Area of rectangle is:",a*b)
+        elif(a!=None):
+            print("Area of rectangle is:",a*a)
+        else:
+            print("Enetr something!")
+obj=Area() 
+obj.find_a()
+obj.find_a(10)
+obj.find_a(10,20)
+
+---------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------
+OPERATOR OVERLOADING :
+--------------------
+-here we change the nature of "+" operator.class A:
+    def __init__(self,x):
+        self.x=x 
+    def __add__(self,o):
+        return self.x+o.x 
+o1=A(20)
+o2=A(20)
+print(o1+o2)
+
+--------------------
+eg 2:
+num1=20 
+num2=20
+print(num1+num2)
+print(num1.__add__(num2))
+print(int.__add__(num1,num2))
+
+
+---------------------------------------------------------------------------------
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+=====================================================================================
+
+MULTITHREADING:
+---------------
+A]MULTITASKING:
+---------------
+1)Process bassed:
+-Each task is an independent program/process
+-used in OS level.
+-eg:opening multiple task or applications at the same time.
+
+2)Thread based Multi-tasking:
+-Each task is an independent thread(part of a program)
+-used in programmatic level.
+-eg:consider VsCode is an program and syntax highlighter and code editor are threads.
+or calculator is an program and and additions,division are an threads.
+-eg:Payment app as an example,different threads run at a time for different users.
+-------------------------------------------------------------------------------------
+WHAT IS THREAD:
+---------------
+-A thread is operating system obejct that executes instruction/program.
+-A thread is a separate flow of execution in program.
+-thread represents task/sub program.
+-But to acheive threading thre should be independent functions.
+
+ADVANTAGES:
+-----------
+-Improves performance.
+-less time
+-reduces response time of websites/applications.
+-Normal programs has 1 flow and threading has many flow to run programs.
+
+
+APPLICATIONS:-
+-------------
+1)VEDIO GAMES:PubG,like one thread for running and onother threads for firing.
+2)Multi-media graphics
+3)Animations.
+--------------------------------------------------------------------------------------
+THREADING IN PYTHON:
+====================
+-Python provides "threading module" for multithreading.
+-This module is aprt of standard distribution,so we dont need to install with pip cmd.
+-Threads are python objects of threading.Thread() class.
+--------------------------------------------------------------------------------------
+MAIN THREAD:
+-----------
+-When we click run button,python interpreter starts.Python interpreater request OS for 
+creating one thread that is Main threads.
+-Any process have atleast one default thread called as main thread.
+-Main thread is created by PVM(ie. Interpreater)
+
+
+import threading
+
+th=threading.current_thread() #This will give name of thread ,status,id
+#th=threading.current_thread().name  #This will give name of thread only
+print(th)
+------------------------------------------------------------------------------------
+2 WAYS TO CREATE THREADS:
+-When we create a thread then python interpreater sends a request to the OS to create
+ one thread.
+-------------------------
+A)USING THREAD CLASS PRESENT IN THREADING MODULE.
+------------------------------------------------
+steps:1-Import thread class from threading module.
+steps:2-create a function containing code to be executed parallaly.
+steps:3-create an object of Thread class.
+steps:4-start created thread using start() method.
+
+B)BY EXTENDING THREADS CLASS:
+-----------------------------
+
+---------------------------------------------------------------------------------------
+THREAD NAMES:
+-------------
+-Each thread has names.
+-Naming:Thread-[%d]-->integer value.
+        first thread:Thread 1
+        secondthread:Thread 2.....
+-All threads are python objects.
+-Nmae of the thread is stored in"name" attribute of Thread object.
+-main thread name is "MainThread".
+-WE CAN CHANGE THE NAME OF THE THREAD.
+ eg:t1.name="anup"
+    print(t1)
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+THREDS HAS TWO ID'S ie.IDENTIFIER:
+----------------------------
+1)THREAD INDENTIFIER:
+-This is given by process.
+-each thread has unique id in python process.
+-This is given by [ython interpreater.
+-This identifier is read only positive and unique in process.
+-id is assigned after starting,not after creating,without starting it gives none.
+-this is stored in instance variable:ident.
+
+2)NATIVE IDENTIFIER:
+-This is given by OS.
+-Each thread has unique id assigned by OS
+-eg:propoerty name is:native_id
+-assigned after starting.
+-generally ident and native_id is same.
+
+3)Process Identifier:
+-this is for ur process(program).
+-to see this id..import os module and see with the help of getpid()
+
+-------------------------------------------------------------------------------------
+BUILT IN FUNCTIONS OF THREADS:
+------------------------------
+1)is_alive() : Checks thread is running or not.
+2)main_thread() : returns main thread details.
+3)active_count() :number of running thread.
+4)enumerate() :list of all running threads.
+5)get_native_id() :know native id of thread.
+--------------------------------------------------------------------------------------
+
+JOIN METHOD:
+------------
+-If a thread wants to wait for some other thread,then we should go fot join() method.
+
+--------------------------------------------------------------------------------------
+RACE CONDITIONS:
+----------------
+-It is unrealiable output becouse of multiple threads called as Race condition.
+-It is bug generated when u do multi-processing.It occures becouse two or more threads 
+tries to update the same variable and results into unrealiable output.
+-Concurrent accesses to shread resources can lead to race condition.
+-It is a bug in concurrency programming.This accures when different threads using same 
+variable and its value at the same time.
+
+#TO AVOID THIS CONDITION WE USE THEAD SYNCHRONISATION TECHNIQUE:
+---------------------------------------------------------------
+-A common approach is to protect the critical section of code(prevent concurrent access).
+-FOLLOWING ARE THREAD SYNCHRONISATION  SYSTEM:
+1)using locks:
+-------------
+-Threading module provides Lock class to deal with this.
+-The code in which we use locking technique ,called as critical code.
+-It has two states:
+1)LOCKED:-
+----------
+-The lock has been acuuired by one thread and any thread that makes an attempt to acurire
+it must wait until it is released.
+-For this we used "acquire" method of thread module.
+
+2)UNLOCKED:-
+------------
+-The lock has not been not acuired and can be acuired by the next thread that makes an
+attempt.
+-For this we used "release method."
+-we cant use multiple acquire and release methods. 
+-------------------
+Step1:create an object of lock class
+    eg:from threading import*
+        mylock=Lock()
+
+step2:Acuire lock using acquire()
+     eg:mylock.acquire()
+-acquire() method changes the state of code to locked.
+-other threads have to wait until lock is released by current working thread.
+-eg:mylock.acquire([blocking=True],timeout=-1)
+    -blocking and timeout are set by default.
+    -maximum timeout is 3 second ie.it has only 3 seconds to do task.But by default
+     it is set to -1 ie.it will not release it is done.
+    -If we set blocking true then other threads will not check variable to access,if
+     it is false then others will check again and again.
+
+step3:release lock using lock:
+     eg:mylock.release()
+---------------------------------------------------------
+2)using R-locks(modified lock):
+-----------------------------
+-We cannot acquire() multiple times using Lock mechanism.
+-By using RLock we can use acquire() method multiple times.
+-We just need to creat RLock() object not of Lock().
+-What is the nedd of RLock:we need bcz sometimes programmers mistacally acquire 
+and release multiple times.
+---------------------------------------------------------
+3)using semaphores:
+------------------
+-Semaphores can be used to limit the access to the shared resources with limited
+capacity.
+-In semaphore we have built in RLock.
+-eg:university allows certain students to see result at a time.
+step1:-create an object of semaphore class
+      eg:s=Semaphore()
+
+step2:-Acquire lock using acquire()
+      eg: s.acquire()
+
+step3:-Release lock using release()
+      eg: s.release()
+
+------------------------------------------------------------------------------------------
+ Exception in multithreading :
+-----------------------------
+que:will exception of one thread impact other threads?
+ANS:no,bcz separate flow is generated for each thread,so it will not implact others.
+
+*What happens for exception in thread?
+-The interpreter calls threading.exception() function with one argument ie> named 
+tupple with 4 arguments.
+  1)the exception class
+  2)exception  instance/value
+  3)a traceback object
+  4)Thread name.
+
+-If exception accures in main thread then sys.exception() function executes.
+-If exception accures in created thread then threading.excepthook() functions calls,
+ and if we found exception  in threading.excepthook() then finally threading.excepthook()
+calls
+-----------------------------------------------------------------------------------------
+
+Life cycle of thread:
+--------------------
+-Thread is terminated either with the normal executions ,eans after completing task 
+or with the exception.
+
+Q:difference between creating and starting a thread:
+-In creating we just define or create the thread and in satrting
+
+Q:difference between run and start:
+-When a program calls the start() method, a new thread is created and then the run() 
+method is executed.But when we call run method then no new thread will create and it 
+will execute current thread.Run() method is also called as NORMAL FUNCTION CALL.
+
+Q:difference between blocked and terminated:
+-In blocked state,a thread must wait for other to complte others task to access
+ resources.
+-when a thread terminates, it stops executing and releases all of its resources.
+Once a thread has terminated, you will no longer be able to access its result, 
+as the thread object itself will no longer be available.But, In case you want to
+access the result of a thread after it has terminated, you will need to store
+the result in a separate object that is not tied to the thread
+
+Q:difference between blocked and waiting:
+-While waiting and blocking,threads do not use our CPU resources at all.
+-Waiting state is when thread intentionally called the wait() method . It means it
+waiting for some event/action to complete. Its like you go to customer care and 
+queue is empty. You are waiting for your wife to arrive with Warranty card. So you 
+are intentionally waiting.
+-But In the BLOCKED state, Thread is ready to run but other events blocked it for 
+some reason. Like a thread is about to enter a synchronized block, but there is 
+another thread currently running inside a synchronized block on the same object.
+
+
+stages:1)New thread
+       2)running thread ----running thread has also blocked thread stage
+       3)Terminated thread
+
+-----------------------------------------------------------------------------------------
+THREAD COMMUNICATION:
+--------------------
+-When two or more thread communicate with each other then it is thread communication.
+-Threads communicates via signals.
+3 WAYS TO DO THREAD COMMUNICATION:
+a)By using event object:
+-----------------------
+-Here only communication between 2 threads is possible.
+-Each thread maintain a flag which is either true or false.Initially it is false.
+-This is the simplest way.In this one thread signals an event and other threads wait
+for it.
+-EXECUTION:
+1:first we have to create an event object.
+2:create two threads which will communicate.
+3:put t2 thread in waiting by using wait().
+4:use set() method in/after t1 thread code.
+-Agter executing thread1,thread2 value for set will be true then thread2 will execute.
+
+1)set():-
+-This will set flag to true.
+-If flag is True,waiting thread is awakened,ie.waiting thread will start its execution.
+
+2)reset():
+-This will set flag to false.
+-Other thread will wait again.
+
+3)is_set():
+-It return true if internal flag is true.
+-until thread two is not set() it will not execute.
+
+4)wait(timeout=None):
+-With this function keep other thread on wait until flag is set to true.
+-------------------------------------------------------------------------------------
+THIS IS ANOTHER WAY TO EXPLAIN EVENT OBJECT:
+--------------------------------------
+-Until Thread1 executes Thread2 will wait for the signal of Thread1 using wait() method.
+-An event object manages an interanl flag that can be set to true with the set() method
+and reset to false with the claer() method.The() method blocks until tha flag is true.
+-the flag is initially false.
+-eg:from threading import Event
+    e=Event()
+-object e has internal flag.
+To check: "is_set()" -->It return true if internal flag is true.
+-wait(timeout=None)-It blocks until the internal flag is true.If the internal flag is
+true on entry,it returns immediately.Otherwise,it blocks until another thread calls set()
+ method to set the flag to true,or until the optional timeout occure.
+-----------------------------------------------------------------------------------------
+b)By using condtion object:
+--------------------------
+-This is used to communicate with multipls objects.
+-Event obejct has disadvantage that is can communicate between 2 threads.
+
+-we use here
+1)acquire() :to acquire the lock
+2)release() : to release the method.
+3)wait(timeout=0) :Used to block the thread.Thread will wait until gets signal from 
+Thread1
+4)notify(): to wake one thread.
+5)notify_all() :to wake up multiple threads.
+
+-All this methods must be called when the calling thread has aquired the lock.
+-----------------------------------------------------------------------------------------
+c)By using Queue module:
+-----------------------
+-sty: import queue
+      my_que=queue.Queue(maxsize)
+-maxsize is optional.
+1)put(item,block=True):
+-This method is to insert elements.
+-By default block is true
+-If we have mazsize is 6 and block is false then it gives exception,otherwise 
+true if we insert more than 6.
+
+2)get() :
+-To delete item.It delete first entered item.(FIFO)
+
+BENEFITS:
+-There is no Race conditions.
+-Implements all the required locking semantics.
+

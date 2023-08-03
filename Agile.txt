@@ -1,0 +1,540 @@
+Phases In Agile
+------------------
+01. Conception, Initiation, Analysis (Requirements Analysis)
+--------------------------------------------------------
+-The Conception Phase, also called as Iteration -1, helps to define the problem or 
+business opportunity, that leads to identify and assess a feasible strategy for the 
+project.
+-The next phase, Initiation, takes place during the first one week or so and is sometimes 
+called Iteration 0. 
+-In this phase,the project is initiated through a feasibility study and working
+with stakeholders to determine the initial requirements.
+-Analysis phase involves performing a requirement analysis.
+------------------------------------------------------------------------------------
+02. Design:
+------------------------------------------------
+-Design phase involves creating design strategies to
+model the system.
+
+
+------------------------------------------------------------------------------------
+03. Construction (Implementation) :
+--------------------------------------
+-Implementation phase begins the project's actual development of the project.
+
+------------------------------------------------------------------------------------
+04. Testing :
+--------------------------------------
+-Testing will evaluate and test the completed project on various aspects and factors.
+
+------------------------------------------------------------------------------------
+05. Deployment
+--------------------------------------
+-Deployment is the final stage of launching the project.
+
+=========================================================================================
+-Even though the Agile phases may look similar to the waterfall model SDLC, there are 
+several differences.
+-The key difference is that Agile phases incorporate customer collaboration, iteration, 
+and an incremental approach.
+-In Agile development, the features of the product to be developed are first identified. 
+-New features identified in the course of the lifecycle are planned across sprints.
+
+-----------------------------------------------------------------------
+SPRINTS :
+-----------
+-A sprint is the most basic unit of development and is defined as a fixed period of 
+time during which a specific task has to be completed and made ready for review.
+-The duration of each sprint depends on the feature to bedeveloped.
+-Each sprint goes through all the phases.
+-The time period for the task is fixed and it cant be change.
+-A sprint has multiple task. 
+
+=========================================================================================
+Overview of the phases in Agile development :
+---------------------------------------------
+-The actual implementation may differ in the real world.
+-The Requirements Analysis phase, for example, may consist of three sub-stages, Conception,
+Initiation, and Analysis where the project is first conceptualized,initiated, and then, 
+finally, analyzed.
+-The basic tasks in each phase are almost similar to the waterfall model, however, every 
+phase is iterative and incremental.
+
+=========================================================================================
+AGILE ARTIFACTS :
+-----------------
+-An object made or shaped by human hand.
+-An object such as a tool or weapon.
+
+-In software engineering, artifact is defined as any form of portrayal denoting 
+intermediate orend product of the development process.
+-Some example of artifacts includes requirements specifications, source code (programs), 
+project plans,and so on. 
+-Artifacts are created for a specific purpose and used accordingly to develop software.
+
+-The progress of the project needs to be measurable.
+-There are six main artifacts, or deliverables that can be used by Agile project team.
+-This helps to develop products and track progress during the project development.
+
+TYPES:
+------
+1)Product vision :
+-------------------
+-Comprises a short overview statement and a vision statement to express the goals or 
+outcomes of the product.
+-A summary which communicates how the product will support the company's or organization's
+strategies. 
+-The vision statement must specify the goals for the product.
+
+2)PRODUCT BACKLOG :
+------------------
+-Comprises a list of tasks for the project, ordered by priority.
+-The list of what is in the scope for the project, ordered by their priority in the 
+project. 
+-Once you have your first requirement, you have a product backlog.
+
+3)PRODUCT ROADMAP :
+------------------
+-Comprises a roadmap for the product requirements, with an approximate time frame for the 
+development of those requirements.
+-The product roadmap is a high-level view of the product requirements, with a loose time 
+frame for when you will develop those requirements.
+
+
+4)RELEASE PLAN :
+-----------------
+-A high-level timetable for the release of working software.
+-Comprises an evolving timetable that describes the features to be delivered in upcoming 
+releases.
+
+
+5)SPRINT BACKLOG :
+------------------
+-Comprises a list of task to be compliteted within the current sprint ranked in the 
+desired order of the implementation.
+-The goal,task and user stories are associated with the current sprint.
+
+6)INCREAMENT :
+------------------
+-It shoes the working product functionality at the end of the each sprint.
+
+====================================================================================
+AGILE TOOLS AND MECHANISMS :
+---------------------------
+1)VELOCITY :
+-----------
+-It is measured by the qauntity of work that team members together can accomplish in
+one iteration.
+-It is used to measure the time taken for a team to deliver upcoming outcomes based on
+ its prior performanace.
+-During the first iteration,the team has no velocity,so an approximate assumption is 
+made as to how much work is likely to be accomplised.
+
+-Wiht the velocity calculated in the previous iteration,the amount of work that can be 
+accomplised in the further iteration are establised.
+-Velocity is the data used to calculate burndown and burnup charts.
+ 
+
+2)BURNDOWN AND BURNUP CHARTS :
+----------------------------
+-These are the ig visible charts that are placed near the Agile team workplace that
+convey the progress of the project team in various ways.
+-Charts aid the team in working effectively towards the overall progress in 
+developening the software.
+
+-Burndown charts tracks the work remaining on the project and the possibility of the 
+deadline being met.
+-The vertical axis measures the work remaining and the hosrizontal aix marks the 
+iteration.
+
+-Burnup charts tracks the amount if work done.
+-It shows the quanitiy of work in the whole project.
+-It shows the changing goals or scope of the project.
+-The bottom line represents the work done and top line shoes the total scope.
+
+
+3)PROCESS IMPROVEMENT CHARTS :
+------------------------------
+-Type of bug visible charts.
+-It measures specific issues that the team would like to worked upon and improve upon.
+-These charts stays as long as team would like to improve upon.
+-The process improvement charts are created and maintained as a team responsibility 
+and are kept upto date.
+
+
+4)OTHER CHARTS :
+---------------
+-The iteration and release planning boards are further example of big visible charts.
+-The team calender is anothe useful status chart that display impprtant dates and 
+iteration numbers.
+
+
+5)INFORMATIVE WORKSPACE :
+------------------------
+-It is not a tool but a practice.
+-It is an workspace that has a feedback mechanism incorporated to help the people who 
+are working in it.
+-The important feature of an informative workspace is that it advertises information 
+into the room.
+-An informative workspace makes the team members understand the phase of the project by
+just walking into the room.
+-Big Visible Charts are also part of informative workspace.
+
+
+6)HAND DRAWN CHARTS :
+--------------------
+-Hand drawn charts are the solution where projector or PLASMA SCREEN are expensive.
+-As the information in the charts constantly change,it is easier to use flip charts and 
+whiteboards to draw a chart than creating one on a computer.
+
+
+7)TASK BOARD :
+-------------
+-A task board represents at a minimum,three column,"To-do","In-precess",and "done"
+and is used for organising a team work.
+-it mostly display the work to be performed during the current iteration.
+
+
+8)EXTREME PROGRAMMING (XP):
+------------------------
+-XP is one of the many popular Agile processes.
+-It concetrates on software developement rather that software project management.
+-The first XP project was started on march 6,1996.
+-XP was designed in such a way that organisation could either adopt the whole 
+methodology or in parts.
+-This process has been proven to be very successfull at many companies worldwide.
+-the main focus of XP is on customer satisfaction.
+-This process delivers the software as and when it is required rather that delivering 
+everything in bulk at the end.
+-It empowers the developers to handle changes in customer requirements confidently,
+even late in the life cycle.
+
+-XP also emphasizes teamwork.
+-Customers,developers and managers coordinates as a team and work together as equal 
+partners.
+-This methedology enables teams to become highly productive by implementing a simple 
+and effective environment.
+-The team organizes itself aound the issue and effeciently solve the issue.
+
+
+SOME OF THE CORE PRACTICES OF THE XP ARE :
+-----------------------------------------
+1)SIT TOGETHER :
+-----------------
+-Developement team sits and opetates from one single open space.
+-This team must include a bussiness representative and the customer who provides the 
+requirements,it adds value to the project if the customer or one of its member is a real 
+end user who knows the domain and what is needed.
+
+2)PLANNING :
+------------
+-XP panning addresess two key question in software developement:
+a)predicting whta will be accomplished by the due date and
+b)determining what to do next.
+
+-The emaphasis is on understanding the project rout,rather than on exact prediction
+of what will be needed and how long it will take which is quite difficult.
+
+TWO TYEPS:
+---------
+A)RELEASE PLANNING :
+------------------
+-It is a practice where the customer presents the desired features to the programmers,
+and programmers estimates their difficulty.
+-With the cost estimates in hand and with knowledge of the importance of the features,
+the customer lays out a plam for the project.
+-Initial release plans are neccessarily exact not are the estimates truely solid,until 
+the team begins to work.
+-Even the first release plan is accurate enough for decision making however and XP teams 
+revise the release plan regularly.
+
+B)ITERATION PLANNING :
+-------------------- 
+-It is the practice whereby the team is given direction every couple of weeks.
+-XP teams build software in two week "iteration" delivering running useful software at 
+the end of each iteration.
+-During iteration panning,the customer presents the features desired for the next two 
+weeks.
+-The programmers breaks them down into task and estimates their cost which is more in 
+details than in release planning.
+
+
+3)DESIGN IMPROVEMENT :
+---------------------
+-Extream programming focuses on delivering bussiness value in every iteration.
+-To accomplish this ober the course of the whole project,the Software must be 
+well designed.
+-So,XP uses a process of continues on removal of duplication and on inreasing 
+the "cohesion" of the code,while lowering the "coupling".
+-Highe cohesion and low coupling have been recognised as the hallmarks of the well designed 
+code.
+
+
+4)CROSS FUNCTIONAL TEAM :
+-------------------------
+-Team consist of eevryone who is essential for the success of the project.
+
+5)INFORMATIVE WORKSPACE :
+------------------------
+-Informative charts are places around the workspace to display the status and progress of 
+the project.
+
+6)ENERGIZED TEAM :
+-----------------
+-Working overtime is not encouraged.
+
+7)PAIR PROGRAMMING :
+--------------------
+-referes to the practice where two programmers work together,working on the same design of
+the production software.
+-All the production software in XP is bult by two programmers,sitting side by side at the 
+same machine
+-This practice ensures that all production code is reviewed by at least one other programmer 
+and results in better design,better testing and better code.
+-This may seem inefficient to have two programmers doing one thing but the reverse is true.
+-Research shoes that pairing produces better code in about the same time as programmers 
+working signly.
+-This proves the principle of thinking thta "two heads really are better than one."
+-Pairing in addition to providing better code and tests,also serves to communicate knowledge 
+throghout the team.
+-As per switch,everyone gets the benefits of everyone's specialised knowledge.
+
+
+8)USER-STORIES:
+---------------
+-Team writes short statements of customer visible functionality required in the product.
+
+9)WEEKLY CYCLES:
+----------------
+-Are held to review the progress of the project.
+-The feedback from the them drives the next weekly cycle.
+
+10)QUARTERLY CYCLE :
+---------------------
+-team picks a theme for quarter (90 days) and bussiness value os delivered by the end of 
+it.
+
+11)SLACK :
+----------
+-Lowered priority task are planned so that they can ve dropped if the team lags in 
+their work.
+
+12)TEN-MINUT BUILD:
+-------------------
+-Project structure is designed in order to allow frequent testing anad test are run within 
+ten minuts.
+
+13)TEST-FIRST PROGRAMMING :
+--------------------------
+-The user story is considered fulfilled when it passes the acceptance test.
+-Automated unit tests are written using TEst-Driven developement.
+
+14)CONTINUOUS INTEGRATION :
+--------------------------
+-Programmers check into the completed code and the associated test several times a day.
+
+15)INCREAMENTAL DESIGN :
+------------------------
+-System is designed incrementally rather than designing the whole system in advance.
+
+======================================================================================
+EXTREME PROGRAMMING PROGRAMMING BASED ON 5 METHEDOLOGY :
+------------------------------------------------------
+1)COMMUNICATION :
+------------------
+-XP has oral communication culture and its practices encourages.
+-Solving problems iss possible not only by concentrating for many solutions but also 
+communicating effectively with other  people who have encounterred then in the past.
+
+2)FEEDBACK :
+----------
+-the customeres feedback at the end of the iteration drives the next iteration.
+-The customere provides the feedback to the developemet team at the end of each 
+iteration and release.
+-Design and implementation loop feedback loops are also built into the methodology.
+-Feedback on every two weeks.
+-Feedback  on working code and design.
+-Feedback  from colleagues.
+
+3)SIMPLICITY :
+-------------
+-Design and code in the cureent requirement and develope the simplest product that
+meets the customers requirement.
+
+4)RESPECT :
+-----------
+-Team members respect and care about each others and project and also respect to the 
+customers experties.
+
+5)COURAGES :
+------------
+-The other values such as transparency about the project progress and estimates enable 
+the team to be courageous in its performance and decision.
+
+===================================================================================
+LIFE CYCLE OF XP :
+-------------------
+1)EXPLORATION PHASE :
+---------------------
+-In this phase,the customer writes the story cards that they desire to include in the
+first release.
+-The story cards describe the features to be added in the program.
+-Meanwhile,the project team familiarizes themselves with the project including the 
+technology,tools and practices tha are to be used.
+-Team builds a prototype of the system in order to check the technologies and the
+architectural capabilities.
+-Duration of this phase is baed on how familiar the programmers are.
+
+2)PLANNING PHASE :
+------------------
+-It takes couple of days.
+-Stories are prioritized and contents of the first release is decided.
+-Duration for first release dows not exceed two months.
+
+3)ITERATION TO RELEASE PHASE :
+------------------------------
+-This phase include serveral iterations of the system before the first release.
+-The schedule fixed in the planning phase is divided into several iterations each of 
+which takes between one to four weeks to implement.
+-The first iteration creates a prototype of the whole system.
+-The customer decides and selects the bo for each iteration, and creates the functional 
+test be run at the end of each iteration.
+-The system is ready for production at the end of the last iteration.
+
+
+4)PRODUCTIONIZING PHASE :
+-------------------------
+-In this phase, the system goes through extra testing and performance checks before 
+being released to the customer.
+-New changes can still be suggested by the customer and the decision to include it in 
+the current release has to be taken.
+-The duration of the iterations are shortened in this phase.
+-The ideas and suggestions which were postponed are documented for implementation during 
+the maintenance phase. 
+
+
+5)MAINTENANCE PHASE :
+---------------------
+-After productionizing the first release for customer use, the XP project must keep the 
+system under development running and also produce new iterations.
+-In order to do this, customer support tasks are also taken up during this phase.
+-Thus, the development velocity decreases once the system is in production.
+
+6)DEATH PHASE :
+---------------
+-In this phase, the customer requirements are met and no additional stories to be 
+implemented.
+-As there are no more changes to the architecture, code,or design, the necessary system
+documentation is done.
+-Death also occurs if it gets too expensive for further development or if the system is 
+not delivering the desired output.
+
+========================================================================================
+XP DOCUMENTS AND ARTIFACTS :
+----------------------------
+-Rather than documents, XP relies mostly on oral communicgtion, the code, and tacit 
+knowledge (Understood).
+-While oral communication works for a small team, bigger teams require documentation to 
+be in place.
+-This is also applicable in case of systems which by nature are high-risk and are audifed 
+for legal, engineering reasons,and/or software consistencies.
+-To deal with such issues, the following artifacts have to be more formally managed, 
+recorded/preserved, and regularly re-visited, as part of a formal and traceable XP 
+process.
+
+1)USER STORY CARDS :
+-------------------
+-These consist of paper index cards which contain short requirement descriptions.
+-The user story cards do not contain a full requirement statement but are a commitment 
+for further conversation between the customer and the developer.
+-During this conversation, the customer and the developer come to an understanding of 
+the requifement to be fulfilled.
+-Developer resource estimates and customer priority are also included in the card.
+
+2)TASK LIST :
+-------------
+-Tasks represent visible features of a user story.
+-The task list is a listing of%he tasks for the user stories fo be developed for an 
+iteration.
+-The resource estimate for a user story should not exceed the iteration duration.
+
+3)CRC CARDS :
+-------------
+-CRC stands for Class-Responsibility-Collaboration.
+-The responsibilities and collaborators of classes are identified during a design 
+session involving multiple developers and are recorded on paper index cards.
+-This serves as a basis for software design.
+
+
+4)CUSTOMER ACCEPTANCE TESTS :
+-----------------------------
+-The customer develops customer acceptance tests which are textual descriptions and 
+automated test cases.
+-Successful conclusion of the test cases denotes the completion of a user story and 
+the confirmation of customer requirements.
+
+5)VISIBLE WALL GRAPHS :
+-----------------------
+-Posting progress graphs in team work area encourages communication and accountability.
+-The graphs usually depict the number of stories completed and test cases passed.
+
+=========================================================================================
+ADAPTIVE SOFTWARE DEVELOPEMENT :
+--------------------------------
+-Adaptive Software Development (ASD) is a new software development methodology that 
+focuses on rapid creation,application, and evolution of software systems.
+-It was derived from rapid application development (RAD).
+-It addresses the Internet and dot-com companies today in the:
+market.
+-It is based on Iteration mode, also called as adaptive cycles.
+-ASD is characterized by high speed and high change, which introduces a complexity that 
+cannot be handled by traditional approches.
+
+CHARECTERISTICS :
+----------------
+-Mission focused
+-Feature-based
+-Time-Boxed
+-Risk-driven
+-Change-tolerant
+-Iterative 
+
+
+3 MAIN PHASES :
+--------------
+A)SPECULATE :
+--------------
+-There are four main steps in speculate phase. These steps can be revised several times 
+during the  iteration and planning phase.
+
+
+Project initiation consists of:
+-Setting project goals
+-Recognizing obstacles
+-Making initial scope and size estimates
+-Analyzing project risks
+
+
+B)LEARN :
+---------
+
+
+C)COLLABORATION :
+-----------------
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

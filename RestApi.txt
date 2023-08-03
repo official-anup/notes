@@ -1,0 +1,1635 @@
+1)@Injectable:
+-----------
+-
+
+2)Subscribe:
+-------------
+-
+
+======================================================================================
+1. install django-cors-headers
+
+ pip install django-cors-headers
+
+2. add corsheaders 
+
+INSTALLED_APPS = [
+    'myapp',
+    'corsheaders',
+    'rest_framework',
+]
+
+3. add cors middleware
+
+MIDDLEWARE = [
+    
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+
+4. add allowed origins
+
+CORS_ALLOWED_ORIGINS=['http://localhost:4200']
+
+======================================================================================
+FETCHING DATA WITH fetch and then and catch:
+-------------------------------------------
+-After fetching the data it returns one promise.
+-Then we converts it into json data
+-then() block handles all the errors including 404 error
+-catch() block handles only network error.
+
+----------------------------------------------------------
+-Fetch Api provides an interface for fetching resources(including across the networks)
+-It seems familiar to anyone who has used XMLHttpResquest,but the new api provides a
+more powerful and flexible feature set.
+-Main difference between two is fetch api uses Promises.XMLHttpResquest uses very complecated 
+things to remember.
+-Response provides multiple promise-based methods to access the body in various formates.
+-Inshort response provides promise.Then this response can be convert into text or json format.
+-fetch() provides promise then wee consume this promise using then().
+
+-The fetch() method of the window starts the fetching a resources from the network,
+returning a promise which is fulfilled once the response is available.
+-The promise resolve to the response object represnting the response to your request.
+-A fetch() promise only rejects when a network error is encountered(which is usually
+ when thre's a permission issue or simmilar).
+
+
+-A fetch() promise does not reject on HTTP error(404 etc,).Instead, a then() handler
+must check the Response.ok or Response.status properties.
+
+-------------------------------------------------------------------
+Q)API
+-(API) is a way for two or more computer programs to communicate with each other. It is
+ a type of software interface, offering a service to other pieces of software.
+-An API helps software developers to access web tools
+
+-------------------------------------------------------------------------------------
+REST FRAMEWORK:
+--------------
+-REST API stands for Representational State Transfer Application Programming Interface. 
+-It is an architectural style for designing networked applications, most commonly used for 
+web services development.
+
+-In a REST API, resources (such as data or functionalities) are represented by URLs (Uniform 
+Resource Locators), and these resources can be accessed and manipulated using standard HTTP 
+methods such as GET, POST, PUT, PATCH, and DELETE. 
+
+-------------------------------------------------------------------------------------
+-async ensures that the function returns a promise, and wraps non-promises in it.
+-The keyword await makes JavaScript wait until that promise settles and returns its result.
+  
+   sty:fetch(resourses or url,init)
+     1)resources may be the url, request object and url of the resources.
+     2)init:=>It is optional
+       a)method: The request method eg.GET,POST
+       b)headers: Any headers that you want to add your request,contained within a
+        Headers object or an obejct literal with ByteString values.
+       c)body: Any body that you want to add to your request.this can be a Blob,
+               BluffersSources,FormData,UrlSearchParams,USVString or Readable string obejct.
+               Note that a request susing the GET or HEAD method cannot have a body.
+
+ex:fetch("url/post",
+    {
+      method:"POST",
+      headers:
+          {
+         "Accept":"application/json",
+          "Content-Type":"application/json"
+        
+          },
+
+        body:body,
+        cache:"default"
+    })
+
+-Body.arrayBuffer(): method of the Body mixin takes a Response stream and reads it to
+ completion. It returns a promise that resolves with an ArrayBuffer.
+
+-Body.blob(): takes a Response stream and reads it to completion. It returns a promise
+ that resolves with a Blob representation of the request body.
+
+-Body.formData(): It returns a promise that resolve with a FormData representation of
+the request body.
+
+-Body.json():  It returns a promise that resolve with a json representation of the
+ request body.
+
+-Body.text():  It returns a promise that resolve with an USVString(text) representation 
+of the request body.
+
+-
+
+======================================================================================
+TO MAKE FAKE API:
+----------------
+-JSON server provides fake api for the developers.
+-To download json server go to this link:https://www.npmjs.com/package/json-server
+-Hit the commond : npm install -g json-server
+-make folder in desktop with, cd desktop --> mkdir API --> cd API
+-Then create db.json or hit the commond, json-server --watch db.json.This will create
+the db.json file.
+
+-Open db.json file.Delete last 2 api make own API.And add data with id also.
+-And then see that changes are reflected in the files.
+-Copy the link.http://localhost:3000/
+-Go to the postman with the link/API_NAME/2.
+======================================================================================
+FLOW FOR THE API DATA:
+---------------------
+-JS can't directly connect with the DB.Thats why we use API
+1)Data from db ---> server side lang(eg.java,python) ---> This server side lang will create 
+API (data in the form of json) ---> This data we can catch with the help of JS and can
+display in browser.
+
+2)Browser will send API resquest to server side lang,then this lang will fetch data from db
+and will return it to the browser.
+
+Types of API:
+------------
+-GET,POST,PUT(for update),DELETE etc
+-----------------------------------------------------------------------------------------
+
+FETCH:
+-----
+-Bydefault it is get request ie.fetch(),which will return a promise.
+
+-We can convert this promise in json format.
+  eg:result=result.json()
+
+-Then fetch table body name and map this data in table body ie. in table rows in script.
+  eg:script code:
+     function callapi()
+  
+======================================================================================
+======================================================================================
+API
+-(API) is a way for two or more computer programs to communicate with each other. It is
+ a type of software interface, offering a service to other pieces of software.
+-An API helps software developers to access web tools
+
+TYPES IN TERMS OF RELEASE POLICY:
+--------------------------------
+1)PRIVATE:
+-It can be used within the organisation.
+
+2)PARTNER:
+-It can be used within bussiness partners.
+
+3)PUBLIC:
+-It can be used by any developers.
+
+------------------------------------------------------------------------------------------
+WEB API:
+---------
+-An API which is interface for web is called Web Api.It ias an API which we made for the
+web
+-It may consist of one or more endpoints to define request and response.
+
+------------------------------------------------------------------------------------------
+HOW WEEB API WORKS:
+--------------------
+-Client makes HTTP request to api
+-API will communicate to the web application or database if nedded.
+-web application or database will provide required data to API
+-API returns data to the Client.
+
+
+
+HOW TO USE WEB API:
+-------------------
+● Register/Sign-up to API
+-API may provide API Key for Authentication purpose
+-API Key/Token: 23423jkhjhgh32434hjgjh4343
+
+● Whenever you need to communicate with server, make Request to API with API Key
+http://geekyshows.com/?key=23423jkhjhgh32434hjgjh4343
+-If API Key authentication succeed, API will provide required Data
+ 
+------------------------------------------------------------------------------------------
+REST:
+------
+-It is an architectural guideline to develop Web API.
+
+REST API:
+------
+-The API which is developed using REST is known as REST API / RESTful
+API.
+
+------------------------------------------------------------------------------------------
+DJANGO REST FRAMEWORK:
+----------------------
+-Django Rest framework is a poweerful and flexible toolkit for building WEB APIs.
+
+
+WHY DJANGO REST FRAMEWORK:
+---------------------------
+-The Web browsable API is a huge usability win for your developers.
+-Authentication policies including packages for OAuth1 and OAuth2.
+
+-Serialization that supports both ORM and non-ORM data sources.
+-Customizable all the way down - just use regular function-based views if you don't
+need the more powerful features.
+
+-Extensive documentation, and great community support.
+-Used and trusted by internationally recognized companies including Mozilla, Red Hat,
+Heroku, and Eventbrite.
+
+--------------------------------------------------------------------------------------
+REQUIREMENTS:
+-------------
+● Python
+• Django
+The following packages are optional:
+● PyYAML, uritemplate (5.1+, 3.0.0+) - Schema generation support.
+● Markdown (3.0.0+) - Markdown support for the browsable API.
+● Pygments (2.4.0+) - Add syntax highlighting to Markdown processing.
+● django-filter (1.0.1+) - Filtering support.
+● django-guardian (1.1.1+) - Object level permissions support.
+
+--------------------------------------------------------------------------------------
+PYTHON JSON:
+-----------
+-Python has a built in package called json, which is used to work with json
+data.
+
+1)DUMPS()
+----------
+-dumps(data) – This is used to convert python object into json string.
+Example:
+
+To use json package First we have to import it.
+import json
+
+python_data = {'name': 'Sonam', 'roll':101}
+json_data = json.dumps(python_data)
+print(json_data)
+{"name” : “Sonam”, “roll" : 101}
+
+2)LOADS:
+---------
+-loads(data) - This is used to parse json string.
+-It will converts json object to python object.
+
+Example:
+import json
+json_data = {"name": "Sonam”, “roll” : 101}
+parsed_data = json.loads(json_data)
+print(parsed_data)
+{'name': 'Sonam', ‘roll’: 101} 
+
+---------------------------------------------------------------------------------------
+SERIALIZERS:
+------------
+-Serializers  converts complex data type into python data types,which is easily converts
+into the json or xml.
+-In Django REST Framework, serializers are responsible for converting complex data
+such as querysets and model instances to native Python datatypes (called serialization)
+that can then be easily rendered into JSON, XML or other content types which is
+understandable by Front End.
+
+-Serializers are also responsible for deserialization which means it allows parsed data to
+be converted back into complex types, after first validating the incoming data.
+● Serialization
+• Deserialization
+
+
+-A serializer class is very similar to a Django Form and ModelForm class, and includes
+similar validation flags on the various fields, such as required, max_length and default.
+
+-DRF provides a Serializer class which gives you a powerful, generic way to control the
+output of your responses, as well as a MedelSerializer class which provides a useful
+shortcut for creating serializers that deal with model instances and querysets.
+
+
+How to Create Serializer Class:
+===============================
+● Create a separate seriealizers.py file to write all serializers.
+
+from rest_framework import serializers Forms (torm, (from)
+class StudentSerializer(serializers.Serializer):
+         name = serializers.CharField(max_length=100)
+         roll = serializers. IntegerField()
+         city = serializers.CharField(max_length=100)
+
+#MODEL.PY:
+-----------
+from django.db import models
+class Student(models.Model):
+name = models.CharField(max_length=100)
+roll = models. IntegerField()
+city = models.CharField(max_length=100)
+
+-Then,Run makemigrations and migrate command
+
+-------------------------------------------------------------------------------------
+SERIALIZATION:
+--------------
+-The process of converting complex data such as querysets and model instances to native 
+Python datatypes are called serializations.
+EG:
+1)FOR ONE MODEL OBJECT:
+-----------------------
+-Creating model instance stu:
+    eg: stu = Student.objects.get(id = 1)
+
+-Converting model instance stu to Python Dict/ Serializing Object:
+    eg: serializer = StudentSerializer(stu)
+
+
+2)FOR MANY MODEL  OBJECT:
+-------------------------
+● Creating Query Set:
+     eg: stu = Student.objects.all()
+
+• Converting Query Set stu to List of Python Dict/Serializing Query Set:
+      eg: serializer = StudentSerializer(stu, many=True)
+
+3)TO SEE SERIALIZED DATA:
+------------------------
+EG: print(serializer.data)
+
+4)JSONRenderer:
+---------------
+-This is used to render Serialized data into JSON which is understandable by Front End.
+eg:
+-Importing JSONRenderer:
+   eg: from rest_framework.renderes import JSONRenderer
+
+-Render the data into json:
+   eg: json_data=JSONRenderer().render(serializer.data)
+
+----------------------------------------------------------------------------------------
+JSON RESPONSE():
+------------------
+ SYNTAX: JsonResponse(data, encoder=Django) SONEncoder, safe=True, json_dumps_params=None,
+
+**kwargs)
+
+-An HttpResponse subclass that helps to create a JSON-encoded response. It inherits most
+
+behavior from its superclass with a couple differences:
+
+-Iis default Content-Type header is set to application/json.
+
+-The first parameter, dara, should be a dict instance. If the safe parameter is set to 
+False it can be any JSON-serializable object.
+
+-The encoder, which defaults to django.core serializers json. Django] SONEncoder, will 
+be used to serialize the data
+
+-The safe: boolean parameter defaults to True. If it's set to False, any object can be 
+passed for serialization (otherwise only dict instances are allowed). If safe is True and 
+a non-dict object is passed as the first argument, a TypeRrror will be raised.
+
+----------------------------------------------------------------------------------------
+SERIALIZER FIELD:
+----------------
+-Serializer fields handle converting between primitive values and intemal datatypes.
+-They also deal with validating input values, as well as retrieving and setting the
+values from their parent objects
+
+Example:-
+
+from rest_framewark import serializers
+   serializers.CharField()
+
+---------------------------------------------------------------------------------------
+DE-SERIALIZATION :
+-----------------
+- json data---->python data types----> complex data type
+
+1)BytesIO:
+---------
+-A stream implementation using an in-memory bytes buffer. It inherits
+BufteredlOBase. The buffer is discarded when the close() method is called.
+eg:
+import io
+stream = io.BytesIO(json_data)
+
+2)JSONParser():
+---------------
+-This is used to parse json data to python native data type.
+eg:
+from rest_framewaork.parsers import JSONParser
+parsed_data = JSONParser().parse(stream)
+
+3)De-serialization:
+--------------------
+-Deserialization allows parsed data to be converted back into complex types,
+after first validating the incoming data.
+eg:
+Creating Serializer Object:
+---------------------------
+serializer = StudentSerializer(data = parsed_data)
+
+Validated Data:
+--------------
+serializer.is_valid()
+
+serializer.Validated Data:
+------------------------
+serializer.errors
+
+This is valid data:
+------------------
+serializer.validated_data
+
+------------------------------------------------------------------------------
+CREATE DATA/INSERT DATA/POST(For de-serialization):
+------------------------
+from rest_framework import serializers
+class StudentSerializer(serializers Serializer):
+     name=serializers.CharField(max_length=100)
+     roll=serializers.IntegerField()
+      city = serializers. CharField(max length-=100)
+
+     def create(self,validate_data):
+         return Student.objects.create(**validate_data)
+
+-----------------------------------------------------------------------------------------
+CRUD OPERATION:
+-----------------
+1)FOR PARTIAL UPDATE:
+---------------------
+from rest_framework import serializers
+class StudentSerializer(serializers. Serializer):
+    name — serializers. CharField(max_length=100)
+    roll = serializers Integerield()
+    city = serializers.CharFicld(max_length=100)
+   
+    def update(self, instance, validated_data):
+        instance.name = validated_data.get('name', instance.name)
+        instance.roll = validated_data.get('roll', instance.roll)
+        instance.city = validated_data.get('cily', instance.city)
+        instance.save()
+        return instance
+
+2)FOR ALL AUPDATE:
+------------------
+-By default, serializers must be passed values for all required fields or they
+will raise validation errors.
+-Required All Data from Front Find/Client
+
+serializer = StudentSerializer(stu, data=pythondata)
+if serializer.is_valid()
+serializersave()
+
+3)FOR PARTIAL UPDATE:
+--------------------
+serializer = StudentSerializer(stu, data=pythondata,partial=true)
+if serializer.is_valid()
+serializersave()
+
+------------------------------------------------------------------------------------------
+VALIDATION:priority:validators > field level > object level
+-------------
+1)FIELD LEVEL VALIDATION:
+------------------------
+-We can specify custon field-level validation by adding validate_fieldname() 
+method to your Seriliazer subclass.
+-These are similar to the clean fieldName methods on Django forms.
+-validate_fieldName() methods should return the validated value or raise a
+serializer ValidationError
+
+Syntax:- def validate_fieldname(self, value)
+       eg:def validate_roll(self, value)
+   Where,value is the field value that requires valiation.
+
+2)OBJECT LEVEL VALIDATION:
+--------------------------
+-When we need to do validation that requires access to multiple fields we
+do object level validation by adding a method called validate() to
+your Seriliazer subclass.
+-It raises a serializers. ValidationError if necessary, or just return the
+validated values.
+
+Example:- def validate (self, data)
+Where,data is a dictionary of field values.
+
+
+3)VALIDATORS:
+--------------
+-Most of the time you're dealing with validation in REST framework you'll simply be
+relying on the default field validation, or writing explicit validation methods on
+serializers pr field classes.
+
+-However, sometimes you will want to place your validation logic into reusable
+components, so that i can easily be reused throughout your codebase. This can be.
+achieved by using validator functions and validator classes.
+
+
+-REST framework the validation is performed entirely on the serializer class. This is
+advantageous for the following reasons:
+
+* It introduces a proper separation of concerns, making your code behavior more
+obvious.
+
+*This is easy to switch between using shortcut ModelSerilizer classes and using explicit
+Serializer classes. Any validation behavior being used for ModelSerializer is simple
+to replicate.
+
+*Printing the repr() of a serializer instance will show you exactly what validation
+rules it applies. There's no extra hidden validation behavior being called on the model
+instances.
+
+-When youre using ModelSeriaizer all of this is handled automatically for you. If you
+want to drop down to using Serializer classes instead, then you need to define the
+validation rules explicitly.
+
+---------------------------------------------------------------------------------------
+MODELSERIALIZER CLASS:
+----------------------
+-The ModelSerializer class provides a shortcut that lets you automatically create a
+Serializer class with fields that correspond to the Model fields.
+
+-The ModelSerialiver class is  the same as regular Serializer clase, except that
+
+1)It will automatically generate set of fields for you, based on the model
+2)It will automatically generate validators for the serializer,such as unique_together
+validators.
+3)It includes simple default implementations of create() and update).
+
+
+-Create a separate sericalizers.py file to write all serilizers:
+
+A)In sericalizers.py file :
+--------------------------
+from rest_framework import serializers
+class StudentSerilizers(serializers.ModelSerializer):
+   class Meta:
+       model=Student
+       fields=["id","name","roll","city"]
+   fields="__all__"
+   exclude = ['roll’]
+
+
+B)In views.py
+------------
+from django.shortcuts import render
+from .models import Company,Employee
+from .serializers import CompanySerializers,EmployeeSerializers
+from rest_framework import viewsets
+from rest_framework.decorators import action
+# Create your views here.
+
+class CompanyViewSet(viewsets.ModelViewSet):
+   queryset=Company.objects.all()
+   serializer_class = CompanySerializers 
+
+C)In url.py :
+-------------
+# 1)import :
+from django.urls import path,include
+from app import views
+from rest_framework.routers import DefaultRouter
+
+# 2)creating default router:
+router=DefaultRouter()
+
+# 3)Resgiter class with router.
+router.register('com',views.CompanyViewSet,basename='company')
+router.register('emp',views.EmployeeViewSet,basename='employee')
+
+
+# 4)The API URLS are now determined automatically by the router:
+urlpatterns=[
+  path("",include(router.urls)),
+ ]
+
+D)In models.py
+--------------
+from django.db import models
+
+# Create your models here.
+type=(
+    ("IT","IT"),
+    ("Banking","Banking"),
+    ("Travelling","Travelling"),
+    ("Hardware","Hardware"),
+    ("Education","Education"),
+    
+)
+
+class Company(models.Model):
+    id=models.AutoField(primary_key=True)
+    name=models.CharField(max_length=100)
+    location=models.CharField(max_length=100)
+    about=models.TextField()
+    type=models.CharField(max_length=100,choices=type)
+    date=models.DateTimeField(auto_now=True)
+    active=models.BooleanField(default=True)
+    
+    def __str__(self):
+        return f"{self.name} -- {self.location}"
+
+---------------------------------------
+validate:
+--------
+from rest_framework import serializers
+class StudentSerilizers(serializers.ModelSerializer):
+   name=serializers.CharField(read_only=True)
+   class Meta:
+       model=Student
+       fields=["id","name","roll","city"]
+
+      OR
+     ----
+
+from rest_framework import serializers
+class StudentSerilizers(serializers.ModelSerializer):
+   class Meta:
+       model=Student
+       fields=["id","name","roll","city"]
+       read_only_fields=["name","roll"]
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+=======================================================================================
+FUNCTION BASED API_VIEW:
+------------------------
+-This wrapper provide few bits of functionality such as making sure you receive Request
+instances in your view, and adding context to Response objects so that content negotiation
+can be performed.
+
+-The wrapper also provide behaviour such as returning 405 Method Not Allowed responses when
+appropriate, and handling any ParseE:mor exceptions that occur when accessing request.data 
+with malformed input.
+
+-By default only GET methods will be accepted. Other methods will espond with "405 Method
+Not Allowed".
+
+1)@api_view(),it contains by default "GET" method
+2)@api_view(["GET","POST","PUT","DELETE"])
+  def fun1(request):
+   ..............
+   ..............
+------------------------------------------------------------
+REQUEST:
+--------
+-REST framework's Request objects provide flexible request parsing that allows you to
+treat requests with JSON data or other media types in the same way that you would
+normally deal with form data
+
+1)request.data — request.data returns the parsed content of the request body, This is
+similar to the standard request POST and request FILES atuributes except that:
+
+   « It includes all parsed content, including fle and non-file inputs.
+
+   « It supports parsing the content of HTTP methods other than POST, meaning that you
+     can access the content of PUT and PATCH requests.
+
+   « It supports REST framework's flexible request parsing, rather than just supporting
+   form data. For example you can handle incoming JSON data in the same way that
+   you handle incomig from data.
+
+ 
+2)request.method — request method returns the uppercased string representation of the
+request's HTTP method.
+-Browser-based PUT, PATCH and DELETE forms are transparently supported.
+
+3)request.query_params :- request.query_params is a more correctly named synonym for
+request.GET
+-For clarity inside your code, we recommend using request query_params instead of the
+Django’ standard request. GET. Doing so wil help keep your codebase more correct
+and obvious - any HTTP method type may include query parameters, not just GET
+requests.
+
+---------------------------------------------------------
+RESPONSE():
+----------
+-REST framework support HTTP content negotiation by providing a Response class which allows
+ you to return content that can be render ino multiple coatent pes, depending on the client
+ request.
+-Response object are initialized with data, which should consist of native Python primitives.
+REST framework then uses standand HTTP content negotiation to determine how it should rander
+the final response content.
+-Response classs simply provides nicer interface for reurning content negotiated Web API 
+responses, that can be rendered to multiple formates.
+
+SYNTAX:Respose(data,staus=None,template_name=None,Headers=None,content_Type=None)
+
+  1)data: The unendared, srilized data fr th response,
+  2)satus: A status code for the response, Defuls to 200,
+  3)template_name :A template name to use only if HTMLRenderer or some other custom template
+   render is the accepted renderer for the response.
+  4)headers: A dictionary of HTTP headers to use in he response.
+  5)content_Type :Typically,this will be the automatically by the renderer as determined by
+  content negotioation,but there may be some cases where you newws to specify the content 
+  type explicitly.
+   
+=======================================================================================
+GenericApiView :
+---------------- 
+-This class extends REST framework's APIView class, adding commonly required
+behavior for standard list and detail views.
+
+Attributes:
+----------
+1)queryset - The queryset that should be used for returning objects from this view. 
+Typically,you must either set this attribute, or override the get_queryset() method. If
+you are overriding a view method, it i important that you call get_queryset() instead of
+accessing this property directly, as queryset will get evaluated once, and those results 
+will be cached for all subsequent request.
+
+2)seralizer_class - The scrialzer class that should be uscd for validating and descrializing
+input, and for scrialzing output. Typically, you must cither set this attribute, or 
+override the get_serializer_class() method.
+
+3)lookup field - The model field that should be used to for performing object lookup of
+individual model instances. Defaults to pk’.
+
+4)Lookup_url_kwarg - The URL keyword argument that should be used for object lookup. The
+URL conf should include u keyword argument corresponding to this value. If unset this
+defaults to using the same value us lookup_fild.
+
+5)pagination class - The pagination class that should be used when paginating fst results.
+Defaults 10 the same value as the DEFAULT_PAGINATION_CLASS sctting, which is
+‘rest_framework pagination. PageNumberPagination’. Setting pagination_class=None will
+disable pagination on this view.
+
+6)filer_backends - A list of filter backend classes that should be used for filtering the 
+queryset.Defaults to the same value as the DEFAULT_FILTER_BACKENDS setting.
+
+
+METHODS:
+----------
+1)get_queryset(self) It returns the queryset that should be used for list views, and that 
+should be used as the base for lookups in detail views. Defaults to returning the queryset
+ specified by the queryset attribute.
+
+-This method should always be used rather than accessing self.queryset directly, as
+self queryset gets evaluated only once, and those results are cached for all subsequent
+requests.
+
+2)get object(self) - It returns an object instance that should be used for detail views.
+ Defaults to using the lookup_field parameter to filter the base queryset.
+
+3)get_serializer_class(self) - It returns the class that should be used for the serializer. 
+Defaults to returning the serilizer_class attribute.
+
+4)get serializer context(self) - It returns a dictionary containing any extra context
+that should be supplied to the serializer. Defaults to including ‘request’, ‘view’ and
+'formate' key.
+
+5)get serializer(self, instance-None, data-None, many False, partial-False) - It
+returns selializers instance.
+
+6)get_paginated_response(self, data) — It returns a paginated style Response object.
+
+7)paginate_queryset(self, queryset) - Paginate a queryset if required, either returning
+a page object, or None if pagination is not configured for this view.
+
+8)filter_queryset(self. queryset) - Given a queryset, filter it with whichever filter
+backends are in use, returning a new queryset.
+
+-----------------------------------------------------------
+MIXINGS:
+========
+-One of the big wins of using class-based views is that it allows us to easily compose
+reusable bits of behaviour.
+
+-The ereate/retrieve/update/delete operations that we've been using so far are going
+to be pretty similar for any model-hacked API views we create.
+
+-Those bits of common behaviour are implemented in REST framework's mixin
+classes.
+
+-The mixin classes provide the actions that are used to provide the basic view
+behaviour.
+
+-Note that the mixin classes provide action methods rather than defining the handler
+‘methods, such as get() and post(), directly. This allows for more flexible
+composition of behavior.
+
+-The mixin classes can be imported from rest_framework.mixins
+
+TYPES:
+---------
+1)ListModelMixin :
+----------------
+-It provides a list(request, *args, **kwargs) method, that implements listing a
+queryset.
+-If the queryset is populated, this returns a 200 OK response, with a serialized
+representation of the queryset as the body of the response. The response data may
+optinally be paginated.
+
+from rest_framework mixins import ListModelMixin
+from rest framework. generics import GenericAPI View
+
+eg:
+from rest_framework.mixins import ListModelMixin
+from rest_framework.generics import GenericAPIView
+        class StudentList(ListModelMixin, GenericAPIView):
+              queryset = Student objects.all()
+              serializer class = StudentSerializer
+              def get(self,request,*args,**kwargs):
+                   return self.list(request,*args,**kwargs)
+
+--------------------------------------------
+2)CreateModelmixin :
+-------------------
+-It provides a create(request, *args, **kwargs) method, that implements creating and
+saving a new model instance.
+
+-If an object is created this retums a 201 Created response, with a serialized
+representation of the object as the body of the response. If the representation
+contains a key named url, then the Location header of the response will be
+populated with that value.
+
+-If the request data provided for creating the object was invalid, a 400 Bad Request
+response will be returned, with the error details as the body of the response.
+
+eg:
+from rest_framework.mixins import CreateModelMixin
+from rest_framework generics import GenericAPIView
+      class StudentCreate(CreateModelMixin, GenericAPIView):
+          queryset = Student. objects.all()
+          serializer_class = StudentSerializer
+
+          def post(self, request, *args, **kwargs):
+                return self.create(request, *args, **kwargs)
+
+
+-----------------------------------------------------------
+3)RetriveModelMixin :
+-------------------
+-It provides a retrieve(request, “args, **kwargs) method, that implements returning
+an existing model instance in a response.
+
+-If an object can be retrieved this returns a 200 OK response, with a serialized
+representation of the object as the body of the response. Otherwise it will refurm a
+404 Not Found.
+
+eg:
+from rest_framework.mixins import RetrieveModeIMixin
+from rest_framework.generics import GenericAPIView
+        class StudentRetrieve(RetrieveModelMixin, GenericAPIView)
+             queryset = Student. objects.all()
+             serializer class = StudentSerializer
+
+             def get(self, request, *args, **kwargs):
+                  return self.retrieve(request, *args, **kwargs)
+
+
+-----------------------------------------------------------
+4)UpdateModelMixin :
+--------------------
+-It provides a update(request, *args, **kwargs) method, that implements updating
+and saving an existing model instance.
+-It also provides a partial update(request, *args, **kwargs) method, which is similar
+to the update method, except that all fields for the update will be optional. This
+allows support for HTTP PATCH requests.
+-If an object is updated this returns a 200 OK response, with a serialized
+representation of the object as the body of the response. .
+-If the request data provided for updating the object was invalid, a 400 Bad Request
+response will be returned, with the error details as the body of the response.
+
+eg:
+from rest_framework mixins import UpdateModelMixin
+from rest_framework generics import GenericAPIView
+     class StudentUpdate(UpdateModelMixin, GenericAPIView):
+            queryset = Student. objects.all()
+            serializer class = StudentSerializer
+       
+            def put(self,request,*args,**kwargs):
+                return self update(request, *args, **kwargs)
+
+-----------------------------------------------
+5)DestroyModelMixin :
+---------------------
+-It provides a destroy(request, args, **kwargs) method, that implements deletion of
+an existing model instance.
+
+-If an object is deleted this returns a 204 No Content response, otherwise it will
+return a 404 Not Found.
+
+eg:
+from rest_framework.mixin import DestroyModelMixin
+from rest_framework.generics import GenericMixin
+ 
+class studentDestroy(DestroyModelMixin,GenericMixin):
+     queryset=student.obejcts.all()
+     serializer_class=studentSerializer
+   
+     def delete(self,request,*args,Kwargs):
+        eturn self.destroy(request,*args,**kwargs)
+
+=======================================================================================
+CONCRETE VIEW CLASS:
+--------------------
+-If you are using views this is normally the level you'll ve working at unless you need
+heavily customized behaviour.
+-The view classes can be imported from rest_freamwork.generics
+
+1)ListApiView :
+---------------
+-It is used for read-only endpoints to represent a collection of model intsatnces.It 
+provides a get method handler.
+-It extends GenericApiView and ListModelView
+
+eg:
+from rest_framework.generics import ListApiView
+class StudentList(ListApiView):
+    queryset=Student.objects.all()
+    serializer_class=StudentSerializer
+
+--------------------------------------------------------------
+2)CreateApiView :
+---------------
+-It is used for create-only endpoints.It provides a post method handler.
+-It extends GenericApiView and CreateModelMixin
+
+eg:
+from rest_framework.generics import ListApiView
+class StudentCreate(CreateApiView):
+    queryset=Student.objects.all()
+    serializer_class=StudentSerializer
+
+--------------------------------------------------------------
+3)RetriveApiView :
+----------------
+-It is used for read-only endpoints to represent a single model instance.It provides a
+get method handler.
+-It extends GenericApiView and RetriveModelMixin
+
+eg:
+from rest_framework.generics import RetriveApiView
+class StudentCreate(RetriveApiView):
+    queryset=Student.objects.all()
+    serializer_class=StudentSerializer
+--------------------------------------------------------------
+4)UpdateApiView :
+----------------
+-It is used for update only endpoints for a single model instance.It provies put and
+ patch method handler.
+-It extends GenericApiView and UpdateModelMixin
+
+eg:
+from rest_framework.generics import UpdateApiView
+class StudentCreate(UpdateApiView):
+    queryset=Student.objects.all()
+    serializer_class=StudentSerializer
+--------------------------------------------------------------
+5)DestroyApiView :
+----------------
+-It is used for delete only endpoints for a single model instance.It provies put and
+ patch method handler.
+-It extends GenericApiView and DestroyModelMixin
+
+eg:
+from rest_framework.generics import DestroyApiView
+class StudentCreate(DestroyApiView):
+    queryset=Student.objects.all()
+    serializer_class=StudentSerializer
+
+--------------------------------------------------------------------------------
+6)ListCreateApiView :
+--------------------
+-It is used for read-write endpoints to represent a collection of model intsatnces.It 
+provides a get and post method handler.
+-It extends GenericApiView, ListModelView,createModelMixin
+
+eg:
+from rest_framework.generics import ListCreateApiView
+class StudentCreate(ListCreateApiView):
+    queryset=Student.objects.all()
+    serializer_class=StudentSerializer
+--------------------------------------------------------------------------------
+7)RetriveUpdateApiView :
+-----------------------
+-It is used for read-write endpoints to represent a collection of model intsatnces.It 
+provides a get,patch and put method handler.
+-It extends GenericApiView, RetriveModelView,UpdateModelMixin
+
+eg:
+from rest_framework.generics import RetriveUpdateApiView
+class StudentCreate(RetriveUpdateApiView):
+    queryset=Student.objects.all()
+    serializer_class=StudentSerializer
+--------------------------------------------------------------------------------
+8)RetriveUpdateDestroyApiView :
+--------------------------------
+-It is used for read-write endpoints to represent a collection of model intsatnces.It 
+provides a get,patch,put and destroy method handler.
+-It extends GenericApiView, RetriveModelView,UpdateModelMixin,DestroyModelMixin
+
+eg:
+from rest_framework.generics import RetriveUpdateDestroyApiView
+class StudentCreate(RetriveUpdateDestroyApiView):
+    queryset=Student.objects.all()
+    serializer_class=StudentSerializer
+
+=====================================================================================
+VIEWSET :
+------------
+-Django REST framework allows you to combine the logic for a set of realted views in a 
+single class,called a viewset.
+-2 Main advantanges :
+ 1)Repeated logic can be combined into a single class
+ 2)By using routers,we no longer need to deal with writing up the URL conf ourself.
+
+-A view set is simply a type of class-based view,that does not provide any method handler
+such as get() or post() and instead provides actions such as list() and create().
+1)list()
+2)retrive()
+3)create()
+4)update()
+5)partial_update()
+6)destroy()
+
+CODE:
+from rest_framework import viewset
+class StudentViewSet(viewset.ViewSet):
+   def list(list):...........
+   def list(retrive,pk=None):...........
+   def list(create):...........
+   def list(update,pk=None):...........
+   def list(partial_update,pk=None):...........
+   def list(destroy,pk=None):...........
+
+-During dispatch, the following attributes are available on the ViewSet:-
+1)basename - the base fo use for the URL names that are created.
+2)action - the name of the current action (eg, lis, create)
+3)detail - boolean indicating if the current action is configured for a list or detail
+4)sullix - the display suffix for the viewset type - mirrors the detail attribute,+.
+5)name - the display name for the viewset. This argument is mutually exclusive to
+suffix.
+6)description-the display description for he individual view of viewset.
+
+-------------------------------------------------------
+URL CONFIG :
+-----------
+1)import :
+from django.urls path,include
+from app_name import views
+from rest_framework.routers import DefaultRauter
+
+2)creating default router:
+router=DefaultRouter
+
+3)Resgiter class with router.
+router.register('getdata',viewStudentView,basename='Student')
+
+4)The API URLS are now determined automatically by the router:
+urlpatterns=[
+  path("",include(router.urls)),
+ ]
+
+============================================================================
+ModelViewSet :
+--------------
+-The Model ViewSet class inherits from GenericAPIView and includes
+implementations for various actions, by mixing in the behavior of the
+various mixin classes.
+-The actions provided by the ModelViewSet class are list(), retrieve(),
+create(), update(), partial_update(), and destroy(). You can use any of the
+standard atributes or method overrides provided by GenericAPIView
+
+class StudentViewSet(viewsets ModelViewSe):
+   queryset=Student.objects.all()
+   serializer_class = StudentSerializer 
+
+
+1)import :
+from django.urls path,include
+from app_name import views
+from rest_framework.routers import DefaultRauter
+
+2)creating default router:
+router=DefaultRouter
+
+3)Resgiter class with router.
+router.register('getdata',viewStudentView,basename='Student')
+
+4)The API URLS are now determined automatically by the router:
+urlpatterns=[
+  path("",include(router.urls)),
+ ]
+-------------------------------------------------------------------------
+ReadOnlyModelViewSet Class :
+---------------------------
+-The ReadOnlyModel ViewSet class also inherits from GenericAPIView. As
+with Model ViewSet it also includes implementations for various actions,
+but unlike Model Viewset only provides the ‘read-only’ actions, list() and
+retrieve(). You can use any of the standard attributes and method overrides
+available to GienericAPIView.
+
+class StudentReadOnlyModelViewSel(viewsets.ReadOnlyModelViewset)
+        queryset=Student.objects.all()
+        serializer_class = StudentSerializer
+
+========================================================================================
+AUTHENTICATION AND PERMISSION :
+------------------------------
+-Currently our API doesn't have any restrictions on who can edit or delete Data.
+-We'd like to have some more advanced behavior in order to make sure that.
+
+1)Data is always associated with a creator.
+2)only authenticated users may create data.
+3)Only the creator of a Data may update or delete it.
+4)Unauthenticated requests should have full read-only access.
+
+AUTHENTICATION :
+--------------
+-Auhtentication is the mechanism of the associating an incomming request
+with a set of identifying credentials, such as the user the request came
+from, or the token that it was signed with. The permission and throttling
+policies can then use those credentials to determine if the request should
+be permitted.
+
+-Authentication is always run at the very start of the view, before the
+permission and throttling checks occur, and before any other code is
+allowed to proceed.
+
+-REST framework provides a number of authentication schemes out of
+the box, and also allows you to implement custom schemes.
+
+A)BasicAuthentication :
+----------------------
+-This authentication scheme uses HTTP Basic Authentication, signed against a user's
+username and password.
+-Basic authentication is generally only appropriate for testing.
+
+-If successfully authenticated,basicAuthentication provides the fallowing credintial
+1)requester will be a Django User instance.
+2)request.auth will be None.
+
+-Unauthenticated responses that are denied permission wil result in an HTTP 401
+Unauthorized response with an appropriate WWW-Authenticate header. For
+ex:
+WWW-Authenticate: Basic realm="api"
+
+NOTE :
+----
+-If you use BasicAuthentication in production you must ensure that your API
+is only available over https.
+-You should also ensure that your API clients will always re-request the usermame
+and password at login, and will never store those details to persistent storage.
+
+PERMISSION :
+------------
+-Permissions are used to grant or deny access for different classes of
+users to different parts of the API.
+-Permission checks are always run at the very start of the view, before
+any other code is allowed to proceed.
+
+-Permission checks will typically use the authentication information in
+the request.user and request.auth properties to determine if the
+incoming request should be permitted.
+
+
+PERMISSION CLASSES :
+------------------
+-Permissions in REST framework are always defined as a list of permission classes.
+1)AllowAny :
+----------
+-The AllowAny permission class will allow unrestricted access,
+regardless of if the request was authenticated or unauthenticated.
+
+-This permission is not strictly required, since you can achieve the same
+result by using an empty list or tuple for the permissions setting, but
+you may find it useful to specify this class because it makes the
+intention explicit.
+
+-------------------------------------------------------------
+2)IsAuthenticated :
+------------------
+-The IsAuthenticated permission class will deny permission to any
+unauthenticated user, and allow permission otherwise.
+-This permission is suitable if you want your API to only be accessible
+to registered users.
+
+-------------------------------------------------------------
+3)IsAdminUser :
+------------------
+-The IsAdminUser permission class will deny permission to any user,
+unless user.is_staff is True in which case permission will be allowed.
+-This permission is suitable if you want your API to only be accessible
+to a subset of trusted adminisirators.
+
+-------------------------------------------------------------
+4)IsAuthenticatedOrReadOnly :
+-The IsAuthenticatedOrReadOnly will allow authenticated users to
+perform any request. Requests for unauthorised users will only be
+permitted if the request method is one of the "safe" methods; GET,
+HEAD or OPTIONS.
+-This permission is suitable if you want to your API to allow read
+permissions to anonymous users, and only allow write permissions to
+anuthenticated users.
+
+
+-------------------------------------------------------------
+5)DjangoModelPermissions :
+-------------------------
+-This permission class ties into Django's standard django.contrib.auth model
+
+permissions. This permission must only be applied to views that have a queryset
+
+property set.Authorization will only be granted if the user is authenticated and has
+
+the relevant model permissions assigned.
+
+1)POST requests require the user (0 have the add permission on the model.
+
+2)PUT and PATCH requests require the user to have the change permission on the
+model .
+
+3)DELETE requests require the user o have the delete permission on the model.
+
+-The default behaviour can also be overridden to support custom model permissions.
+
+For example. you might want to include a view model permission for GET requests.
+
+-To use custom model permissions, override DjangoModelPermissions and set the
+perms_map property.
+-By default this will give only readOnly property,if we want others then we have to 
+define it.
+
+-------------------------------------------------------------
+6)DjangoModelPermissionsOrAnonReadOnly :
+--------------------------------------
+-Similar to DjangoModel Permissions, but also allows unauthenticated
+users to have read-only access to the API
+
+-------------------------------------------------------------
+7)DjangoObjectPermisssion :
+--------------------------
+-This permission class ties into Django's standard object permissions framewark that
+allows per-object permissions on models. In order 10 use this permission class,
+you'll also need to add a permission backend that supports object-level permissions,
+such as django-guardian.
+
+-As with DjangoModelPermissions, this permission must only be applied to views
+that have a queryset property or get_queryset() method. Authorization will only be
+granted if the user is authenticated and has the relevant per-object permissions and
+relevant model permissions assigned.
+
+1)POST requests require the user to have the add permission on the model instance.
+2)PUT and PATCH requests require the user to have the change permission on the
+model instance.
+3)DELETE requests require the user to have the delete permission on the model
+instance.
+
+---------------------------------------------------------------------------
+8)Custom permission
+-To implement a custom permission, override BasePermission and
+implement either, or both, of the following methods:
+
+1)has_permission(self, request, view)
+2)has_object_permission(self, request, view,obj)
+The methods should return True if the request should be granted access,
+and False otherwise. 
+
+MAKE FILE :custompermissions.py
+CODE:
+class MyPermission(BasePermission):
+    def has_permission(self, request, view)
+
+-------------------------------------------------------------------------------------
+B)SessionAuthentication :
+------------------------
+-This authentication scheme uses Django default session backend for
+authentication. Session authentication is appropriate for AJAX clients that are
+running in the same session context as your website.
+-IF successfully authenticated, Session Authentication provides the following
+creadentials:
+1)request.user will be a Django User instance.
+2)request.auth will be none.
+-Unauthenticated responses that are denied permission will esult in an HTTP 403
+Forbidden response.
+
+-If you're using an AJAX style API with SessionAuthenticatin, you'll need to make
+sure you include a valid CSI woken for any "unsafe" HTT method calls, such as.
+PUT, PATCH, POST or DELETE requests.And safe methods are options,get and head.
+
+PERMISSIONS :
+-----------
+
+
+
+-------------------------------------------------------------------------------------
+C)TokenAuthentication :
+-----------------------
+-This authentication scheme uses a simple token-based HTTP Authentication
+scheme. Token authentication is appropriate for client-server setups, such as native
+desktop and mobile clients.
+-To use the TokenAuthentication scheme you'll need to configure the authentication
+classes to include TokenAuthentication, and additionally include
+rest_framework.authtoken in your INSTALLED_APPS setting:
+
+INSTALLED_APPS =
+[
+...
+'rest_framework.authtoken'
+]
+Note: Make sure to run manage py migrate after changing your settings. The
+rest_framework,authtoken upp provides Django database migrations.
+---------------------------------
+
+-IF successfully authenticated, TokenAuthentication provides the following
+credentials.
+1)request.user will be a Django User instance.
+2)request.auth will be a rest_framework.authtoken.models.Token instance.
+Unauthenticated responses that are denied permission wil result in an HTTP 401
+Unauthorized response with an appropriate WW W-Authenticate header. For
+example :
+
+WWW-Authenticate: Token
+-The http command line tool may be useful for testing token authenticated APIs. For
+example:
+
+Http hitp://127.0.0.1:8000/studentapi/ ‘Authorization: Token
+9944b09199¢62bclV418ad846dd0cdbbd fcbeedb’
+
+
+Note: If you use Token Authentication in production you must ensure that your API
+is only available over https.
+
+GENERATE TOKE :
+---------------
+1)using Admin Application :
+
+------------------------------
+2)Using django manage.py command 
+  eg: python manage.py drf_create_token<username>,This command will return API Token 
+    for the given user or creates a Token if token dosent exist.
+
+3)By exposing an API endpoint.It will generate By User itself.
+------------------------------
+-It will generate By User itself.
+
+HOW CLIENT CAN ASK/CREATE TOKEN :
+------------------------------
+-When using TokenAuthentication, you may want to provide a mechanism for clients to obtain
+a token giben the username and password.
+-This can be done in the command line or powershell.
+-REST framework provides a built-in view to provide this behavior, To use it, add the
+obtain_auth_token view to your URLconf:
+
+ex:
+from rest_framework.authtoken.views import obtain_auth_token
+urlpattern=[
+   path('gettoken/',obtain_auth_token)
+]
+
+-The obtain_auth token view will return a JSON respanse when valid username and password
+fields are POSTed to the view using form data or JSON:
+http POST http://127.0.0.1:8000/scttoken/ username="name” password="pass”
+{ ‘token’ ; '9944b09199¢62bc19418ad846dd0cAbbdfceedb’ }
+
+-It also generates token if the token is not generated for the provided user.
+
+------------------------------
+4)Using signals:
+---------------
+-write code in model.py from official site.
+-Write after migrate.
+-After this,when we generate user,its token will automatically generate.
+
+CODE:
+------
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        if instance.is_superuser:    
+            Token.objects.create(user=instance, key="superuser_key")
+        else:
+            Token.objects.create(user=instance) # use generated key 
+
+-----------------------------------------------------------------------------------
+D)RemoteUserAuthentication :
+---------------------------
+
+-----------------------------------------------------------------------------------
+E)CustomAuthentication :
+-----------------------
+-
+
+===================================================================================
+ACCESSING API USING TOKEN :
+--------------------------
+1)Permission Classes :
+-------------------
+-Permissions in REST framework are always defined as a list of
+permission classes.
+
+1)AllowAny
+2)IsAuthenticated
+3)IsAdminUser
+4)IsAuthenticatedOrReadOnly
+5)DjangoModelPermissions
+6)DjangoModelPermissionsOrAnonReadOnly
+7)DjangoObjectPermissions
+8)Custom Permissions
+
+
+HTTPIE :
+-------
+-HTTPie (pronounced aitch-tee-tee-pic) is a command line HTTP client, lis goal is
+to make CLI interaction with web services as human-friendly as possible. 
+
+-It provides a simple hitp command that allows for sending arbitrary HTTP requests
+using a simple and natural syntax, and displays colorized output, HTTPie can be
+used for testing, debugging, and generally interacting with HTTP servers.
+
+Syntax:- http [flags] [METHOD] URL [ITEM [ITEM]]
+
+1)GET request :
+- http http://127.0.0:8000/studentApi/
+
+2)GET request with Auth :
+- http http://127.0.0:8000/studentApi/'Authorization:Token 9944b0946dd0cAbbdfceedb'
+
+3)POST request/Submitting Form :
+- http -f POST http://127.0.0:8000/studentApi/ name="name" city="city_name" roll=roll_no
+'Authorization:Token 9944b0946dd0cAbbdfceedb'
+ 
+4)PUT request :
+- http PUT http://127.0.0:8000/studentApi/4/ name="name" city="city_name" roll=roll_no
+'Authorization:Token 9944b0946dd0cAbbdfceedb'
+
+5)DELETE reuqest :
+- http PUT http://127.0.0:8000/studentApi/4/ 'Authorization:Token 9944b0946dd0cAbbdfceedb'
+
+===================================================================================
+JSON WEB TOKEN AUTHENTICATION :
+-------------------------------
+A)Third party packages:-
+------------------------
+1)Django OAuth Toolkit
+2)JSON Web Token Authentication(JWT)
+3)Hawk HTTP Authentication
+4)HTTP Signature Authentication
+5)Djoser
+6)django-rest-auth / dj-rest-auth
+7)diango-rest-framework-social-oauth2
+8)django-rest-knox
+9)drfpasswordless
+
+-JSON Web Token is a fairly new standard which can be used for token-based authentication. 
+-Unlike the built-in TokenAuthentication scheme,JWT Authentication doesn't need to use a 
+database to validate a token.
+ 
+-Simple JWT provides a JSON Web Token authentication backend for
+the Django REST Framework. It aims to cover the most common use
+cases of JWTs by offering a conservative set of default features. It also
+aims to be easily extensible in case a desired feature is not present.
+https://django-rest-framework-simplejwi.readthedocs.io/en/latest/
+
+HOW TO INSTAL JWT :
+------------------
+- pip install djangorestframework-simplejwt
+
+
+CONFIGURE JWT :
+---------------
+1)In settings.py file
+---------------------
+
+REST_FRAMEWORK = {
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+    
+}
+
+
+2)In urls.py :
+-------------
+from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
+
+urlpatterns = [
+    ...
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    ...
+]
+
+
+3)-You can also include a route for simple jwt's TokenVerifyView if you wish to
+allow API users to verify HMAC-signed tokens without having access to your
+signing key.
+
+IN URLS.PY :
+-----------
+from rst framework simplcjwt.views import TokenObtainPair View, TokerRefrcshView,
+TokenVerifyView
+urlpatterns=[
+path(‘gettoken/', TokenObtainPairViewas_view(), name-token_obiain_ pair'),
+path‘reffeshiokent/', TokenRefreshViewas_view(), name-"token_refresh’),
+path('veriytoken/', TokenVerifyView.as_view(), name='token_verify'),
+]
+
+
+4)JWT default setting :
+-----------------------
+from datetime import timedelta
+SIMPLE_JWT=
+{
+  "ACCESS_TOKEN_LIFETIME":timedelta(minutes=5),
+   "REFRESH_TOKEN_LIFETIME":timedelta(days=1),
+   "ROTATE_REFRESH_TOKEN":False,
+    "BLACKLIST_AFTER_ROTATION":True,
+   "ALGORITHM":"HS256",
+   "SIGNING_KEY":settings.SECRET_KEY,
+   "VERIFYING_KEY":None,
+   "AUTH_HEADER_TYPES":('Bearer'),
+   "USER_ID_FIELD':"ID",
+   "USER_ID_CALM":"user_id",
+   "AUTH_TOKEN_CLASSES":("rest_framework_simplejwt.tokens.AccessToken",),
+   "TOKEN_TYPE_CLAIM":"token_type",
+   "JTI_CLAIM":"jti",
+   "SLIDING_TOKEN_REFRESH_EXP_CLAIM":"refresh_exp",
+   "SLIDING_TOKEN_LIFETIME":timedelta(minutes=5),
+   "SLIDING_TOKEN_REFRESH_LIFETIME":timedelta(days=1),
+}
+
+-ACCESS_TOKEN_LIFETIME - A datetime.timedelta object which specifies how
+long access tokens are valid.
+-REFRESH_TOKEN_LIFETIME - A datetime timedelta object which specifies how.
+long refresh tokens are valid.
+
+
+
+5)---------------
+-To generate token , we need to use postman
+
+
+a) URL 
+
+	In postman =http://127.0.0.1:8000/gettoken/
+        In cmd =  http POST http://127.0.0.1:8000/gettoken/
+
+b) method - post
+
+c) select body-raw-JSON
+
+	{
+        	"username": "abcd",
+        	"password": "abcd"
+        
+         }
+
+-This will give generate below response
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoi
+cmVmcmVzaCIsImV4cCI6MTY2NDMwODg5OSwiaWF0IjoxNjY0MjIyNDk5LCJqdGkiOiI0ZTITc3
+Nzc0NzdhYjVkZjdkZTI4MDBhZmFjNCIsInVzZXJfaWQiOjF9.K_vyTSIFhOiSa2rcG9UWzfGE7
+hbsTQ6QexjzYgZa9JA",
+    
+"access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmc
+mVzaCIsImV4cCI6MTY2NDMwODg5OSwiaWF0IjoxNjY0MjIyNDk5LCJqdGkiOiI0ZTITc3Nzc0
+NzdhYjVkZjdkZTI4MDBhZmFjNCIsInVzZXJfaWQiOjF9.FhOiSa2rcG9UWzfGE7hbsTQ6Qexj
+zYgZa9JA"
+}
+
+TO VERIFY TOKEN :
+----------------
+a) URL 
+
+	In postman =http://127.0.0.1:8000/verifytoken/token="generated_token"
+        In commond = http POST http://127.0.0.1:8000/verifytoken/refresh="generated_token"
+
+b) method - post
+
+
+
+TO REFRESH TOKEN :
+----------------
+a) URL 
+
+	In postman= http://127.0.0.1:8000/refreshtoken/refresh="generated_token"
+        In commodn= http POST http://127.0.0.1:8000/refreshtoken/refresh="generated_token"
+
+b) method - post
+
+==============================================================================================
+Disable Browsable API in Production(31 st lecture)
+
+
+
+TO GETTOKEN :
+----------------
+a) URL 
+
+	http://127.0.0.1:8000/gettoken/
+
+b) method - get
+
+c) select body-raw-JSON
+
+	{
+        	"username": "abcd",
+        	"password": "abcd"
+        
+         }

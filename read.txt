@@ -1,0 +1,26 @@
+-oops concept
+-having and group by in mysql
+-singnals,abstraction class,proxy model in django 
+-to see duplicated names in mysql
+-list,tupple,dict
+-drop and truncate in mysql
+-memory management in python.
+
+-What have you built in the last 12 months?
+-What is the process for managing data in Django
+-How do you work with the Django REST framework
+-Explain Django DB routers and why would you use them?
+-Explain PostgreSQL Database Sharding
+-Explain Django ORM lazy querysets
+-Explain differences between annotate and aggregate functions in Django QuerySets.
+-What are Django middleware classes, why are they used for?
+-What are Django Migrations, where are they stored, and how can you tell if they are applied?
+-In Python how is context manager used
+-Which methods do you know inside python objects?
+-In Python what is the difference between an iterator and a generator?
+-what are django channels.
+
+-django moedls,
+-examples of djnago sessions
+-djnago decorators
+-call by value and call by reference

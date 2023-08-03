@@ -1,0 +1,557 @@
+
+questions:
+---------
+1)to see version: ng version
+2)to install earlier version: first uninstall current NPM then in cmd
+  npm install -g@angular/cli@10.0.0
+3)to install 2 version of the same: them install nvm(node version manager) 
+4) we should use properties and attributes by property binding not by interpolation.
+5)Difference between library and framework.
+====================================================================================
+ANGULAR s|
+_________
+-data binding and fast loading
+-developed by google.
+-open source
+-used NPM(node package manager for using bootstrap,js and other libraries)
+ and CMD
+-based on MVC(model view controller) framework
+-it is single page application
+-commuication between view and typescript or js is very fast
+-cross platform...we can make its native apps ie. mobile apps,we can also make
+ websites and progressive weeb apps.
+-speed and performance..ie.it initiates page once..it does not refresh page again and again
+-code reusability 
+-comond line intereface..angular provide to create model by simply firing commonds
+,or we can create components and services.	
+-productivity :bcz of fast loading 
+====================================================================================
+Angular 12:
+-----------
+-everything is new
+-new features
+-bug fixes
+-speed and other improvements
+-mostly features are same.
+====================================================================================
+
+====================================================================================
+1)ng new angular-app :to create a new project
+2)cd angular-app(app name)
+3)ng serve :this commond will run and compile our application in local system 
+and it will show output in browser
+4)ng generate component c_name
+5)ng g c - generate a new component
+6)ng g s - generate a new service
+7)ng g d - generate a new directive
+8)ng g m - generate a new module
+9)ng g p - generate a new pipe
+========================================
+FOLDER:|
+--------
+-e2e: for end to end testing,we can test our app here
+
+-node modules: node packages are here,we use these packages in our project time by
+ time.all libraries are there required for project,when we cmd NPM then this folder
+ rebulids thats why dont make changes opr create any file here.
+             -
+
+-src: in which we will work and it main folder where we store our modules,components
+      and services are stored.
+      -envionment.ts is called when our project in the developents time.
+      -envionment.product called when we build product and deploy
+      -99% works in this folder
+      -component is piece of code
+      -assets for imgs ,css
+      -environment folder for deploying project on server.it has 2 files.bt we can 
+       otheres too.
+     -main.js:it loads js in html file.
+
+
+-.editorconfig: when multiple developers are working in single project then with this we
+      can specify certain rules for the developements.
+
+-gitignore:
+
+-angualr.json: most imp file,under this file we define  some configuration and paths.  
+             like path rquired for this project,where is entrance(index) path and output path etc.
+             -we can define css file that we are using in this project.
+             -this is configuration file of the application.
+
+-browser list : we simply list browser in this.which browser it supports.
+
+-karma.conf.js: this uses jasmine framework and test our project.
+              -we write test cases configurations.
+-polyfills.ts: 
+========================================================================
+
+-package-lock.json : which configurations file are used in the projct or which packages
+             are locked in the project with version of the files.
+           -it carries all the details of the packages.
+
+-package.json : most imp,name,version,all libraries,dependencies,
+
+=========================================================================
+-README.md: there are just instruction.
+
+-tsconfig.app.json: in this files routing are defined which are of typescript.
+                  -we can configure jypescript files,bt usually we dont touch this
+                   one.
+                  -it will maintain ts configurations.
+
+-tsconfig.spec.json : specification file for testing.
+
+-tslint.json : we can define some rules for better codding standards.
+             -this shows error if we break some rules while writing our code.
+
+-==================================================================================
+->index->approot is a selector of an app component.,it means when we laod page then 
+this is of app componets.
+-in app.componets.ts file we write our logical part.
+
+-app.module.ts: most imp file for the project,bcz all routing and rendering done wtih
+    this file.
+==================================================================================
+-ASSETS FOLDER: we store our css,images and js files which are global to use in 
+  this project.
+
+-ENVIRONMENT FOLDER: 
+
+===================================================================================
+INTERPOLATION:
+-------------
+-To display dynamic data on html page.
+
+{{anup}}
+ In ts file,anup:string="a good boy"
+
+-we cannot :
+     -assign value here eg:{{title="anup"}}
+     -we cannot see type with typeof operators.
+     -we cannot increament or decreament value eg:{{data++}}
+     -we cannot use new keyword. eg:{{new title}}
+     -we cannot use assignment and typeof oeprators
+===================================================================================
+COMMONDS:
+--------
+-ng g c module module_name.module has only one file ie. ts file.
+-ng g c user/component_name.(this will generate component in user module)
+   -module has multiple components.
+-ng g class class_name.It has 2 files, ts file and testing file.
+-ng build:this will create build folder in main folder.
+   -when we want to live our project then we create mini files of project in build.
+===================================================================================
+COMPONENT:
+----------
+-it building block to build any functionality like header or anything.
+-
+===================================================================================
+IN-LINE STYLE AND IN-LINE TEMPLTAE:
+----------------------------------
+1)ng g c student --inline-template.(this component does not contain html file)
+2)ng g c student --inline-template --inline-style.(This component will contain only two 
+  files ie: testing file and ts file)
+3)ng g c student --inline-style.(This component does not contain css file)
+
+===================================================================================
+MODULE:
+-------
+-It is bundle of complete functionality in which different functionalities are present.
+-In one module there are multipls services,pipes,components are present.
+-we cannot reuse complete module.Bt we can use its components separatly.
+-sty:ng g m module_name
+-In module there is just one file ie:Ts file.
+-ng g c module_name/component_name
+-register this module in app.module.
+-export this module then use selector in app.html file.
+-we use module for the structured use.
+
+===================================================================================
+FUNCTION:
+---------
+-Functions in AngularJS are used to perform some frequent tasks or clarify something. 
+-in angualr 9,10,11 data type while passing argument data type mentioning was not mandatory
+bt it mandatory in later versions bcs in json configuration file there is a strict mode is true.
+===================================================================================
+EVENTS:
+-------
+-An Events in AngularJS can be used to perform particular tasks, based on the 
+action taken.
+-we can add more than 1 event on single button or inpute box.
+-<!-- keyup button chodne k bd value deta h -->
+-blure--jb pointer inpute se bhr tb jake event perform hogi.
+-input event is almost similar to the keydown(mouse events k liye alert kro acchese
+smj ayega..consol me mt kro)
+
+===================================================================================
+GET TEXT BOX VALUE AND PRINT:
+-------------------------------
+-wo count vala simple function..kr loge tum log
+
+===================================================================================
+STYLE:
+-----
+-If we want to style globaly then we can add style to the style.css file which generates with 
+the app name..not with module and  component.Smjhe kyaaaaaaaaa.confuse nh hona h.
+-------
+TYPES:
+------
+1)Global ie. in global style.css
+2)Component ie. in component k css file me
+3)internal ie. in component k html file me with style tag
+-->priority:1)internal style 2)component style 3)global style
+
+
+===================================================================================
+DATA BINDING:|
+-------------
+-it allows to define the communication between components and view.
+-Data binding passed from componet(TS) to view and from view to components.
+1)One way data binding:
+-it is one way communication where ts file changes reflects in html web page
+-angular interpolation/string interpolation,property binding and event binding
+ are example of one way data binding.
+
+--------------------------------------------------------------------------------------
+2)string data binding:
+-----------------------
+-we use double curly braces.
+it is type of one way data binding
+-used to output data from TS to html webpage.
+--------------------------------------------------------------------------------------
+3)property data binding:
+-------------------------
+eg:property binding:[value]="value"
+   string interpolation: value="{{value}}"
+
+- we should use properties and attributes by property binding not by interpolation.
+-inerpolation provides only bollean values and property binding provides number and string
+-type of one way binding
+-we bind a property of DOM elements to a field which is defined  propoerty in our
+ component TS code.
+-Angular inetrnally converrts string interpolation into property interpolation
+
+--------------------------------------------------------------------------------------
+4)Event data binding:
+---------------------
+-type of one way data binding.
+-used to handle the vents raised from the DOM like the button click etc.
+eng: <button (click)="clickme()">Click</button>.
+--------------------------------------------------------------------------------------
+5)Attribute binding:
+--------------------
+--With attribute binding we can set the value of an attribute directly. 
+-Angular team recommends to use Property binding when possible and use attribute 
+binding only when there is no corresponding element property to bind.
+
+<th [attr.colspan]="columnSpan"> # This is property binding
+
+<th attr.colspan="{{columnSpan}}"> # This is String Interpolation
+
+class EmployeeComponent {
+    columnSpan: number = 2;
+}
+---------------------------------------------------------------------------------------
+6)Two way data binding:
+------------------------
+-whatever we changes in view this will refect in the TS and when we changes in 
+TS the this will reflect int he view part.
+-it is a mixture of event and property binding.
+-eg:[(ngModel)]="property_name_from_ts_file"
+
+===================================================================================
+LIFE CYCLE HOOKS:
+----------------
+- when we genrate component and render with the selector,this selector creates an 
+intsance of DOM,between initiation and distruction of components,betn this phases 
+generates,this is called hooks,and number of accurence is called life cycle.
+-------------
+1)constructo(): This is not an type bt this execute before the life cycle hooks
+--------------------------------------------------------------------------
+2)ngOnChanges():
+-this works on arguments.
+-when the value of input property changes then ngOnChanges() executes.
+-This happens multiple time.
+-this first execute when componet execute and second time when when inpute value changes.
+----------------------------------------------------------------------------------
+
+3)ngOnInit():
+-------------
+-we get this bydefault when we create component or custom method.
+-In Angular, the ngOnInit() method is a lifecycle hook provided by the OnInit interface. 
+-It is part of the Angular component lifecycle and is called by Angular after the component 
+has been initialized and its inputs have been bound.
+
+-The ngOnInit() method is commonly used for initialization tasks within a component. 
+-It is where you can perform setup operations, such as retrieving data from a server, 
+initializing component properties, subscribing to observables, or initializing third-party 
+libraries.
+
+-------------------------------------------------------------------------------
+4)ngDoCheck():
+----------------
+-this checks every time when we made changes to our components.
+
+--------------------------------------------------------------------------
+5)ngAfterContentInit():
+-----------------------
+-when anything initiates in our DOM then we perform anything with this.
+
+------------------------------------------------------------------------------------
+6)ngAfterContentChecked():
+--------------------------
+-after every content initiation changes accure then this changes checked by this one.
+
+----------------------------------------------------------------------------------
+7)ngAfterViewInit():
+--------------------
+- every time page render on DOM ie.when child paer of view intitialise ,then this executes
+------------------------------------------------------------------------------
+
+8)ngAfterViewChecked():
+----------------------
+-
+
+-----------------------------------------------------------------------------
+9)ngOnDestroy:-
+---------------
+-when we jump from one component to another (ie. from one page to another),then 
+previous one destroy.If we want that our component should executes something before 
+destroyed then we executes this one.
+-------------------------------------------------------------------------------
+
+
+==============================================================================
+PIPES:||
+======
+-this is filters used for many common uses like formatting dates,string
+ manipulation etc.These filters are knows as "pipes" in angular.
+-pipes allow us to change the data before rendered or browser.
+-pipes takes data from properties and transform into the desired output.
+-there are built in pipes.
+    -The Async pipe automatically subscribes to an Observable or a Promise and returns the 
+     emitted values as they come in.
+    -The Currency pipe allows to format numbers in different currencies
+    -Format date values with the Date pipe:
+    -The Decimal pipe formats decimal values:
+    -The Json pipe is useful for debugging and displays an object as a Json string. 
+     It uses JSON.stringify behind the scenes:
+    -Covert text to either lower case or upper case with the respective pipe:
+    -The Percent pipe transforms a number into it’s percentage value:
+    -Create a subset list or string with the Slice pipe:
+    -titlecase:
+
+- we can create also.
+syntax:property|pipeoperator[:pipeArguments]
+eg: {{cureeentDate | 'date:dd/mm/yyyy'}}
+
+==============================================================================
+4 BUILDING BLOCKS OF ANGULAR:
+------------------------------
+1)COMPONETS
+2)SERVICES
+3)PIPES
+4)DIRECTIVES
+==============================================================================
+
+INTERFACE :
+-----------
+-An interface is an structure that defines the syntax for classes to fallows.
+-Interface defines properties,methods and events which are members of the interface.
+-It contains only the declarations of the members.We cannot define its variable.
+-ex:To validate price*quantity all in number type.
+-
+
+ 
+eg: interface Employee (this is from employee file)
+{
+name:string,
+id:number,
+email:string
+}
+
+ interface Adress(this is from Adressfile)
+{
+city_name:string,
+pin_code:number,
+}
+
+-If we want to use interface of the different file then import those file and write
+   interface combineInterfcae extends Employee,Adress
+          {
+          }
+   -note:Employee and Adress are interface names which are stored in apps folder.
+------------------------------------------
+-interface has undefined methods.
+-Interface is a specification that identifies a related set of properties and
+ methods to be implemented by a class.
+ So basically using interface you can set some basic rules for your properties
+ and methods using class.
+
+==============================================================================
+
+SERVICES:
+---------
+-we can access functions from services in every components.They are like 
+a global functions.
+===========================================================================
+
+DIRECTIVES:
+----------
+eg:[(ngModel)]
+
+===========================================================================
+-If we use @Input decorator for any property
+ then parent can send any value for this property.
+
+===========================================================================
+-If we toggle(hide/show) the function to hide and show the content in the html does not
+load,bt if we done this with css display none property then all the data loads first,it
+requires more processing time.
+
+===========================================================================
+BOOTSTRAP:
+-It is an library which can make our webpage responsive ie. it can run in both mobile phones and 
+desktop etc.
+-commond:ng add @ng-bootstrap/ng-bootstrap 
+
+===========================================================================
+MATERIAL UI:
+------------
+-To make website responsive and to give rich look to it.
+-with this we can style less to give more fansy look.
+-bt it is heavier than bootrap thats why it has effect on performance.
+===========================================================================
+ READ THIS TO UNDERSTAND COMPONENT NAME:
+-Parent -child--->data from child to parent
+-Reusable component--->parent to child
+---------------------------------------------------------
+# parent2-child2--->sending data from child to parent:
+STEPS:
+------
+1)make child
+2)use child in parent component
+3)send function from parent 
+4)call function in child
+5)get data in parent
+
+===========================================================================
+
+TWO WAY DATA BINDING:
+---------------------
+-we have to done with the ngmodel or bannana brackets.
+-This is used to display  and update property at the same time.
+-We have another way to display and update property with Onchange event but this
+lenghty,thats why we should prefer two way data binding. 
+
+========================================================================================
+TEMPLATE REFERNCE VARIABLE:
+--------------------------
+- Id in any tag is another name of template variable.
+-while defining function,we can anything istead of any.
+  eg: getvalue(item:any){
+                   ----
+    alert("Input value is :"+item)
+  }
+========================================================================================
+
+BASICS OF TYPESCRIPTS:
+---------------------
+-It avoids different errors which accures in js code writing.
+-Like we can specify here data type of variable.
+-Browser dosen't uderstand ts.Angular itself convert ts in js and then display in browser.
+
+WE CAN DEFINE FOLLOWING VALUES:
+1)number
+2)string
+3)boolean
+4)any
+5)define 2 types
+   eg:data=20
+   - we can define object also:
+
+      item:{name:string ,phone:number}={name:"anup",phone:8956}
+   -we can define array also
+      eg: item:string[]=["Anup","monti"]
+    
+      getdata(item:number |boolean)
+       {
+          if (type of item ==="number")
+          {
+            return item*20
+          }
+       }
+========================================================================================
+PIPES:
+------
+-To formate data,ie.one form to another.
+-We can avoid pipes for formatting bt it takes less time and kes easier for formatting 
+rather formating data.
+-We can use 2 pipes at a time also.
+========================================================================================
+
+FORMS:
+------
+-Use to submit any info to the database.
+-But angular cannot connect to the database,so we use API.
+-We send data to database and API submit data and update the database.
+eg:login,sighn up,post,google search is also type of form.
+
+2 TYPES OF FORMS:
+-----------------
+1)TEMPLATE DRIVEN FORM:-Mostly work done in the component template ie.i HTML file.Whoes handlling 
+is done in template side. 
+2)REACTIVE FORMS:-Mostly done in component class ie. in TS file.
+
+FLOW:
+----
+TEMPLATE-->class--->service--->database
+-first we write html then we get info from class and then we will call service ie.service
+and service will submit the data in database.
+========================================================================================
+DIRECTIVES:
+------------
+- Directives are defined as classes that can add new behavior to the elements in the template 
+or modify existing behavior.
+-The purpose of Directives in Angular is to maneuver the DOM, be it by adding new elements to
+DOM or removing elements and even changing the appearance of the DOM elements.
+-eg: *ngFor,*ngIf,switch case etc.
+========================================================================================
+404 ERROR:
+----------
+-When we hit any invalid url then it returns 404 error.
+-Wildcard is represented by **(double star),ie. when any invalid url will come then this page
+will run or open.
+========================================================================================
+SERVICES:
+---------
+-Service is a classs in which contains different methods,properties and variables which wew can use
+in different component.
+-To avoid data duplicasy.
+
+========================================================================================
+CALL API IN ANGULAR:
+--------------------
+-An API (Application Programming Interface) is a set of rules that are shared by a particular 
+service. These rules determine in which format and with which command set your application can
+access the service, as well as what data this service can return in the response.
+-In simple words, you can say it is a software interface that offers service to the other 
+pieces of software.
+
+-We can connect angular to the databse through API.
+--------------------------------------------------------------------------------------------
+1)npm install -g json-server
+2)json-server --watch db.json (open cmd from API folder in desktop )
+
+que:what is required to call API? 
+-First we have create service then we can import httpclientModule in module file.
+
+===============================================================================================
+MODEL:
+------
+-Model is one of the functionality of TS.
+-It defines data structure, so we dont need to define its type and it can validate data. 
+-This is a part of TS not of angular.
+-We can use it where we have to define data,either it comming from API or it is static data.
+-TO UNDERSTAND THIS SEE INTERFACE-EX COMPONENTS.
+-
